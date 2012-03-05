@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up with ScanShowSell</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.fileupload-ui.css">
+    <link href="css/template_register.css" rel="stylesheet">
+
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+    <script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAAVSqAzgPLn6hnw7NqrJxW-BRe7sDIkaei9_QOoSx4oTVMhOsiLxSciM_Lb80M38AQaVMw0okrfII5kQ"></script>
+    <script type="text/javascript">
+      google.load("jquery", "1.7.1");
+      google.load("jqueryui", "1.8.16");
+    </script>
+
+    <script src="js/bootstrap-tabs.js"></script>
+    <script src="js/bootstrap-alerts.js"></script>
+    <script src="js/bootstrap-twipsy.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+      $(function () {
+      $("input[rel=twipsy]").twipsy({
+      live: true,
+      offset: 10,
+      delayIn: 800,
+      placement: 'right',
+      trigger: 'focus'
+      })
+      })
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="panel-wrap">
+        <div id="panel">
+          <div class="row">
+	    <header>
+	      <a href="http://www.scanshowsell.com"><img src="images/title_med.png" alt="ScanShowSell.com" border="0" /></a>
+	      <h1 class="pull-right">Register Now</h1>
+	    </header>
+	  </div>
+	  
+	  <div class="row">
+	    <div id="page-wrap">
+	      <hgroup>
+		<h2>Start your 30-day free trial today! No credit card necessary.</h2>
+		<h5>Build, customize and host a beautiful mobile website with us - for free. No payment necessary, cancel anytime.</h5>
+	      </hgroup>
+	      
+	      <form id="registerForm">
+	        <ul id="formList">
+	          <li>
+	            <!-- ===== WEBSITE NAME ====== -->
+	            <div class="clearfix">
+	              <label for="websiteName">Website name</label>
+	              <div class="input">
+	                <input type="text" class="span7" id="websiteName" size="30" name="websiteName" rel="twipsy" title="You can't change this later as it should be reserved in DNS record." placeholder="Your Site Name" required></input>
+	              </div>
+	            </div><!-- /clearfix -->
+	            <p class="hint-inline">This will also be used as your website's address. (Example: yourcompany.scanshowsell.com)</p>
+	          </li> 
+	          
+	          <!-- ===== WEBSITE URL ======
+	               <li> 
+	                 <div class="clearfix">
+	                   <label for="websiteURL">Website URL</label>
+	                   <div class="input">
+	                     <input type="text" class="span7 alert" id="websiteURL" size="30" name="websiteURL" rel="twipsy" title="Example: bobsplumbing.scanshowsell.com" placeholder="yourwebsite" required></input>
+	                     <span class="help-inline">.scanshowsell.com</span>
+	                   </div>
+	                 </div>
+	                 <p class="hint-inline">This is your website's address. It can be 3 - 35 characters long (only numbers and letters). Once registered, you can also use your own domain name (ex: wwww.yourdomain.com) at any time.</p>
+	               </li>
+	               -->
+	          
+	          <li>
+	            <!-- ===== EMAIL ADDRESS ====== -->
+	            <div class="clearfix">
+	              <label for="emailAddress">Email Address</label>
+	              <div class="input">
+	                <input type="text" class="span7" id="emailAddress" size="30" name="emailAddress" required></input>
+	              </div>
+
+	              <label for="emailConfirm">Confirm Email</label>
+	              <div class="input">
+	                <input type="text" class="span7" id="emailConfirm" size="30" name="emailConfirm" required></input>
+	              </div>
+	            </div><!-- /clearfix -->
+	            <p class="hint-inline">This will be what you use to log in.</p>
+	          </li>
+	          
+	          <li>
+	            <!-- ===== PASSWORD ====== -->
+	            <div class="clearfix">
+	              <label for="password">Choose Password</label>
+	              <div class="input">
+	                <input type="text" class="span7" id="password" size="30" name="password" required></input>
+	              </div>
+
+	              <label for="passwordConfirm">Confirm Password</label>
+	              <div class="input">
+	                <input type="text" class="span7" id="passwordConfirm" size="30" name="passwordConfirm" required></input>
+	              </div>
+	            </div><!-- /clearfix -->
+	            <p class="hint-inline">Must be at least 6 characters long, numbers and letters only (no spaces, or special symbols).</p>
+	          </li>
+	          
+	          <li>
+	            <!-- ===== SPAM ALERT ====== -->
+	            <div class="clearfix">
+	              <label class="spamLabel" for="spamAlert">What is <span id="randomEQ" class="label warning">2&nbsp;&nbsp;+&nbsp;&nbsp;2</span>&nbsp;?</label>
+	              <div class="input">
+	                <input type="text" class="mini" id="spamAlert" name="Spam Bot" required></input>
+	              </div>
+	            </div><!-- /clearfix -->
+	            <p class="hint-inline">We're just making sure you're a human and not a spam-bot.</p>
+	          </li>
+	          
+	          <li>
+	            <!-- ===== TOS AGREEMENT ====== -->
+	            <div class="clearfix">
+	              <input type="checkbox" name="tosAgree" value="yes" />
+	              <span class="tosAgree">I agree to the <a href="#">Terms of Service</a></span>
+	              <a href="mwb/wizard.html" class="pull-right"><button class="btn large success">Build your mobile website&nbsp;&nbsp;&rarr;</button></a>
+	            </div><!-- /clearfix -->
+	          </li>
+	        </ul>
+	      </form>
+            </div>  <!-- /span16 -->
+          </div>  <!-- /row -->
+          
+        </div>  <!-- /panel -->
+      </div> <!-- /panel-wrap -->
+    </div>  <!-- /container -->
+    
+
+    <script src="js/jquery.iframe-transport.js"></script>
+    <script src="js/jquery.fileupload.js"></script>
+    <script src="js/jquery.fileupload-ui.js"></script>
+    <script src="js/application.js"></script>
+    <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE >= 8 -->
+    <script src="js/jquery.xdr-transport.js"></script>
+    <!-- postMessage Transport support can be added with the following plugin -->
+    <!--script src="jquery.postmessage-transport.js"></script-->
+  </body>
+</html>

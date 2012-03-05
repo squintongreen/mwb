@@ -1,0 +1,773 @@
+
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Page Styles
+:: Lists
+:: Typography 
+:: Content Islands
+:: Navigation
+:: Top Bar
+:: Miscallaneous Styles
+*/
+
+/*	--------------------------------------------------
+	Page Styles
+	-------------------------------------------------- */
+	
+	body {
+			background-color:#f2f2f2;
+			background-image:url('../images/header_bg.png');
+			background-repeat:repeat-x;
+			background-position: left top;
+			}
+	#page-wrap		{
+			margin-top:72px;
+			background: #fefefe;
+			background: -moz-linear-gradient(top, #fefefe 0%, #fbfbfb 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#fbfbfb));
+			background: -webkit-linear-gradient(top, #fefefe 0%,#fbfbfb 100%);
+			background: -o-linear-gradient(top, #fefefe 0%,#fbfbfb 100%);
+			background: -ms-linear-gradient(top, #fefefe 0%,#fbfbfb 100%);
+			background: linear-gradient(top, #fefefe 0%,#fbfbfb 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#fbfbfb',GradientType=0 );
+			/* border-top:4px solid #f05a22;*/
+			box-shadow: 0px -1px 3px rgba(0,0,0,0.25);
+			-moz-box-shadow: 0px -1px 3px rgba(0,0,0,0.25);
+			}
+
+
+	
+/*	--------------------------------------------------
+	Header
+	-------------------------------------------------- */
+
+	header			{ padding:25px 20px;}
+	.main-nav		{ margin:0;padding-top:18px;list-style:none;zoom:1; }
+	.main-nav li	{ float:left; }
+	.main-nav li a	{ margin:0 10px;padding:5px 10px;color:#c3c3c3;text-decoration:none;display:block;border-radius:4px;}
+	.main-nav li a:last-child	{ margin-right:0 !important; }
+	.main-nav li a:hover	{ background:#f3f3f3;color:rgb(0, 105, 214); }
+	
+
+
+/*	--------------------------------------------------
+	Lists
+	-------------------------------------------------- */
+	
+	#sitemap-1		{margin:0;padding:0;float:left;list-style:none;}
+	#sitemap-2		{margin:0 0 0 40px;float:left;list-style:none;}
+	
+	.breadcrumb		{margin-top:12px;}
+
+	
+
+
+/*    --------------------------------------------------
+    Typography
+    -------------------------------------------------- */
+    
+    .hint-inline			{padding:0;color:#848484;max-width:700px;}
+    .register		{font-size:1.5em !important;color:#696969 !important;}
+    
+    
+    
+/*  --------------------------------------------------
+    Navigation 
+    -------------------------------------------------- */ 
+    
+    .pills		{
+			  margin:0;
+			  padding:5px 20px;
+			  background-color: #f5f5f5;
+			  background-repeat: repeat-x;
+			  background-image: -khtml-gradient(linear, left top, left bottom, from(#ffffff), to(#f5f5f5));
+			  background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+			  background-image: -ms-linear-gradient(top, #ffffff, #f5f5f5);
+			  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f5f5f5));
+			  background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+			  background-image: -o-linear-gradient(top, #ffffff, #f5f5f5);
+			  background-image: linear-gradient(top, #ffffff, #f5f5f5);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0);
+			  border: 1px solid #ddd;
+			  -webkit-border-radius: 3px;
+			  -moz-border-radius: 3px;
+			  border-radius: 3px;
+			  -webkit-box-shadow: inset 0 1px 0 #ffffff;
+			  -moz-box-shadow: inset 0 1px 0 #ffffff;
+			  box-shadow: inset 0 1px 0 #ffffff;
+			  }
+    nav.form_btm	{padding:30px 0 0 0;background-color:#f9f9f9;border-top:1px solid #dedede;height:72px;position:relative;bottom:0;clear:both;}
+    .tabs		{margin-bottom:0;}
+
+    
+    
+/*  --------------------------------------------------
+    Content Blocks
+    -------------------------------------------------- */ 
+    
+    #start-website, #profile, #photo-upload, #services, #service-areas, #special-offers, #testimonials, #accreditation, #choose-template, #preview-and-publish				{background-color:#f3f3f3;}
+    #instructions				{margin:18px 0;padding:20px;background-color:#e3e3e3;z-index:9999;}
+    #information				{margin-top:18px;margin-bottom:18px;}
+    
+    #create-website-block		{padding:18px 0 18px 19px;background-color:#fcfcfc;border-left:1px solid #d3d3d3;}
+    
+    /*  For the Manage Website intro page.
+    #create-website-block		{margin:18px 0 18px 20px;padding:20px;background-color:#e3e3e3;border:1px solid #d3d3d3;width:420px;height:210px;float:left;}
+    #manage-website-block		{margin:18px 0 18px 20px;padding:20px;background-color:#e3e3e3;border:1px solid #d3d3d3;width:420px;height:210px;float:left;}
+    */
+    
+    /* -- Company Profile -- */
+    #profile-form				{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #company-profile			{margin-top:18px;padding-top:18px;border-top:1px solid #d3d3d3;}
+    #contact-information		{padding-top:18px;border-top:1px solid #d3d3d3;}
+    #fieldsForm					{padding-top:18px;}
+    #sidebar					{padding-top:18px;}
+    
+    /* -- Photo Uploader -- */
+    #upload-wrap		{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #fileupload			{margin-top:18px;padding:18px 0;border-top:1px solid #d3d3d3;border-bottom:1px solid #d3d3d3;}
+    #photo-panel		{margin:18px 0;padding:10px;padding-top:15px;background-color:#e3e3e3;width:540px;display:block;position:relative;float:left;}
+    .thumb-wrap			{width:220px;display:inline;float:left;}
+    .photo-form			{margin-left:10px;width:310px;display:inline;float:left;}
+    .photo-form > .form-stacked		{padding-left:0 !important;}
+    .photo-buttons		{margin:18px 0;width:100%;display:block;position:relative;}
+    
+    /* -- Services -- */
+    #services-form					{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #service-panel					{margin-top:18px;border-top:1px solid #d3d3d3;}
+    #serviceForm					{padding-top:18px;}
+    .listServices					{margin:0;list-style:none;}
+    
+    /* -- Service Areas -- */
+    #service-areas-form				{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #service-areas-panel			{border-top:1px solid #d3d3d3;}
+    #serviceAreasForm				{padding-top:18px;padding-left:0;}
+    #serviceAreasForm input			{margin-top:7px;}
+    .listServiceArea				{margin:0;list-style:none;}
+    .listServiceArea li				{margin-bottom:18px;}
+    
+    
+    /* -- Special Offers -- */
+    #special-offers-form			{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #special-offers-panel			{border-top:1px solid #d3d3d3;}
+    #specialOffersForm				{padding-top:18px;}
+    .listSpecialOffers				{margin:0;list-style:none;}
+    
+    /* -- Testimonials -- */
+    #testimonials-form				{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #testimonials-panel				{border-top:1px solid #d3d3d3;}
+    #testimonialsForm				{padding-top:18px;}
+    .listFeedback					{margin:0;list-style:none;}
+    
+    /* -- Accreditations -- */
+    #accreditation-form				{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #accreditation-panel			{border-top:1px solid #d3d3d3;}
+    #accreditationForm				{padding-top:18px;}
+    .listCredentials				{margin:0;list-style:none;}
+    .listCredentials li				{margin-bottom:18px;}
+    
+    /* -- Optional Pages -- */
+    #optional-pages-form			{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #optional-pages-panel			{border-top:1px solid #d3d3d3;}
+    #optionalPagesForm				{padding-top:18px;}
+    .inputs-list					{margin:18px 0;list-style:none;}
+    .inputs-list li					{margin-bottom:18px;padding:18px 10px;width:600px;border-radius:4px;background:#f3f3f3;}
+    .inputs-list li label			{font-size: 1.2em;}
+    .inputs-list li label input		{margin-right:10px;}
+    
+    /* -- Template Picker -- */
+    #template-picker				{padding-bottom:36px;background-color:#fcfcfc;width:980px;display:inline;float:left;}
+    #template-picker > h4			{margin:18px 20px;}
+    #templateSlider					{margin:0 !important;}
+    #templates  					{margin-top:18px;margin-bottom:18px;}
+    #templates li 					{background-color:#f3f3f3;padding:10px;border:1px solid #737373;box-shadow:0 0 2px rgba(0,0,0,0.55);} 	
+    #templates li:hover 			{background-color:#fcfcfc;border:1px solid #434343;box-shadow:0 0 4px rgba(0,0,0,0.75);}
+    #templates li.active 			{background-color:#fcfcfc;border:1px solid #00AAFF;box-shadow:0 0 4px rgba(0,0,0,0.75);}
+    #templates li img				{margin-bottom:14px;}
+    .btnContainer					{margin-left:18px;}
+    #go-prev						{margin-top:-25px;margin-left:150px;}
+    #go-next						{margin-top:-25px;margin-right:150px;}
+              
+    /* -- Preview & Publish -- */
+    #preview-publish				{padding-top:18px;padding-bottom:36px;background-color:#fcfcfc;width:960px;display:inline;float:left;}
+    #preview-publish h4				{margin-left:20px;}
+    #emulator-wrap					{margin-left:0;float:right;}
+    #emulator {
+        margin-left:115px;
+        display: inline-block;
+        float:left;
+        background-image:url('../images/iphone_bck.png');
+        background-repeat:no-repeat;
+        background-attachment:inherit;
+        background-position:0px 0px; 
+        width:496px;
+        height:980px;
+      }
+
+      #emulator-view {
+        position:relative;
+        top: 100px;
+        left:25px;
+        width: 245px;
+        height: 368px;
+      }
+    
+    /* -- Footer -- */
+    footer				{margin:0;padding:36px 0;background:#232323;}
+    footer h4			{color:#f3f3f3;text-shadow:2px 2px 2px rgba(0,0,0,0.4);}
+    footer p			{color:#e3e3e3;}
+
+
+
+/*	--------------------------------------------------
+	:: Block grids
+	
+	These are 2-up, 3-up, 4-up and 5-up ULs, suited
+	for repeating blocks of content. Add 'mobile' to
+	them to switch them just like the layout grid
+	(one item per line) on phones
+	-------------------------------------------------- */
+	
+	.block-grid { display: block; overflow: hidden; }
+	.block-grid>li { margin-bottom:18px;display: block; height: auto; float: left; }
+	
+	.block-grid.two-up { margin-left: -4% }
+	.block-grid.two-up>li { margin-left: 4%; width: 46%; }
+	
+	.block-grid.three-up { margin-left: -2% }
+	.block-grid.three-up>li { margin-left: 2%; width: 31.3%; }
+	
+	.block-grid.four-up { margin-left: -2% }
+	.block-grid.four-up>li { margin-left: 2%; width: 23%; }
+	
+	.block-grid.five-up { margin:0 auto; }
+	.block-grid.five-up>li { margin-left: 3.5%; width: 18.5%; }
+	
+	
+	
+	
+/*  --------------------------------------------------
+    Top Bar
+    -------------------------------------------------- */ 
+    
+    .topbar {
+			  height: 40px;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  z-index: 10000;
+			  overflow: visible;
+			}
+	.topbar a {
+	  color: #bfbfbf;
+	  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	}
+	.topbar h3 a:hover, .topbar .brand a:hover, .topbar ul .active > a {
+	  background-color: #333;
+	  background-color: rgba(255, 255, 255, 0.05);
+	  color: #ffffff;
+	  text-decoration: none;
+	}
+	.topbar h3 {
+	  position: relative;
+	}
+	.topbar h3 a, .topbar .brand {
+	  float: left;
+	  display: block;
+	  padding: 8px 20px 12px;
+	  margin-left: -20px;
+	  color: #ffffff;
+	  font-size: 20px;
+	  font-weight: 200;
+	  line-height: 1;
+	}
+	.topbar p {
+	  margin: 0;
+	  line-height: 40px;
+	}
+	.topbar p a:hover {
+	  background-color: transparent;
+	  color: #ffffff;
+	}
+	.topbar form {
+	  float: left;
+	  margin: 5px 0 0 0;
+	  position: relative;
+	  filter: alpha(opacity=100);
+	  -khtml-opacity: 1;
+	  -moz-opacity: 1;
+	  opacity: 1;
+	}
+	.topbar form.pull-right {
+	  float: right;
+	}
+	.topbar input {
+	  background-color: #444;
+	  background-color: rgba(255, 255, 255, 0.3);
+	  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	  font-size: normal;
+	  font-weight: 13px;
+	  line-height: 1;
+	  padding: 4px 9px;
+	  color: #ffffff;
+	  color: rgba(255, 255, 255, 0.75);
+	  border: 1px solid #111;
+	  -webkit-border-radius: 4px;
+	  -moz-border-radius: 4px;
+	  border-radius: 4px;
+	  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0px rgba(255, 255, 255, 0.25);
+	  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0px rgba(255, 255, 255, 0.25);
+	  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0px rgba(255, 255, 255, 0.25);
+	  -webkit-transition: none;
+	  -moz-transition: none;
+	  -ms-transition: none;
+	  -o-transition: none;
+	  transition: none;
+	}
+	.topbar input:-moz-placeholder {
+	  color: #e6e6e6;
+	}
+	.topbar input::-webkit-input-placeholder {
+	  color: #e6e6e6;
+	}
+	.topbar input:hover {
+	  background-color: #bfbfbf;
+	  background-color: rgba(255, 255, 255, 0.5);
+	  color: #ffffff;
+	}
+	.topbar input:focus, .topbar input.focused {
+	  outline: 0;
+	  background-color: #ffffff;
+	  color: #404040;
+	  text-shadow: 0 1px 0 #ffffff;
+	  border: 0;
+	  padding: 5px 10px;
+	  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+	  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+	  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+	}
+	.topbar-inner, .topbar .fill {
+	  background:rgba(0,16,35,0.5);
+	  -webkit-box-shadow: inset 0 -1px 6px rgba(0, 0, 0, 0.2);
+	  -moz-box-shadow: inset 0 -1px 6px rgba(0, 0, 0, 0.2);
+	  box-shadow: inset 0 -1px 6px rgba(0, 0, 0, 0.2);
+	}
+	.topbar div > ul {
+	  display: block;
+	  float: left;
+	  margin: 0 10px 0 0;
+	  position: relative;
+	  left: 0;
+	}
+	.topbar div > ul > li {
+	  display: block;
+	  float: left;
+	}
+	.topbar div > ul a {
+	  display: block;
+	  float: none;
+	  padding: 10px 10px 11px;
+	  line-height: 19px;
+	  text-decoration: none;
+	}
+	.topbar div > ul a:hover {
+	  color: #ffffff;
+	  text-decoration: none;
+	}
+	.topbar div > ul .active > a {
+	  background-color: #222;
+	  background-color: rgba(0, 0, 0, 0.5);
+	}
+	.topbar div > ul.secondary-nav {
+	  float: right;
+	  margin-left: 10px;
+	  margin-right: 0;
+	}
+	.topbar div > ul.secondary-nav .menu-dropdown,
+	.topbar div > ul.secondary-nav .dropdown-menu {
+	  right: 0;
+	  border: 0;
+	}
+	.topbar div > ul a.menu:hover,
+	.topbar div > ul li.open .menu,
+	.topbar div > ul .dropdown-toggle:hover,
+	.topbar div > ul .dropdown.open .dropdown-toggle {
+	  background: #444;
+	  background: rgba(255, 255, 255, 0.05);
+	}
+	.topbar div > ul .menu-dropdown,
+	.topbar div > ul .dropdown-menu {
+	  background-color: #333;
+	}
+	.topbar div > ul .menu-dropdown a.menu,
+	.topbar div > ul .dropdown-menu a.menu,
+	.topbar div > ul .menu-dropdown .dropdown-toggle,
+	.topbar div > ul .dropdown-menu .dropdown-toggle {
+	  color: #ffffff;
+	}
+	.topbar div > ul .menu-dropdown a.menu.open,
+	.topbar div > ul .dropdown-menu a.menu.open,
+	.topbar div > ul .menu-dropdown .dropdown-toggle.open,
+	.topbar div > ul .dropdown-menu .dropdown-toggle.open {
+	  background: #444;
+	  background: rgba(255, 255, 255, 0.05);
+	}
+	.topbar div > ul .menu-dropdown li a,
+	.topbar div > ul .dropdown-menu li a {
+	  color: #999;
+	  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	}
+	.topbar div > ul .menu-dropdown li a:hover,
+	.topbar div > ul .dropdown-menu li a:hover {
+	  background-color: #191919;
+	  background-repeat: repeat-x;
+	  background-image: -khtml-gradient(linear, left top, left bottom, from(#292929), to(#191919));
+	  background-image: -moz-linear-gradient(top, #292929, #191919);
+	  background-image: -ms-linear-gradient(top, #292929, #191919);
+	  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #292929), color-stop(100%, #191919));
+	  background-image: -webkit-linear-gradient(top, #292929, #191919);
+	  background-image: -o-linear-gradient(top, #292929, #191919);
+	  background-image: linear-gradient(top, #292929, #191919);
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#191919', GradientType=0);
+	  color: #ffffff;
+	}
+	.topbar div > ul .menu-dropdown .active a,
+	.topbar div > ul .dropdown-menu .active a {
+	  color: #ffffff;
+	}
+	.topbar div > ul .menu-dropdown .divider,
+	.topbar div > ul .dropdown-menu .divider {
+	  background-color: #222;
+	  border-color: #444;
+	}
+	.topbar ul .menu-dropdown li a, .topbar ul .dropdown-menu li a {
+	  padding: 4px 15px;
+	}
+	li.menu, .dropdown {
+	  position: relative;
+	}
+	a.menu:after, .dropdown-toggle:after {
+	  width: 0;
+	  height: 0;
+	  display: inline-block;
+	  content: "&darr;";
+	  text-indent: -99999px;
+	  vertical-align: top;
+	  margin-top: 8px;
+	  margin-left: 4px;
+	  border-left: 4px solid transparent;
+	  border-right: 4px solid transparent;
+	  border-top: 4px solid #ffffff;
+	  filter: alpha(opacity=50);
+	  -khtml-opacity: 0.5;
+	  -moz-opacity: 0.5;
+	  opacity: 0.5;
+	}
+	.menu-dropdown, .dropdown-menu {
+	  background-color: #ffffff;
+	  float: left;
+	  display: none;
+	  position: absolute;
+	  top: 40px;
+	  z-index: 900;
+	  min-width: 160px;
+	  max-width: 220px;
+	  _width: 160px;
+	  margin-left: 0;
+	  margin-right: 0;
+	  padding: 6px 0;
+	  zoom: 1;
+	  border-color: #999;
+	  border-color: rgba(0, 0, 0, 0.2);
+	  border-style: solid;
+	  border-width: 0 1px 1px;
+	  /* -webkit-border-radius: 0 0 6px 6px;
+	  -moz-border-radius: 0 0 6px 6px;
+	  border-radius: 0 0 6px 6px; */
+	  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	  -webkit-background-clip: padding-box;
+	  -moz-background-clip: padding-box;
+	  background-clip: padding-box;
+	}
+	.menu-dropdown li, .dropdown-menu li {
+	  float: none;
+	  display: block;
+	  background-color: none;
+	}
+	.menu-dropdown .divider, .dropdown-menu .divider {
+	  height: 1px;
+	  margin: 5px 0;
+	  overflow: hidden;
+	  background-color: #eee;
+	  border-bottom: 1px solid #ffffff;
+	}
+	.topbar .dropdown-menu a {
+	  display: block;
+	  padding: 4px 15px;
+	  clear: both;
+	  font-weight: normal;
+	  line-height: 18px;
+	  color: #808080;
+	  text-shadow: 0 1px 0 #ffffff;
+	}
+	.topbar .dropdown-menu a:hover {
+	  background-color: #dddddd;
+	  background-repeat: repeat-x;
+	  background-image: -khtml-gradient(linear, left top, left bottom, from(#eeeeee), to(#dddddd));
+	  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+	  background-image: -ms-linear-gradient(top, #eeeeee, #dddddd);
+	  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
+	  background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
+	  background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
+	  background-image: linear-gradient(top, #eeeeee, #dddddd);
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#dddddd', GradientType=0);
+	  color: #404040;
+	  text-decoration: none;
+	  -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.025), inset 0 -1px rgba(0, 0, 0, 0.025);
+	  -moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.025), inset 0 -1px rgba(0, 0, 0, 0.025);
+	  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.025), inset 0 -1px rgba(0, 0, 0, 0.025);
+	}
+	.open .menu,
+	.dropdown.open .menu,
+	.open .dropdown-toggle,
+	.dropdown.open .dropdown-toggle {
+	  color: #ffffff;
+	  background: #ccc;
+	  background: rgba(0, 0, 0, 0.3);
+	}
+	.open .menu-dropdown,
+	.dropdown.open .menu-dropdown,
+	.open .dropdown-menu,
+	.dropdown.open .dropdown-menu {
+	  display: block;
+	}
+
+
+
+/*  --------------------------------------------------
+    Builder Navigation Tabs
+    -------------------------------------------------- */ 
+    
+	#builderMenu .nav {
+	  display: block;
+	  float: left;
+	  margin: 0 10px 0 0;
+	  position: relative;
+	  left: 0;
+	}
+	#builderMenu .nav > li {
+	  display: block;
+	  float: left;
+	}
+	#builderMenu .nav a {
+	  display: block;
+	  float: none;
+	  margin-bottom:-1px;
+	  padding: 12px 20px;
+	  line-height: 24px;
+	  text-decoration: none;
+	  font-size: 1.25em;
+	  color:#e3e3e3;
+	  border-top:1px solid #232323;
+	  border-right:1px solid #232323;
+	  background-color:#222;
+	}
+	#builderMenu .nav a:hover {
+	  color:#f3f3f3;
+	  text-decoration: none;
+	}
+	#builderMenu .nav .active > a {
+	  background-color:#222;
+	  border-top:3px solid rgb(0, 105, 214);
+	  color:#f3f3f3;
+	  font-weight:600;
+	  margin-bottom:-1px;
+	}
+	#builderMenu .nav.secondary-nav {
+	  float: right;
+	  margin-left: 0;
+	  margin-right: 0;
+	  margin-bottom:-1px;
+	  border-right:none;
+	  border-left:1px solid #232323;
+	}
+	#builderMenu .nav.secondary-nav .dropdown-toggle {
+	  margin-bottom:0;
+	  padding:6px 31px;
+	  background-color:#333;
+	  border-top:1px solid #232323;
+	  border-right:none;
+	  border-bottom:1px solid #232323;
+	  color:#e3e3e3;
+	  font-weight:500;
+	  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	}
+	#builderMenu .nav.secondary-nav .menu-dropdown,
+	#builderMenu .nav.secondary-nav .dropdown-menu {
+	  right: 0;
+	  border: 0;
+	}
+	#builderMenu .nav a.menu:hover,
+	#builderMenu .nav li.open .menu,
+	#builderMenu .nav .dropdown-toggle:hover,
+	#builderMenu .nav .dropdown.open .dropdown-toggle {
+	  background: #232323;
+	}
+	#builderMenu .nav .menu-dropdown,
+	#builderMenu .nav .dropdown-menu {
+	  background-color: #222;
+	}
+	#builderMenu .nav .menu-dropdown a.menu,
+	#builderMenu .nav .dropdown-menu a.menu,
+	#builderMenu .nav .menu-dropdown .dropdown-toggle,
+	#builderMenu .nav .dropdown-menu .dropdown-toggle {
+	  color:#e3e3e3;
+	}
+	#builderMenu .nav .menu-dropdown a.menu.open,
+	#builderMenu .nav .dropdown-menu a.menu.open,
+	#builderMenu .nav .menu-dropdown .dropdown-toggle.open,
+	#builderMenu .nav .dropdown-menu .dropdown-toggle.open {
+	  background: #333;
+	}
+	#builderMenu .nav .menu-dropdown li a,
+	#builderMenu .nav .dropdown-menu li a {
+	  color: #e3e3e3;
+	  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	  font-size:1em;
+	  padding:5px 20px;
+	}
+	#builderMenu .nav .menu-dropdown li a:hover,
+	#builderMenu .nav .dropdown-menu li a:hover {
+	  background-color: #090909;
+	  background-repeat: repeat-x;
+	  background-image: -khtml-gradient(linear, left top, left bottom, from(#191919), to(#090909));
+	  background-image: -moz-linear-gradient(top, #191919, #090909);
+	  background-image: -ms-linear-gradient(top, #191919, #090909);
+	  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #191919), color-stop(100%, #090909));
+	  background-image: -webkit-linear-gradient(top, #191919, #090909);
+	  background-image: -o-linear-gradient(top, #191919, #090909);
+	  background-image: linear-gradient(top, #191919, #090909);
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#191919', endColorstr='#090909', GradientType=0);
+	  color: #ffffff;
+	}
+	#builderMenu .nav .menu-dropdown .active a,
+	.nav .dropdown-menu .active a {
+	  color:#e3e3e3;
+	}
+	#builderMenu .nav .menu-dropdown .divider,
+	#builderMenu .nav .dropdown-menu .divider {
+	  background-color: #222;
+	  border-color: #444;
+	}
+	#builderMenu li.menu, .dropdown {
+	  position: relative;
+	}
+	#builderMenu a.menu:after, .dropdown-toggle:after {
+	  width: 0;
+	  height: 0;
+	  display: inline-block;
+	  content: "&darr;";
+	  text-indent: -99999px;
+	  vertical-align: top;
+	  margin-top: 8px;
+	  margin-left: 4px;
+	  border-left: 4px solid transparent;
+	  border-right: 4px solid transparent;
+	  border-top: 4px solid #ffffff;
+	  filter: alpha(opacity=50);
+	  -khtml-opacity: 0.5;
+	  -moz-opacity: 0.5;
+	  opacity: 0.5;
+	}
+	#builderMenu .menu-dropdown, .dropdown-menu {
+	  background-color: #333;
+	  float: left;
+	  display: none;
+	  position: absolute;
+	  top: 38px;
+	  z-index: 900;
+	  min-width: 160px;
+	  max-width: 220px;
+	  _width: 160px;
+	  margin-left: 0;
+	  margin-right: 0;
+	  padding: 6px 0;
+	  zoom: 1;
+	  border-color: #494949;
+	  border-style: solid;
+	  border-width: 0 1px 1px;
+	  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+	  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+	  -webkit-background-clip: padding-box;
+	  -moz-background-clip: padding-box;
+	  background-clip: padding-box;
+	}
+	#builderMenu .menu-dropdown li, .dropdown-menu li {
+	  float: none;
+	  display: block;
+	  background-color: none;
+	}
+	#builderMenu .menu-dropdown .divider, .dropdown-menu .divider {
+	  height: 1px;
+	  margin: 5px 0;
+	  overflow: hidden;
+	  background-color: #eee;
+	  border-bottom: 1px solid #ffffff;
+	}
+	#builderMenu .dropdown-menu a {
+	  display: block;
+	  padding: 4px 15px;
+	  clear: both;
+	  font-weight: normal;
+	  line-height: 18px;
+	  color: #808080;
+	  text-shadow: 0 1px 0 #ffffff;
+	}
+	#builderMenu .dropdown-menu a:hover {
+	  background-color: #dddddd;
+	  background-repeat: repeat-x;
+	  background-image: -khtml-gradient(linear, left top, left bottom, from(#eeeeee), to(#dddddd));
+	  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+	  background-image: -ms-linear-gradient(top, #eeeeee, #dddddd);
+	  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
+	  background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
+	  background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
+	  background-image: linear-gradient(top, #eeeeee, #dddddd);
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#dddddd', GradientType=0);
+	  color: #404040;
+	  text-decoration: none;
+	  -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.025), inset 0 -1px rgba(0, 0, 0, 0.025);
+	  -moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.025), inset 0 -1px rgba(0, 0, 0, 0.025);
+	  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.025), inset 0 -1px rgba(0, 0, 0, 0.025);
+	}
+	#builderMenu .open .menu,
+	#builderMenu .dropdown.open .menu,
+	#builderMenu .open .dropdown-toggle,
+	#builderMenu .dropdown.open .dropdown-toggle {
+	  color:#f3f3f3;
+	  background: #ccc;
+	  background: rgba(0, 0, 0, 0.3);
+	}
+	#builderMenu .open .menu-dropdown,
+	#builderMenu .dropdown.open .menu-dropdown,
+	#builderMenu .open .dropdown-menu,
+	#builderMenu .dropdown.open .dropdown-menu {
+	  display: block;
+	}
+
+
+    
+    
+/*  --------------------------------------------------
+    Miscellaneous
+    -------------------------------------------------- */ 
+    
+    #content			{margin-top:54px;margin-left:45px !important;}
+    .inline				{margin-left:20px;display:inline;}
+    
