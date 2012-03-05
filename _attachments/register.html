@@ -15,6 +15,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery.fileupload-ui.css">
     <link href="css/template_register.css" rel="stylesheet">
+    <link href="css/bootstrap-happy.css" rel="stylesheet">
 
 
     <!-- Le fav and touch icons -->
@@ -33,7 +34,21 @@
     <script src="js/bootstrap-alerts.js"></script>
     <script src="js/bootstrap-twipsy.js"></script>
     <script src="js/jquery.form.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/happy.js"></script>
+
+    <!-- couchdb stuff -->
+    <script src="/_utils/script/sha1.js"></script>
+    <script src="/_utils/script/json2.js"></script>
+    <script src="/_utils/script/jquery.couch.js"></script>
+    <script src="vendor/couchapp/jquery.couchLogin.js"></script>
+    <script src="vendor/couchapp/jquery.couchProfile.js"></script>
+    <script src="vendor/couchapp/md5.js"></script>
+    <script src="vendor/couchapp/jquery.mustache.js"></script>
+
+
+    <script src="js/validation.js"></script>
+    <script src="js/application.js"></script>
+
     <script type="text/javascript">
       $(function () {
       $("input[rel=twipsy]").twipsy({
@@ -139,7 +154,7 @@
 	            <div class="clearfix">
 	              <input type="checkbox" name="tosAgree" value="yes" />
 	              <span class="tosAgree">I agree to the <a href="#">Terms of Service</a></span>
-	              <a href="mwb/wizard.html" class="pull-right"><button class="btn large success">Build your mobile website&nbsp;&nbsp;&rarr;</button></a>
+	              <a href="wizard.html" class="pull-right"><button class="btn large success">Build your mobile website&nbsp;&nbsp;&rarr;</button></a>
 	            </div><!-- /clearfix -->
 	          </li>
 	        </ul>
@@ -155,7 +170,6 @@
     <script src="js/jquery.iframe-transport.js"></script>
     <script src="js/jquery.fileupload.js"></script>
     <script src="js/jquery.fileupload-ui.js"></script>
-    <script src="js/application.js"></script>
     <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE >= 8 -->
     <script src="js/jquery.xdr-transport.js"></script>
     <!-- postMessage Transport support can be added with the following plugin -->

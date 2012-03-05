@@ -6,7 +6,7 @@
     var fields = [], item;
     
     function getError(error) {
-      return $('<span id="'+error.id+'" class="unhappyMessage">'+error.message+'</span>');
+      return $('<span id="'+error.id+'" class="help-inline">'+error.message+'</span>');
     }
     function handleSubmit() {
       var errors = false, i, l;
@@ -68,7 +68,8 @@
         }
         
         if (error) {
-          el.addClass('unhappy').before(errorEl);
+          //el.addClass('unhappy').before(errorEl);
+            el.addClass('error').after(errorEl).parent().parent().addClass('error');
           return false;
         } else {
           temp = errorEl.get(0);
@@ -76,7 +77,8 @@
           if (temp.parentNode) {
             temp.parentNode.removeChild(temp);
           }
-          el.removeClass('unhappy');
+          //el.removeClass('unhappy');
+            el.removeClass('error').parent().parent().removeClass('error'); 
           return true;
         }
       };
