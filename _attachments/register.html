@@ -33,8 +33,9 @@
     <script src="js/bootstrap-tabs.js"></script>
     <script src="js/bootstrap-alerts.js"></script>
     <script src="js/bootstrap-twipsy.js"></script>
+    <script src="js/jquery.util.js"></script>
     <script src="js/jquery.form.js"></script>
-    <script src="js/happy.js"></script>
+    <script src="js/jquery.validate.js"></script>
 
     <!-- couchdb stuff -->
     <script src="/_utils/script/sha1.js"></script>
@@ -45,21 +46,8 @@
     <script src="vendor/couchapp/md5.js"></script>
     <script src="vendor/couchapp/jquery.mustache.js"></script>
 
-
     <script src="js/validation.js"></script>
     <script src="js/application.js"></script>
-
-    <script type="text/javascript">
-      $(function () {
-      $("input[rel=twipsy]").twipsy({
-      live: true,
-      offset: 10,
-      delayIn: 800,
-      placement: 'right',
-      trigger: 'focus'
-      })
-      })
-    </script>
   </head>
 
   <body>
@@ -87,7 +75,7 @@
 	            <div class="clearfix">
 	              <label for="websiteName">Website name</label>
 	              <div class="input">
-	                <input type="text" class="span7" id="websiteName" size="30" name="websiteName" rel="twipsy" title="You can't change this later as it should be reserved in DNS record." placeholder="Your Site Name" required></input>
+	                <input type="text" class="span7" id="websiteName" size="30" name="websiteName" rel="twipsy" title="You can't change this later as it should be reserved in DNS record." placeholder="Your Site Name"></input>
 	              </div>
 	            </div><!-- /clearfix -->
 	            <p class="hint-inline">This will also be used as your website's address. (Example: yourcompany.scanshowsell.com)</p>
@@ -111,12 +99,12 @@
 	            <div class="clearfix">
 	              <label for="emailAddress">Email Address</label>
 	              <div class="input">
-	                <input type="text" class="span7" id="emailAddress" size="30" name="emailAddress" required></input>
+	                <input type="text" class="span7" id="emailAddress" size="30" name="emailAddress"></input>
 	              </div>
 
 	              <label for="emailConfirm">Confirm Email</label>
 	              <div class="input">
-	                <input type="text" class="span7" id="emailConfirm" size="30" name="emailConfirm" required></input>
+	                <input type="text" class="span7" id="emailConfirm" size="30" name="emailConfirm"></input>
 	              </div>
 	            </div><!-- /clearfix -->
 	            <p class="hint-inline">This will be what you use to log in.</p>
@@ -127,12 +115,12 @@
 	            <div class="clearfix">
 	              <label for="password">Choose Password</label>
 	              <div class="input">
-	                <input type="text" class="span7" id="password" size="30" name="password" required></input>
+	                <input type="password" class="span7" id="password" size="30" name="password"></input>
 	              </div>
 
 	              <label for="passwordConfirm">Confirm Password</label>
 	              <div class="input">
-	                <input type="text" class="span7" id="passwordConfirm" size="30" name="passwordConfirm" required></input>
+	                <input type="password" class="span7" id="passwordConfirm" size="30" name="passwordConfirm"></input>
 	              </div>
 	            </div><!-- /clearfix -->
 	            <p class="hint-inline">Must be at least 6 characters long, numbers and letters only (no spaces, or special symbols).</p>
@@ -143,7 +131,7 @@
 	            <div class="clearfix">
 	              <label class="spamLabel" for="spamAlert">What is <span id="randomEQ" class="label warning">2&nbsp;&nbsp;+&nbsp;&nbsp;2</span>&nbsp;?</label>
 	              <div class="input">
-	                <input type="text" class="mini" id="spamAlert" name="Spam Bot" required></input>
+	                <input type="text" class="mini" id="areYouHuman" name="areYouHuman"></input>
 	              </div>
 	            </div><!-- /clearfix -->
 	            <p class="hint-inline">We're just making sure you're a human and not a spam-bot.</p>
