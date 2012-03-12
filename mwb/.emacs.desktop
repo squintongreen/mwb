@@ -1,0 +1,194 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Mar  5 19:51:09 2012
+;; Desktop file format version 206
+;; Emacs version 23.4.2
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring '("font" "fn" "recent-" "feed" "theme" "couc" "console.lo" "featured" "recent" "menu" "content" "list" "menu" "men" "menu" "<me"))
+(setq register-alist '((114 file . "/home/archer/.emacs.d/starter-kit-registers.el") (98 file . "/home/archer/.emacs.d/starter-kit-bindings.el") (105 file . "/home/archer/.emacs.d/init.el")))
+(setq file-name-history '("/home/archer/dev/mwb/_attachments/service-areas.html" "/home/archer/dev/mwb/_attachments/profile.html" "/home/archer/dev/mwb/_attachments/manage-photos.html" "/home/archer/dev/mwb/_attachments/index.html" "/home/archer/dev/mwb/_attachments/features.html" "/home/archer/dev/mwb/_attachments/wizard.html" "/home/archer/dev/mwb/_attachments/special-offers.html" "/home/archer/dev/mwb/_attachments/prevpub.html" "/home/archer/dev/mwb/_attachments/dashboard.html" "/home/archer/dev/mwb/_attachments/credentials.html" "/home/archer/dev/mwb/_attachments/optional-pages.html" "/home/archer/dev/mwb/_attachments/feedback.html" "/home/archer/dev/mwb/_attachments/create.html" "/home/archer/dev/mwb/_attachments/choose-theme.html" "/home/archer/dev/mwb/_attachments/register.html" "~/dev/mwb/" "~/dev/tt/" "~/dev/tt" "~/dev/tt/lists/menu.js" "/home/archer/dev/tt/views/menu/map.js" "/home/archer/dev/tt/lists/menu.js" "~/dev/tt/" "/home/archer/dev/tt/lists/menu.js" "~/dev/tt" "~/dev/tt/" "~/dev/tt/_attachments/" "/home/archer/tmp/travelguide/demo.knarsku.com/travelguide/single-page.html" "/home/archer/dev/tt/views/menu/reduce.js" "/home/archer/dev/tt/lists/menu.js" "/home/archer/dev/tt/views/menu/map.js"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/svn-commit.tmp"
+  "svn-commit.tmp"
+  'fundamental-mode
+  nil
+  15
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/service-areas.html"
+  "service-areas.html"
+  'html-mode
+  nil
+  11012
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/profile.html"
+  "profile.html"
+  'html-mode
+  nil
+  11632
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/manage-photos.html"
+  "manage-photos.html"
+  'html-mode
+  nil
+  16866
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/index.html"
+  "index.html"
+  'html-mode
+  nil
+  1
+  '(10189 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/register.html"
+  "register.html"
+  'html-mode
+  nil
+  930
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-dos)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/features.html"
+  "features.html"
+  'html-mode
+  nil
+  5161
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/wizard.html"
+  "wizard.html"
+  'html-mode
+  nil
+  32334
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/special-offers.html"
+  "special-offers.html"
+  'html-mode
+  nil
+  14047
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/prevpub.html"
+  "prevpub.html"
+  'html-mode
+  nil
+  9260
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/dashboard.html"
+  "dashboard.html"
+  'html-mode
+  nil
+  7223
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/credentials.html"
+  "credentials.html"
+  'html-mode
+  nil
+  11401
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/optional-pages.html"
+  "optional-pages.html"
+  'html-mode
+  nil
+  9644
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/feedback.html"
+  "feedback.html"
+  'html-mode
+  nil
+  11474
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/create.html"
+  "create.html"
+  'html-mode
+  nil
+  1227
+  '(12801 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/archer/dev/mwb/_attachments/choose-theme.html"
+  "choose-theme.html"
+  'html-mode
+  nil
+  1
+  '(12925 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
