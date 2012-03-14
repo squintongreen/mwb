@@ -68,77 +68,77 @@
  </head>
 
  <body>
-   <div class="topbar">
+   <div class="topbar">  <!--  Topbar  -->
      <div class="fill">
        <div class="container">
-       <ul class="nav">
-         <li class="active"><a href="#">Home</a></li>
-         <li><a href="#about">About</a></li>
-         <li><a href="#contact">Contact</a></li>
-       </ul>
-       <ul class="secondary-nav">
-         <li><a href="register">Register</a></li>
-         <li><a href="login">Login</a></li>
-         <li><a href="logout">Logout</a></li>
-       </ul>
-       </div>
-     </div>
-   </div>
+       	 <ul class="nav">
+       	   <li class="dropdown" data-dropdown="dropdown"><a href="#" id="requests" class="dropdown-toggle">Requests</a>
+       	   		<ul class="dropdown-menu">
+       	   			<li><a href="#"><b>Testimonial Added</b> by Jenny G.</a></li>
+       	   			<li><a href="#"><b>Service Request</b> from Michael A.</a></li>
+       	   			<li><a href="#"><b>Service Request</b> from Dee G.</a></li>
+       	   			<li><a href="#"><b>Estimate Request</b> from Samuel G.</a></li>
+       	   			<li class="divider"></li>
+       	   			<li><a href="inbox.html" class="btnInbox">Go to Inbox&nbsp;&nbsp;&rarr;</a></li>
+       	   		</ul>
+       	   </li>
+       	   <li class="divider"></li>
+       	   <li class="active"><a href="manage.html">Manage</a></li>
+       	   <li><a href="themes.html">Themes</a></li>
+       	   <li><a href="stats.html">Stats</a></li>
+       	 </ul>
+       	 <ul class="secondary-nav">
+       	   <li class="dropdown" data-dropdown="dropdown"><a href="#" class="dropdown-toggle">Dee Giarratano</a>
+       	   		<ul class="dropdown-menu">
+       	   			<li><a href="../settings.html">Settings</a></li>
+       	   			<li><a href="../account.html">Account</a></li>
+       	   			<li><a href="../billing.html">Billing</a></li>
+       	   			<li class="divider"></li>
+       	   			<li><a href="logout">Logout</a></li>
+       	   		</ul>
+       	   </li>
+       	   <li class="divider-vertical"></li>
+       	   <li><a href="support.html">Support</a></li>
+       	 </ul>
+       </div>  <!--  Container  -->
+     </div>  <!--  Fill  -->
+   </div>  <!--  Topbar  -->
 
    <div class="row">
-   <div id="page-wrap" class="container">
+   <div id="page-wrap" class="container">  <!--  Page Wrap  -->
 	 <header>
 	 <a href="http://www.scanshowsell.com"><img src="images/title_sm.png" alt="ScanShowSell.com" border="0" /></a>
-	 <ul class="main-nav pull-right">
-	   	<li><a href="settings.html">Settings</a></li>
-	   	<li><a href="../account.html">Account</a></li>
-	   	<li><a href="../billing.html">Billing</a></li>
-	 </ul>
+	 <a href="#" class="call-us pull-right">
+		1-855-722-6746 ( 855-SCANSHOWSELL )
+		<br />
+		We're just a phone call away!</a>
 	 </header>
 	 
-	 <div id="builderMenu" class="container">
-	 <!-- Builder Navigation ==========
-		 <ul class="nav">
-		     <li class="active"><a href="dashboard.html">Build</a></li>
-		     <li><a href="themes.html">Themes</a></li>
-		     <li><a href="stats.html">Stats</a></li>
-		 </ul>
-	  == /Builder Navigation ==========  -->
-		 
+	 <div class="section-head">
+	 <h1 class="section-header"><a href="manage.html">Manage</a>&nbsp;&nbsp;<span class="current">/&nbsp;&nbsp;Services &amp; Products</span></h1>
+		<div id="siteEditorMenu" class="span7">
 		 <ul class="nav secondary-nav">
 		     <li class="dropdown" data-dropdown="dropdown">
-		     <a href="#" class="dropdown-toggle" style="font-size:1em;font-weight:600;">Currently Editing: Flash Gordon Electric</a>
+		     <a href="#" id="siteSelect" class="dropdown-toggle" style="font-size:1em;font-weight:600;">Currently Editing: Kitchen Sink</a>
 		     <ul class="dropdown-menu">
          		<li><a href="#">Discount Cabinet Designs</a></li>
          		<li><a href="#">Long Cane Group</a></li>
          		<li class="divider"></li>
          		<li><a href="mwb/create.html">+&nbsp;&nbsp;Add another site...</a></li>
-         		<li><a href="mwb/manage.html">Manage sites...</a></li>
+         		<li><a href="mwb/sites.html">Manage sites...</a></li>
+         		<li class="divider"></li>
+         		<li><a href="#">Send Link to Phone</a></li>
+		     	<li><a href="#">View/Generate QR code</a></li>
+		     	<li><a href="#">Preview Page in Phone Simulator</a></li>
              </ul>
              </li>
 		 </ul>
+		</div>
 	 </div>
-	 
-     <div id="wizard-nav" class="row">
-       <ul class="pills">
-         <li><a href="profile.html">Company Profile</a></li>
-         <li><a href="manage-photos.html">Upload Photos</a></li>
-         <li class="active"><a href="services.html">Services/Products</a></li>
-         <li><a href="service-areas.html">Service Area</a></li>
-         <li><a href="special-offers.html">Special Offers</a></li>
-         <li><a href="feedback.html">What Your Customers Say</a></li>
-         <li><a href="credentials.html">Credentials</a></li>
-         <li><a href="optional-pages.html">Optional Pages</a></li>
-         <li><a href="choose-theme.html">Choose a Theme</a></li>
-         <li><a href="prevpub.html">Preview &amp; Publish</a></li>
-       </ul>
-     </div>
      
      <!-- SERVICES -->
      <div id="services" class="row">
-       <div id="services-form" class="span11">
-       <h4>Services/Products</h4>
-       
+       <div id="services-form" class="span10">
          <!-- SERVICE PANEL -->
        	 <div id="service-panel">
        	 	 
@@ -233,24 +233,18 @@
        </div>  <!--/span11 -->
        
        <div id="sidebar" class="span5">
-         <h5>Tell your prospects what you do.</h5>
-         <p>Define the services you offer here. Potential customers will be able to select from these options when contacting you. Remember to keep your description short and sweet!</p>
+         <img class="pull-left" src="images/icn-page-services.png" alt="Add Page: Services" />
+         <h5>Tell prospects what you do.</h5>
+         <p>Define the services you offer here. Potential customers will be able to select from these options when contacting you.</p>
          <div class="alert-message block-message warning">
          <p>Add up to three services or products for your free trial. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
       	</div>
+      	<div id="btn-group">
+         <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
+	   	 <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
+	   	 </div>
+       	</div>
        </div>
-       
-       <nav class="form_btm">
-       <div class="span7">
-	   <a href="manage-photos.html"><button class="btn default large">&larr;&nbsp;&nbsp;Back: Upload Photos</button></a>
-	   </div>
-	   <div class="span4">
-	   <a href="#"><button class="btn success large">Save</button></a>
-	   </div>
-	   <div class="span5">
-	   <a href="service-areas.html"><button class="btn primary large pull-right">Next:&nbsp;&nbsp;Service Area&nbsp;&nbsp;&rarr;</button></a>
-	   </div>
-	   </nav>
        
      </div>
      <!-- /Manage Fields -->

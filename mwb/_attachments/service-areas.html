@@ -8,8 +8,8 @@
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -39,234 +39,229 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
     
     <script type="text/javascript">
-      $(function () {
-      $("input[rel=twipsy]").twipsy({
-      live: true,
-      offset: 10,
-      placement: 'right',
-      trigger: 'focus'
-      })
-      })
+    	$(function () {
+              $("input[rel=twipsy]").twipsy({
+                live: true,
+                offset: 10,
+              	placement: 'right',
+              	trigger: 'focus'
+              })
+        })
     </script>
 
 
-    
-    <script type="text/javascript">
-      var counter = 1;
-      var limit = 5;
-      function addInput(divName){
-      if (counter == limit)  {
-      alert("You have reached the limit of adding " + counter + " inputs");
-      }
-      else {
-      var newdiv = document.createElement('div');
-      newdiv.innerHTML = "Area " + (counter + 1) + " <br /><br /><input type='text' name='myInputs[]'><br /><br />";
-      document.getElementById(divName).appendChild(newdiv);
-      counter++;
-      }
-      }
-    </script>
-    
-  </head>
+	
+	<script type="text/javascript">
+	var counter = 1;
+	var limit = 5;
+	function addInput(divName){
+	     if (counter == limit)  {
+	          alert("You have reached the limit of adding " + counter + " inputs");
+	     }
+	     else {
+	          var newdiv = document.createElement('div');
+	          newdiv.innerHTML = "Area " + (counter + 1) + " <br /><br /><input type='text' name='myInputs[]'><br /><br />";
+	          document.getElementById(divName).appendChild(newdiv);
+	          counter++;
+	     }
+	}
+	</script>
+	
+ </head>
 
-  <body>
-    <div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <ul class="secondary-nav">
-            <li><a href="register">Register</a></li>
-            <li><a href="login">Login</a></li>
-            <li><a href="logout">Logout</a></li>
-          </ul>
-        </div>
+ <body>
+   <div class="topbar">  <!--  Topbar  -->
+     <div class="fill">
+       <div class="container">
+       	 <ul class="nav">
+       	   <li class="dropdown" data-dropdown="dropdown"><a href="#" id="requests" class="dropdown-toggle">Requests</a>
+       	   		<ul class="dropdown-menu">
+       	   			<li><a href="#"><b>Testimonial Added</b> by Jenny G.</a></li>
+       	   			<li><a href="#"><b>Service Request</b> from Michael A.</a></li>
+       	   			<li><a href="#"><b>Service Request</b> from Dee G.</a></li>
+       	   			<li><a href="#"><b>Estimate Request</b> from Samuel G.</a></li>
+       	   			<li class="divider"></li>
+       	   			<li><a href="inbox.html" class="btnInbox">Go to Inbox&nbsp;&nbsp;&rarr;</a></li>
+       	   		</ul>
+       	   </li>
+       	   <li class="divider"></li>
+       	   <li class="active"><a href="manage.html">Manage</a></li>
+       	   <li><a href="themes.html">Themes</a></li>
+       	   <li><a href="stats.html">Stats</a></li>
+       	 </ul>
+       	 <ul class="secondary-nav">
+       	   <li class="dropdown" data-dropdown="dropdown"><a href="#" class="dropdown-toggle">Dee Giarratano</a>
+       	   		<ul class="dropdown-menu">
+       	   			<li><a href="../settings.html">Settings</a></li>
+       	   			<li><a href="../account.html">Account</a></li>
+       	   			<li><a href="../billing.html">Billing</a></li>
+       	   			<li class="divider"></li>
+       	   			<li><a href="logout">Logout</a></li>
+       	   		</ul>
+       	   </li>
+       	   <li class="divider-vertical"></li>
+       	   <li><a href="support.html">Support</a></li>
+       	 </ul>
+       </div>  <!--  Container  -->
+     </div>  <!--  Fill  -->
+   </div>  <!--  Topbar  -->
+
+   <div class="row">
+   <div id="page-wrap" class="container">  <!--  Page Wrap  -->
+	 <header>
+	 <a href="http://www.scanshowsell.com"><img src="images/title_sm.png" alt="ScanShowSell.com" border="0" /></a>
+	 <a href="#" class="call-us pull-right">
+		1-855-722-6746 ( 855-SCANSHOWSELL )
+		<br />
+		We're just a phone call away!</a>
+	 </header>
+	 
+	 <div class="section-head">
+	 <h1 class="section-header"><a href="manage.html">Manage</a>&nbsp;&nbsp;<span class="current">/&nbsp;&nbsp;Service Area</span></h1>
+		<div id="siteEditorMenu" class="span7">
+		 <ul class="nav secondary-nav">
+		     <li class="dropdown" data-dropdown="dropdown">
+		     <a href="#" id="siteSelect" class="dropdown-toggle" style="font-size:1em;font-weight:600;">Currently Editing: Kitchen Sink</a>
+		     <ul class="dropdown-menu">
+         		<li><a href="#">Discount Cabinet Designs</a></li>
+         		<li><a href="#">Long Cane Group</a></li>
+         		<li class="divider"></li>
+         		<li><a href="mwb/create.html">+&nbsp;&nbsp;Add another site...</a></li>
+         		<li><a href="mwb/sites.html">Manage sites...</a></li>
+         		<li class="divider"></li>
+         		<li><a href="#">Send Link to Phone</a></li>
+		     	<li><a href="#">View/Generate QR code</a></li>
+		     	<li><a href="#">Preview Page in Phone Simulator</a></li>
+             </ul>
+             </li>
+		 </ul>
+		</div>
+	 </div>
+     
+     <!-- SERVICE AREAS -->
+     <div id="service-areas" class="row">
+       <div id="service-areas-form" class="span10">
+         <!-- SERVICE AREAS PANEL -->
+       	 <div id="service-areas-panel">
+       	 	 <!-- =====  SERVICE FORM  ===== -->
+			 <form id="serviceAreasForm" class="form-stacked" method="POST">
+				<ul class="listServiceArea">
+         	    <li>
+         	    	<div class="clearfix">
+                	  <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
+                	  <div class="input">
+                	  <input class="span6" id="input" name="Service Area" type="text" required />
+                	  </div>
+                	</div>
+                </li>
+                <li>
+         	    	<div class="clearfix">
+                	  <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
+                	  <div class="input">
+                	  <input class="span6" id="input" name="Service Area" type="text" required />
+                	  </div>
+                	</div>
+                </li>
+                <li>
+         	    	<div class="clearfix">
+                	  <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
+                	  <div class="input">
+                	  <input class="span6" id="input" name="Service Area" type="text" required />
+                	  </div>
+                	</div>
+                </li>
+                <li>
+         	    	<div class="clearfix">
+                	  <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
+                	  <div class="input">
+                	  <input class="span6" id="input" name="Service Area" type="text" required />
+                	  </div>
+                	</div>
+                </li>
+                <li>
+         	    	<div class="clearfix">
+                	  <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
+                	  <div class="input">
+                	  <input class="span6" id="input" name="Service Area" type="text" required />
+                	  </div>
+                	</div>
+                </li>
+				<br />
+				<button class="btn primary" type="button" onClick="addInput('dynamicInput');">Add Service Area</button>
+			</form>
+       	 </div><!-- /service-areas-panel -->
+       </div>  <!--/span11 -->
+       
+       <div id="sidebar" class="span5">
+       	 <img class="pull-left" src="images/icn-page-area.png" alt="Add Page: Service Area" />
+         <h5>Where do you work?</h5>
+         <p>Define a list of towns, cities, or counties that you service. Potential customers will be able to select from these options when contacting you.</p>
+         <div class="alert-message block-message warning">
+        	<p>Add up to five service areas for your free trial. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
+      	</div>
+      	<div id="btn-group">
+         <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
+	   	 <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
+	   	 </div>
+         </div>
+       </div>
+       
+     </div>
+     <!-- /Manage Fields -->
+   </div> <!-- /container -->
+ </div>
+ 
+<footer>
+    <div class="container">
+      <div class="row">
+      	<div class="span6">
+      	<h4>Site Map</h4>
+      	<ul id="sitemap-1">
+	  	    <li><a href="#">Home</a></li>
+	  	    <li><a href="#">About</a></li>
+	  	    <li><a href="#">Sellers</a></li>
+	  	    <li><a href="#">Buyers</a></li>
+	  	    <li><a href="#">Tools & Resources</a></li>
+	  	    <li><a href="#">Contact</a></li>
+	  	</ul>
+	  	<ul id="sitemap-2">
+	  	    <li><a href="#">Network</a></li>
+	  	    <li><a href="#">Real Estate</a></li>
+	  	    <li><a href="#">Automotive</a></li>
+	  	    <li><a href="#">Aviation</a></li>
+	  	    <li><a href="#">Marine</a></li>
+	  	    <li><a href="#">Support</a></li>
+	  	</ul>
+      	</div>
+      	
+      	<div class="span5">
+      	<h4>Newsletter</h4>
+      	<p>Get our newsletter.</p>
+      	<form action="">
+      		<div class="clearfix"><input class="span4" id="" name="" type="text" placeholder="Email Address" /></div>
+      	</form>
+      	</div>
+      	
+      	<div class="span5">
+      	<h4>We're Social</h4>
+      	<p>Social media component.</p>
+      	</div>
       </div>
     </div>
-
-    <div class="row">
-      <div id="page-wrap" class="container">
-	<header>
-	  <a href="http://www.scanshowsell.com"><img src="images/title_sm.png" alt="ScanShowSell.com" border="0" /></a>
-	  <ul class="main-nav pull-right">
-	    <li><a href="settings.html">Settings</a></li>
-	    <li><a href="../account.html">Account</a></li>
-	    <li><a href="../billing.html">Billing</a></li>
-	  </ul>
-	</header>
-	
-	<div id="builderMenu" class="container">
-	  <!-- Builder Navigation ==========
-	       <ul class="nav">
-		 <li class="active"><a href="dashboard.html">Build</a></li>
-		 <li><a href="themes.html">Themes</a></li>
-		 <li><a href="stats.html">Stats</a></li>
-	       </ul>
-	       == /Builder Navigation ==========  -->
-	  
-	  <ul class="nav secondary-nav">
-	    <li class="dropdown" data-dropdown="dropdown">
-	      <a href="#" class="dropdown-toggle" style="font-size:1em;font-weight:600;">Currently Editing: Flash Gordon Electric</a>
-	      <ul class="dropdown-menu">
-         	<li><a href="#">Discount Cabinet Designs</a></li>
-         	<li><a href="#">Long Cane Group</a></li>
-         	<li class="divider"></li>
-         	<li><a href="mwb/create.html">+&nbsp;&nbsp;Add another site...</a></li>
-         	<li><a href="mwb/manage.html">Manage sites...</a></li>
-              </ul>
-            </li>
-	  </ul>
-	</div>
-	
-        <div id="wizard-nav" class="row">
-          <ul class="pills">
-            <li><a href="profile.html">Company Profile</a></li>
-            <li><a href="manage-photos.html">Upload Photos</a></li>
-            <li><a href="services.html">Services/Products</a></li>
-            <li class="active"><a href="service-areas.html">Service Area</a></li>
-            <li><a href="special-offers.html">Special Offers</a></li>
-            <li><a href="feedback.html">What Your Customers Say</a></li>
-            <li><a href="credentials.html">Credentials</a></li>
-            <li><a href="optional-pages.html">Optional Pages</a></li>
-            <li><a href="choose-theme.html">Choose a Theme</a></li>
-            <li><a href="prevpub.html">Preview &amp; Publish</a></li>
-          </ul>
-        </div>
-        
-        <!-- SERVICE AREAS -->
-        <div id="service-areas" class="row">
-          <div id="service-areas-form" class="span11">
-            <h4>Service Areas</h4>
-            <!-- SERVICE AREAS PANEL -->
-       	    <div id="service-areas-panel">
-       	      <!-- =====  SERVICE FORM  ===== -->
-	      <form id="serviceAreasForm" class="form-stacked" method="POST">
-		<ul class="listServiceArea">
-         	  <li>
-         	    <div class="clearfix">
-                      <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
-                      <div class="input">
-                	<input class="span6" id="input" name="Service Area" type="text" required />
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-         	    <div class="clearfix">
-                      <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
-                      <div class="input">
-                	<input class="span6" id="input" name="Service Area" type="text" required />
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-         	    <div class="clearfix">
-                      <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
-                      <div class="input">
-                	<input class="span6" id="input" name="Service Area" type="text" required />
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-         	    <div class="clearfix">
-                      <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
-                      <div class="input">
-                	<input class="span6" id="input" name="Service Area" type="text" required />
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-         	    <div class="clearfix">
-                      <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
-                      <div class="input">
-                	<input class="span6" id="input" name="Service Area" type="text" required />
-                      </div>
-                    </div>
-                  </li>
-		  <br />
-		  <button class="btn primary" type="button" onClick="addInput('dynamicInput');">Add Service Area</button>
-	      </form>
-       	    </div><!-- /service-areas-panel -->
-          </div>  <!--/span11 -->
-          
-          <div id="sidebar" class="span5">
-            <h5>Where do you work?</h5>
-            <p>Define a list of towns, cities, or counties that you service. Potential customers will be able to select from these options when contacting you.</p>
-            <div class="alert-message block-message warning">
-              <p>Add up to five service areas for your free trial. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
-      	    </div>
-          </div>
-          
-          <nav class="form_btm">
-            <div class="span7">
-	      <a href="services.html"><button class="btn default large">&larr;&nbsp;&nbsp;Back: Services/Products</button></a>
-	    </div>
-	    <div class="span4">
-	      <a href="#"><button class="btn success large">Save</button></a>
-	    </div>
-	    <div class="span5">
-	      <a href="special-offers.html"><button class="btn primary large pull-right">Next:&nbsp;&nbsp;Special Offers&nbsp;&nbsp;&rarr;</button></a>
-	    </div>
-	  </nav>
-          
-        </div>
-        <!-- /Manage Fields -->
-      </div> <!-- /container -->
-    </div>
-    
-    <footer>
-      <div class="container">
-        <div class="row">
-      	  <div class="span6">
-      	    <h4>Site Map</h4>
-      	    <ul id="sitemap-1">
-	      <li><a href="#">Home</a></li>
-	      <li><a href="#">About</a></li>
-	      <li><a href="#">Sellers</a></li>
-	      <li><a href="#">Buyers</a></li>
-	      <li><a href="#">Tools & Resources</a></li>
-	      <li><a href="#">Contact</a></li>
-	    </ul>
-	    <ul id="sitemap-2">
-	      <li><a href="#">Network</a></li>
-	      <li><a href="#">Real Estate</a></li>
-	      <li><a href="#">Automotive</a></li>
-	      <li><a href="#">Aviation</a></li>
-	      <li><a href="#">Marine</a></li>
-	      <li><a href="#">Support</a></li>
-	    </ul>
-      	  </div>
-      	  
-      	  <div class="span5">
-      	    <h4>Newsletter</h4>
-      	    <p>Get our newsletter.</p>
-      	    <form action="">
-      	      <div class="clearfix"><input class="span4" id="" name="" type="text" placeholder="Email Address" /></div>
-      	    </form>
-      	  </div>
-      	  
-      	  <div class="span5">
-      	    <h4>We're Social</h4>
-      	    <p>Social media component.</p>
-      	  </div>
-        </div>
-      </div>
     </footer>
 
-    <script src="http://blueimp.github.com/JavaScript-Templates/tmpl.min.js"></script>
-    <script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
-    <!-- Bootstrap Modal and Image Gallery are not required, but included for the demo -->
-    <script src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-modal.min.js"></script>
-    <script src="http://blueimp.github.com/Bootstrap-Image-Gallery/bootstrap-image-gallery.min.js"></script>
-    <script src="js/jquery.iframe-transport.js"></script>
-    <script src="js/jquery.fileupload.js"></script>
-    <script src="js/jquery.fileupload-ui.js"></script>
-    <script src="js/application.js"></script>
-    <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE >= 8 -->
-    <script src="js/jquery.xdr-transport.js"></script>
-    <!-- postMessage Transport support can be added with the following plugin -->
-    <!--script src="jquery.postmessage-transport.js"></script-->
-  </body>
+   <script src="http://blueimp.github.com/JavaScript-Templates/tmpl.min.js"></script>
+   <script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
+   <!-- Bootstrap Modal and Image Gallery are not required, but included for the demo -->
+   <script src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-modal.min.js"></script>
+   <script src="http://blueimp.github.com/Bootstrap-Image-Gallery/bootstrap-image-gallery.min.js"></script>
+   <script src="js/jquery.iframe-transport.js"></script>
+   <script src="js/jquery.fileupload.js"></script>
+   <script src="js/jquery.fileupload-ui.js"></script>
+   <script src="js/application.js"></script>
+   <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE >= 8 -->
+   <script src="js/jquery.xdr-transport.js"></script>
+   <!-- postMessage Transport support can be added with the following plugin -->
+   <!--script src="jquery.postmessage-transport.js"></script-->
+ </body>
 </html>
