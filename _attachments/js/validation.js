@@ -36,6 +36,14 @@ $.validator.addMethod("uniqueUserName", function(value, element) {
 }, "User name is already taken");
 
 
+$.validator.addMethod(
+    "regex",
+    function(value, element, regexp) {
+        var re = new RegExp(regexp);
+        return this.optional(element) || re.test(value);
+    }, "Please check your input."
+);
+
 $(document).ready(function(){
     var defaults = {
         highlight: function (element, errorClass, validClas) { 
@@ -70,12 +78,13 @@ $(document).ready(function(){
     // contactInformation
     $("#contactInformation").validate($.extend(defaults, {
         rules: {
-            'street-address': { required: true },
+            /*
+            'street-address': { required: true },p
             'suite': { required: true },
             'city': { required: true },
-            'state': { required: true },
-            'phone': { required: true },
-            'email': { required: true }
+            'state': { required: true }, */
+            'phone': { required: true, regex: /^\([0-9]{3}\)[0-9]*$/ },
+            'email': { required: true, email: true }
 
         }
     }));
