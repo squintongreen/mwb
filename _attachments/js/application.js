@@ -4,7 +4,10 @@ $(document).ready(function(){
     // FIXME: this stuff is a subject to change
     // as production URLs will probably not contain DB name or design 
     var path = unescape(document.location.pathname).split('/')
-
+	
+	$('.tabs').tabs();
+	$('#fileupload').fileupload();	
+		
     $.design = path[3];
     $.dbname = path[1];
 
@@ -21,6 +24,8 @@ $(document).ready(function(){
         return false;
     })
 
+
+    $.websiteId = $("#websiteId").data("id");
 
     // processing registration form
     $("#registerForm").submit(function(e){
@@ -39,4 +44,11 @@ $(document).ready(function(){
         });
 
     })
+
+    // serviceAreas
+
+    $("#serviceAreas button").click(function(){
+        var cloned = $(this).parents("form").find(".clearfix:last").clone().appendTo($(this).parents("form").find("ul"));
+    });
+		
 });

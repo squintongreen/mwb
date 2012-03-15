@@ -37,8 +37,7 @@ $.validator.addMethod("uniqueUserName", function(value, element) {
 
 
 $(document).ready(function(){
-    //   registerForm 
-    $("#registerForm").validate({
+    var defaults = {
         highlight: function (element, errorClass, validClas) { 
             $(element).parents("div[class='clearfix']").addClass("error"); 
         }, 
@@ -46,7 +45,10 @@ $(document).ready(function(){
             $(element).parents(".error").removeClass("error"); 
         }, 
         errorElement: 'span', // helps if u are not using the inline labels 
+    }
 
+    // registerForm 
+    $("#registerForm").validate($.extend(defaults, {
         rules: { 
             websiteName: { required: true, uniqueWebsiteName: true },
             emailAddress: { required: true, email: true, uniqueUserName: true },
@@ -56,8 +58,42 @@ $(document).ready(function(){
             areYouHuman: { required: true, humanCheck: true },
             tosAgree: { required: true, checked: true }
         }
-    });
+    }));
+    // companyPorfile 
+    $("#companyProfile").validate($.extend(defaults, {
+        rules: { 
+            'company-name': { required: true },
+            'description': { maxlength: 200 }
+        }
+    }));
 
-    //   registerForm 
+    // contactInformation
+    $("#contactInformation").validate($.extend(defaults, {
+        rules: {
+            'street-address': { required: true },
+            'suite': { required: true },
+            'city': { required: true },
+            'state': { required: true },
+            'phone': { required: true },
+            'email': { required: true }
 
+        }
+    }));
+
+    // service
+    $("#service").validate($.extend(defaults, {
+        rules: {
+            'description-1': { maxlength: 200 },
+            'description-2': { maxlength: 200 },
+            'description-3': { maxlength: 200 },
+            'description-4': { maxlength: 200 },
+            'description-5': { maxlength: 200 }
+        }
+    }));
+
+
+    $(".success").click(function(){
+        var allForms = $(this).parents("div.tab-pane").find("form")
+        allForms.submit();
+    })
 })

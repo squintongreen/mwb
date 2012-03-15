@@ -1,5 +1,5 @@
 /*
- * jQuery File Upload Plugin 5.5.4
+ * jQuery File Upload Plugin 5.8.1
  * https://github.com/blueimp/jQuery-File-Upload
  *
  * Copyright 2010, Sebastian Tschan
@@ -10,9 +10,21 @@
  */
 
 /*jslint nomen: true, unparam: true, regexp: true */
-/*global document, XMLHttpRequestUpload, Blob, File, FormData, location, jQuery */
+/*global define, window, document, XMLHttpRequestUpload, Blob, File, FormData, location */
 
-(function ($) {
+(function (factory) {
+    'use strict';
+    if (typeof define === 'function' && define.amd) {
+        // Register as an anonymous AMD module:
+        define([
+            'jquery',
+            'jquery.ui.widget'
+        ], factory);
+    } else {
+        // Browser globals:
+        factory(window.jQuery);
+    }
+}(function ($) {
     'use strict';
 
     // The fileupload widget listens for change events on file input fields defined
@@ -62,6 +74,12 @@
             limitConcurrentUploads: undefined,
             // Set the following option to true to force iframe transport uploads:
             forceIframeTransport: false,
+            // Set the following option to the location of a redirect url on the
+            // origin server, for cross-domain iframe transport uploads:
+            redirect: undefined,
+            // The parameter name for the redirect url, sent as part of the form
+            // data and set to 'redirect' if this option is empty:
+            redirectParamName: undefined,
             // Set the following option to the location of a postMessage window,
             // to enable postMessage transport uploads:
             postMessage: undefined,
@@ -280,14 +298,14 @@
                         });
                     }
                     if (options.blob) {
-                        formData.append(options.paramName, options.blob);
+                        formData.append(options.paramName, options.blob, file.name);
                     } else {
                         $.each(options.files, function (index, file) {
                             // File objects are also Blob instances.
                             // This check allows the tests to run with
                             // dummy objects:
                             if (file instanceof Blob) {
-                                formData.append(options.paramName, file);
+                                formData.append(options.paramName, file, file.name);
                             }
                         });
                     }
@@ -303,6 +321,14 @@
             options.dataType = 'iframe ' + (options.dataType || '');
             // The iframe transport accepts a serialized array as form data:
             options.formData = this._getFormData(options);
+            // Add redirect url to form data on cross-domain uploads:
+            if (options.redirect && $('<a></a>').prop('href', options.url)
+                    .prop('host') !== location.host) {
+                options.formData.push({
+                    name: options.redirectParamName || 'redirect',
+                    value: options.redirect
+                });
+            }
         },
 
         _initDataSettings: function (options) {
@@ -740,44 +766,38 @@
                 .unbind('change.' + ns, this._onChange);
         },
 
-        _beforeSetOption: function (key, value) {
-            this._destroyEventHandlers();
-        },
-
-        _afterSetOption: function (key, value) {
-            var options = this.options;
-            if (!options.fileInput) {
-                options.fileInput = $();
-            }
-            if (!options.dropZone) {
-                options.dropZone = $();
-            }
-            this._initEventHandlers();
-        },
-
         _setOption: function (key, value) {
             var refresh = $.inArray(key, this._refreshOptionsList) !== -1;
             if (refresh) {
-                this._beforeSetOption(key, value);
+                this._destroyEventHandlers();
             }
             $.Widget.prototype._setOption.call(this, key, value);
             if (refresh) {
-                this._afterSetOption(key, value);
+                this._initSpecialOptions();
+                this._initEventHandlers();
+            }
+        },
+
+        _initSpecialOptions: function () {
+            var options = this.options;
+            if (options.fileInput === undefined) {
+                options.fileInput = this.element.is('input:file') ?
+                        this.element : this.element.find('input:file');
+            } else if (!(options.fileInput instanceof $)) {
+                options.fileInput = $(options.fileInput);
+            }
+            if (!(options.dropZone instanceof $)) {
+                options.dropZone = $(options.dropZone);
             }
         },
 
         _create: function () {
-            var options = this.options;
+            var options = this.options,
+                dataOpts = $.extend({}, this.element.data());
+            dataOpts[this.widgetName] = undefined;
+            $.extend(options, dataOpts);
             options.namespace = options.namespace || this.widgetName;
-            if (options.fileInput === undefined) {
-                options.fileInput = this.element.is('input:file') ?
-                        this.element : this.element.find('input:file');
-            } else if (!options.fileInput) {
-                options.fileInput = $();
-            }
-            if (!options.dropZone) {
-                options.dropZone = $();
-            }
+            this._initSpecialOptions();
             this._slots = [];
             this._sequence = this._getXHRPromise(true);
             this._sending = this._active = this._loaded = this._total = 0;
@@ -828,4 +848,4 @@
 
     });
 
-}(jQuery));
+}));

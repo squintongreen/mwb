@@ -14,7 +14,8 @@
     <!-- Le styles -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/template_wizard.css">
-
+    <link rel="stylesheet" href="css/jquery.fileupload-ui.css">
+    
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -27,6 +28,17 @@
       google.load("jqueryui", "1.8.16");
     </script>
     
+    <script src="js/tmpl.min.js"></script>
+    <script src="js/load-image.min.js"></script>
+    <script src="js/canvas-to-blob.min.js"></script>
+    <script src="js/jquery.iframe-transport.js"></script>
+    <script src="js/jquery.fileupload.js"></script>
+    <script src="js/jquery.fileupload-ip.js"></script>
+    <script src="js/jquery.fileupload-ui.js"></script>
+    <script src="js/locale.js"></script>
+    <script src="js/jquery.xdr-transport.js"></script>
+    
+    
     <script src="js/bootstrap-modal.js"></script>
     <script src="js/bootstrap-tabs.js"></script>
     <script src="js/bootstrap-alerts.js"></script>
@@ -35,7 +47,7 @@
     <script src="js/jquery.util.js"></script>
     <script src="js/jquery.form.js"></script>
     <script src="js/jquery.validate.js"></script>
-
+    
     <!-- couchdb stuff -->
     <script src="/_utils/script/sha1.js"></script>
     <script src="/_utils/script/json2.js"></script>
@@ -44,7 +56,7 @@
     <script src="vendor/couchapp/jquery.couchProfile.js"></script>
     <script src="vendor/couchapp/md5.js"></script>
     <script src="vendor/couchapp/jquery.mustache.js"></script>
-
+    
     <script src="js/validation.js"></script>
     <script src="js/application.js"></script>
   </head>
@@ -89,7 +101,7 @@
 	  
 	  <ul class="nav secondary-nav">
 	    <li class="dropdown" data-dropdown="dropdown">
-	      <a href="#" class="dropdown-toggle" style="font-size:1em;font-weight:600;">Currently Editing: Flash Gordon Electric</a>
+	      <a id="websiteId" data-id="flash-gordon-electric" href="#" class="dropdown-toggle" style="font-size:1em;font-weight:600;">Currently Editing: Flash Gordon Electric</a>
 	      <ul class="dropdown-menu">
          	<li><a class="add-site" href="mwb/create.html">+&nbsp;&nbsp;Add another site...</a></li>
          	<li><a class="manage-site" href="mwb/manage.html">Manage sites...</a></li>
@@ -133,11 +145,11 @@
        	      <div id="company-profile">
        		<h5>About Us</h5>
        		<p class="hint-inline">Required fields denoted with a ' * '.</p>
-	   	<form id="fieldsForm" name="company-profile" action="mobile/updateFields">
+	   	<form id="companyProfile" name="company-profile" action="mobile/updateFields">
        		  <div class="clearfix">
        		    <label>Company Name *</label>
        		    <div class="input">
-       		      <input class="span6" id="company-name" name="CName" type="text" placeholder="Company Name" required />
+       		      <input class="span6" id="company-name" name="company-name" type="text" placeholder="Company Name"/>
        		    </div>
        		  </div><!-- /clearfix -->
        		  <div class="clearfix">
@@ -149,8 +161,7 @@
        		  <div class="clearfix">
        		    <label>Description</label>
        		    <div class="input">
-       		      <textarea name="Description" value="" rows="5" class="span6">Here you can briefly describe your company.
-       		      </textarea>
+ 		      <textarea name="description" value="" rows="5" class="span6" placeholder="Here you can briefly describe your company."></textarea>
        		      <p class="hint-inline">Maximum 200 characters.</p>
        		    </div>
        		  </div>  <!-- /clearfix -->
@@ -161,29 +172,29 @@
        	      <div id="contact-information">
        		<h5>Contact Information</h5>
        		<p class="hint-inline">All fields required.</p>
-	   	<form id="fieldsForm" name="contact-information" action="mobile/updateFields">
+	   	<form id="contactInformation" name="contact-information" action="mobile/updateFields">
        		  <div class="clearfix">
        		    <label>Street Address</label>
        		    <div class="input">
-       		      <input class="large" id="lInput" name="street-address" type="text" placeholder="123 Peachtree Street" rel="twipsy" title="This is the address you used when you registered your business." required />
+       		      <input class="large" id="lInput" name="street-address" type="text" placeholder="123 Peachtree Street" rel="twipsy" title="This is the address you used when you registered your business."/>
        		    </div>
        		  </div><!-- /clearfix -->
        		  <div class="clearfix">
        		    <label>Suite Number</label>
        		    <div class="input">
-       		      <input class="small" id="small" name="Suite" type="text" placeholder="13B" />
+       		      <input class="small" id="suite" name="suite" type="text" placeholder="13B" />
        		    </div>
        		  </div><!-- /clearfix -->
        		  <div class="clearfix">
        		    <label>City</label>
        		    <div class="input">
-       		      <input class="small" id="small" name="City" type="text" placeholder="Anytown" required />
+       		      <input class="small" id="city" name="city" type="text" placeholder="Anytown"/>
        		    </div>
        		  </div><!-- /clearfix -->
        		  <div class="clearfix">
        		    <label for="smallSelect">State</label>
        		    <div class="input">
-       		      <select class="small" name="smallSelect" id="smallSelect">
+       		      <select class="small" name="smallSelect" id="state">
        			<option>AL</option>
        			<option>AR</option>
        			<option>DE</option>
@@ -195,13 +206,13 @@
        		  <div class="clearfix">
        		    <label>Telephone</label>
        		    <div class="input">
-       		      <input class="small" id="small" name="Telephone" type="text" placeholder="(123) 555-6789" rel='twipsy' title='A mobile number is prefered. This way, interested parties can either call or send you a text message.' required />
+       		      <input class="small" id="phone" name="phone" type="text" placeholder="(123) 555-6789" rel="twipsy" title="A mobile number is prefered. This way, interested parties can either call or send you a text message."/>
        		    </div>
        		  </div><!-- /clearfix -->
        		  <div class="clearfix">
        		    <label>Email</label>
        		    <div class="input">
-       		      <input class="large" id="large" name="Email" type="text" placeholder="you@yourcompany.com" rel="twipsy" title="Who is the primary contact?" required />
+       		      <input class="large" id="email" name="email" type="text" placeholder="you@yourcompany.com" rel="twipsy" title="Who is the primary contact?"/>
        		    </div>
        		  </div><!-- /clearfix -->
        		</form>
@@ -228,13 +239,41 @@
               
               <!--  =====  UPLOAD BUTTON BAR  =====  -->
               <form id="fileupload" action="fileupload/upload" method="POST" enctype="multipart/form-data">
-        	<div class="fileupload-buttonbar">
-        	  <span class="btn success fileinput-button">
-        	    <span>Add files...</span>
-        	    <input type="file" name="files[]" multiple="multiple"></input>
-        	  </span>
-        	  <button type="submit" class="btn primary start">Upload all</button>
-        	</div>
+		<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+		<div class="row fileupload-buttonbar">
+		  <div class="span7">
+		    <!-- The fileinput-button span is used to style the file input field as button -->
+		    <span class="btn success fileinput-button">
+		      <i class="icon-plus icon-white"></i>
+		      <span>Add files...</span>
+		      <input type="file" name="files[]" multiple>
+		    </span>
+		    <button type="submit" class="btn primary start">
+		      <i class="icon-upload icon-white"></i>
+		      <span>Start upload</span>
+		    </button>
+		    <button type="reset" class="btn warning cancel">
+		      <i class="icon-ban-circle icon-white"></i>
+		      <span>Cancel upload</span>
+		    </button>
+		    <button type="button" class="btn danger delete">
+		      <i class="icon-trash icon-white"></i>
+		      <span>Delete</span>
+		    </button>
+		    <input type="checkbox" class="toggle">
+		  </div>
+		  <div class="span5">
+		    <!-- The global progress bar -->
+		    <div class="progress progress-success progress-striped active fade">
+		      <div class="bar" style="width:0%;"></div>
+		    </div>
+		  </div>
+		</div>
+		<!-- The loading indicator is shown during image processing -->
+		<div class="fileupload-loading"></div>
+		<br>
+		<!-- The table listing the files available for upload/download -->
+		<table class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
               </form>
               
               <!--  =====  INDIVIDUAL PHOTO PANELS  =====  -->
@@ -336,20 +375,20 @@
               <!-- SERVICE PANEL -->
        	      <div id="service-panel">
        	 	<!-- =====  SERVICE FORM  ===== -->
-	     	<form id="serviceForm" name="service" action="mobile/updateFields">
+	     	<form id="service" name="service" action="mobile/updateFields">
 	     	  <ul class="listServices">
          	    <li>
          	      <h5>Service/Product 1</h5>
          	      <div class="clearfix">
          	     	<label>Type of Service</label>
          	     	<div class="input">
-         	     	  <input class="span6" id="input" name="Service Type" type="text" placeholder="e.g. Home A/V Setup" required />
+         	     	  <input class="span6" id="service-type-1" name="service-type-1" type="text" placeholder="e.g. Home A/V Setup"/>
          	     	</div>
          	      </div>
          	      <div class="clearfix">
          	     	<label>Short Description</label>
          	     	<div class="input">
-         	     	  <textarea name="Description" value="" rows="3" class="span6">Short description of service.</textarea>
+         	     	  <textarea id="description-1" name="description-1" value="" rows="3" class="span6" placeholder="Short description of service."></textarea>
          	     	  <p class="hint-inline">Maximum of 200 characters.</p>
          	     	</div>
          	      </div>
@@ -359,13 +398,13 @@
          	      <div class="clearfix">
          	     	<label>Type of Service</label>
          	     	<div class="input">
-         	     	  <input class="span6" id="input" name="Service Type" type="text" placeholder="e.g. Home A/V Setup" required />
+         	     	  <input class="span6" id="service-type-2" name="service-type-2" type="text" placeholder="e.g. Home A/V Setup"/>
          	     	</div>
          	      </div>
          	      <div class="clearfix">
          	     	<label>Short Description</label>
          	     	<div class="input">
-         	     	  <textarea name="Description" value="" rows="3" class="span6">Short description of service.</textarea>
+         	     	  <textarea name="description-2" value="" rows="3" class="span6" placeholder="Short description of service."></textarea>
          	     	  <p class="hint-inline">Maximum of 200 characters.</p>
          	     	</div>
          	      </div>
@@ -375,13 +414,13 @@
          	      <div class="clearfix">
          	     	<label>Type of Service</label>
          	     	<div class="input">
-         	     	  <input class="span6" id="input" name="Service Type" type="text" placeholder="e.g. Home A/V Setup" required />
+         	     	  <input class="span6" id="service-type-3" name="service-type-3" type="text" placeholder="e.g. Home A/V Setup"/>
          	     	</div>
          	      </div>
          	      <div class="clearfix">
          	     	<label>Short Description</label>
          	     	<div class="input">
-         	     	  <textarea name="Description" value="" rows="3" class="span6">Short description of service.</textarea>
+         	     	  <textarea name="description-3" value="" rows="3" class="span6" placeholder="Short description of service."></textarea>
          	     	  <p class="hint-inline">Maximum of 200 characters.</p>
          	     	</div>
          	      </div>
@@ -391,13 +430,13 @@
          	      <div class="clearfix">
          	     	<label>Type of Service</label>
          	     	<div class="input">
-         	     	  <input class="span6" id="input" name="Service Type" type="text" placeholder="e.g. Home A/V Setup" required />
+         	     	  <input class="span6" id="service-type-4" name="service-type-4" type="text" placeholder="e.g. Home A/V Setup"/>
          	     	</div>
          	      </div>
          	      <div class="clearfix">
          	     	<label>Short Description</label>
          	     	<div class="input">
-         	     	  <textarea name="Description" value="" rows="3" class="span6">Short description of service.</textarea>
+         	     	  <textarea name="description-4" value="" rows="3" class="span6" placeholder="Short description of service."></textarea>
          	     	  <p class="hint-inline">Maximum of 200 characters.</p>
          	     	</div>
          	      </div>
@@ -407,13 +446,13 @@
          	      <div class="clearfix">
          	     	<label>Type of Service</label>
          	     	<div class="input">
-         	     	  <input class="span6" id="input" name="Service Type" type="text" placeholder="e.g. Home A/V Setup" required />
+         	     	  <input class="span6" id="service-type-5" name="service-type-5" type="text" placeholder="e.g. Home A/V Setup"/>
          	     	</div>
          	      </div>
          	      <div class="clearfix">
          	     	<label>Short Description</label>
          	     	<div class="input">
-         	     	  <textarea name="Description" value="" rows="3" class="span6">Short description of service.</textarea>
+         	     	  <textarea name="description-5" value="" rows="3" class="span6" placeholder="Short description of service."></textarea>
          	     	  <p class="hint-inline">Maximum of 200 characters.</p>
          	     	</div>
          	      </div>
@@ -451,13 +490,13 @@
               <!-- SERVICE AREAS PANEL -->
        	      <div id="service-areas-panel">
        	 	<!-- =====  SERVICE FORM  ===== -->
-		<form id="serviceAreasForm" class="form-stacked" method="POST">
+		<form id="serviceAreas" class="form-stacked" method="POST">
 		  <ul class="listServiceArea">
          	    <li>
          	      <div class="clearfix">
                 	<label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
                 	<div class="input">
-                	  <input class="span6" id="input" name="Service Area" type="text" required />
+                	  <input class="span6" id="input" name="Service Area" type="text"/>
                 	</div>
                       </div>
                     </li>
@@ -465,7 +504,7 @@
          	      <div class="clearfix">
                 	<label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
                 	<div class="input">
-                	  <input class="span6" id="input" name="Service Area" type="text" required />
+                	  <input class="span6" id="input" name="Service Area" type="text"/>
                 	</div>
                       </div>
                     </li>
@@ -473,7 +512,7 @@
          	      <div class="clearfix">
                 	<label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
                 	<div class="input">
-                	  <input class="span6" id="input" name="Service Area" type="text" required />
+                	  <input class="span6" id="input" name="Service Area" type="text" />
                 	</div>
                       </div>
                     </li>
@@ -481,7 +520,7 @@
          	      <div class="clearfix">
                 	<label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
                 	<div class="input">
-                	  <input class="span6" id="input" name="Service Area" type="text" required />
+                	  <input class="span6" id="input" name="Service Area" type="text"/>
                 	</div>
                       </div>
                     </li>
@@ -489,12 +528,13 @@
          	      <div class="clearfix">
                 	<label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
                 	<div class="input">
-                	  <input class="span6" id="input" name="Service Area" type="text" required />
+                	  <input class="span6" id="input" name="Service Area" type="text"/>
                 	</div>
                       </div>
                     </li>
+                    </ul>
 		    <br />
-		    <button class="btn primary" type="button" onClick="addInput('dynamicInput');">Add Service Area</button>
+		    <button class="btn primary" type="button">Add Service Area</button>
 		</form>
        	      </div><!-- /service-areas-panel -->
             </div>  <!--/span11 -->
@@ -707,15 +747,64 @@
         </div>
       </div>
     </footer>
-
-    <script src="http://blueimp.github.com/JavaScript-Templates/tmpl.min.js"></script>
-    <script src="js/jquery.iframe-transport.js"></script>
-    <script src="js/jquery.fileupload.js"></script>
-    <script src="js/jquery.fileupload-ui.js"></script>
-
-    <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE >= 8 -->
-    <script src="js/jquery.xdr-transport.js"></script>
-    <!-- postMessage Transport support can be added with the following plugin -->
-    <!--script src="jquery.postmessage-transport.js"></script-->
+    <!-- The template to display files available for upload -->
+    <script id="template-upload" type="text/x-tmpl">
+      {% for (var i=0, file; file=o.files[i]; i++) { %}
+      <tr class="template-upload fade">
+	<td class="preview"><span class="fade"></span></td>
+	<td class="name"><span>{%=file.name%}</span></td>
+	<td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+	{% if (file.error) { %}
+	<td class="error" colspan="2"><span class="label label-important">{%=locale.fileupload.error%}</span> {%=locale.fileupload.errors[file.error] || file.error%}</td>
+	{% } else if (o.files.valid && !i) { %}
+	<td>
+	  <div class="progress progress-success progress-striped active"><div class="bar" style="width:0%;"></div></div>
+	</td>
+	<td class="start">{% if (!o.options.autoUpload) { %}
+	  <button class="btn btn-primary">
+	    <i class="icon-upload icon-white"></i>
+	    <span>{%=locale.fileupload.start%}</span>
+	  </button>
+	  {% } %}</td>
+	{% } else { %}
+	<td colspan="2"></td>
+	{% } %}
+	<td class="cancel">{% if (!i) { %}
+	  <button class="btn btn-warning">
+	    <i class="icon-ban-circle icon-white"></i>
+	    <span>{%=locale.fileupload.cancel%}</span>
+	  </button>
+	  {% } %}</td>
+      </tr>
+      {% } %}
+    </script>
+    <script id="template-download" type="text/x-tmpl">
+      {% for (var i=0, file; file=o.files[i]; i++) { %}
+      <tr class="template-download fade">
+	{% if (file.error) { %}
+	<td></td>
+	<td class="name"><span>{%=file.name%}</span></td>
+	<td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+	<td class="error" colspan="2"><span class="label label-important">{%=locale.fileupload.error%}</span> {%=locale.fileupload.errors[file.error] || file.error%}</td>
+	{% } else { %}
+	<td class="preview">{% if (file.thumbnail_url) { %}
+	  <a href="{%=file.url%}" title="{%=file.name%}" rel="gallery" download="{%=file.name%}"><img src="{%=file.thumbnail_url%}"></a>
+	  {% } %}</td>
+	<td class="name">
+	  <a href="{%=file.url%}" title="{%=file.name%}" rel="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
+	</td>
+	<td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+	<td colspan="2"></td>
+	{% } %}
+	<td class="delete">
+	  <button class="btn btn-danger" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}">
+	    <i class="icon-trash icon-white"></i>
+	    <span>{%=locale.fileupload.destroy%}</span>
+	  </button>
+	  <input type="checkbox" name="delete" value="1">
+	</td>
+      </tr>
+      {% } %}
+    </script>	
   </body>
 </html>
