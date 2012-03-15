@@ -155,7 +155,7 @@
        		  <div class="clearfix">
        		    <label>Slogan/Tagline</label>
        		    <div class="input">
-       		      <input class="span6" id="slogan" name="Slogan" type="text" placeholder="Slogan" rel="twipsy" title="Remember to keep it simple. Try something like 'Great service, fast'." />
+       		      <input class="span6" id="slogan" name="slogan" type="text" placeholder="Slogan" rel="twipsy" title="Remember to keep it simple. Try something like 'Great service, fast'." />
        		    </div>
        		  </div><!-- /clearfix -->
        		  <div class="clearfix">
@@ -171,7 +171,7 @@
        	      <!--  =====  CONTACT INFORMATION  =====  -->
        	      <div id="contact-information">
        		<h5>Contact Information</h5>
-       		<p class="hint-inline">All fields required.</p>
+       		<p class="hint-inline">Required fields denoted with a ' * '.</p>
 	   	<form id="contactInformation" name="contact-information" action="mobile/updateFields">
        		  <div class="clearfix">
        		    <label>Street Address</label>
@@ -192,27 +192,21 @@
        		    </div>
        		  </div><!-- /clearfix -->
        		  <div class="clearfix">
-       		    <label for="smallSelect">State</label>
+       		    <label for="state">State</label>
        		    <div class="input">
-       		      <select class="small" name="smallSelect" id="state">
-       			<option>AL</option>
-       			<option>AR</option>
-       			<option>DE</option>
-       			<option>FL</option>
-       			<option>GA</option>
-       		      </select>
+       		      <input class="small" id="state" name="state" type="text" placeholder="State"/>
        		    </div>
        		  </div><!-- /clearfix -->
        		  <div class="clearfix">
-       		    <label>Telephone</label>
+       		    <label>Telephone *</label>
        		    <div class="input">
-       		      <input class="small" id="phone" name="phone" type="text" placeholder="(123) 555-6789" rel="twipsy" title="A mobile number is prefered. This way, interested parties can either call or send you a text message."/>
+       		      <input class="small" id="phone" name="phone" type="text" placeholder="(123) 555-6789" rel="twipsy" title="This must be a mobile number or your prospects cannot send you text messages."/>
        		    </div>
        		  </div><!-- /clearfix -->
        		  <div class="clearfix">
-       		    <label>Email</label>
+       		    <label>Email *</label>
        		    <div class="input">
-       		      <input class="large" id="email" name="email" type="text" placeholder="you@yourcompany.com" rel="twipsy" title="Who is the primary contact?"/>
+       		      <input class="large" id="email" name="email" type="text" placeholder="you@yourcompany.com" rel="twipsy" title="This email is where your prospects will contact you."/>
        		    </div>
        		  </div><!-- /clearfix -->
        		</form>
