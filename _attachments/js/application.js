@@ -44,6 +44,43 @@ $(document).ready(function(){
         });
 
     })
+    // any other form
+    $("form").not("#registerForm").submit(function(e){
+        e.preventDefault = true;
+        var form = $(this).serializeObject();
+        form._id = $.websiteId;
+        $.db.openDoc($.websiteId, {
+            async: false,
+            success: function(doc){
+                // document exists
+                var result_doc = $.extend(doc, form)
+                $.db.saveDoc(result_doc, {
+                    async: false,
+                    success: function(ok){
+                        console.log(ok)
+                    }, 
+                    error: function(err){
+                        console.log(err)
+                    }
+                })
+            },
+            error: function(err){
+                // document does not exists
+                var result_doc = $.extend({}, form)
+                $.db.saveDoc(result_doc, {
+                    async: false,
+                    success: function(ok){
+                        console.log(ok)
+                    }, 
+                    error: function(err){
+                        console.log(err)
+                    }
+                })
+            }
+        })
+
+        //return true;
+    })
 
     // serviceAreas
 
