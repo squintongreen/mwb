@@ -1,7 +1,7 @@
 $.validator.addMethod("humanCheck", function(value, element) { 
     // FIXME hardcoded check here
     return this.optional(element) || value == "4"
-}, "Seems you're robot or just a baby-kid");
+}, "Sorry that's wrong. Please try again.");
 
 $.validator.addMethod("uniqueWebsiteName", function(value, element) { 
     value = value.replace(/\s/gi, '-')
