@@ -71,13 +71,7 @@ $(document).ready(function(){
     $("#companyProfile").validate($.extend(defaults, {
         rules: { 
             'company-name': { required: true },
-            'description': { maxlength: 200 }
-        }
-    }));
-
-    // contactInformation
-    $("#contactInformation").validate($.extend(defaults, {
-        rules: {
+            'description': { maxlength: 200 },
             /*
             'street-address': { required: true },p
             'suite': { required: true },
