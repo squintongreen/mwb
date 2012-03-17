@@ -15,6 +15,34 @@ $.fn.serializeObject = function()
     return o;
 };
 
+String.format = function() {                                                                                                                                                                                                                                                     
+    var s = arguments[0];
+    for (var i = 0; i < arguments.length - 1; i++) {
+        var reg = new RegExp("\\{" + i + "\\}", "gm");
+        s = s.replace(reg, arguments[i + 1]);
+    }
+
+    return s;
+}
+
+
+$.collect = function(c, f) {
+    var a = [];
+    $.each(c, function(k, v) {
+        a.push(f(k, v));
+    });
+    return a;
+};
+
+
+li = function(nested){
+    return String.format("<li>{0}</li>", nested)
+}
+
+a = function(nested){
+    return String.format("<a href='#'>{0}</a>", nested)
+}
+
 $(document).ready(function(){
     // twipsying
     $("input[rel=twipsy]").twipsy({

@@ -25,8 +25,6 @@ $(document).ready(function(){
     })
 
 
-    $.websiteId = $("#websiteId").data("id");
-
     // processing registration form
     $("#registerForm").submit(function(e){
         var form = $(this).serializeObject();
@@ -44,16 +42,53 @@ $(document).ready(function(){
         });
 
     })
+
+    function updateDocList() {
+        $.db.view("mwb/all-docs", {
+            reduce: false,
+            success: function(data){
+                // clearning all 
+                var all = $("#projects .dropdown-menu li.divider ~ li");
+                all.remove();
+                $.each(data.rows, function(k, v){
+                    $("#projects .dropdown-menu").append(li(a(v.id)));
+                });
+            }
+        });
+    };
+
+    updateDocList();
+
+    $("#projects ul li a").live('click', function(){
+        $("#websiteId").text($(this).text());
+    })
+
+    $("#add-new-site").click(function(){
+        var name=prompt('Enter new website name','Name');
+        $.db.saveDoc({_id: name, type: 'project'}, {
+            success:function(){
+                updateDocList();
+            }
+        })
+    });
+
     // any other form
-    $("form").not("#registerForm").submit(function(e){
+    $("#publish").click(function(e){
         e.preventDefault = true;
-        var form = $(this).serializeObject();
-        form._id = $.websiteId;
-        $.db.openDoc($.websiteId, {
+
+        var forms = {};
+        $("form").each(function(){
+            var form = {}
+            form[$(this).attr('id')] = $(this).serializeObject()
+            $.extend(forms, form)
+        });
+
+        forms._id =  $("#websiteId").text();
+        $.db.openDoc(forms._id, {
             async: false,
             success: function(doc){
                 // document exists
-                var result_doc = $.extend(doc, form)
+                var result_doc = $.extend(doc, forms)
                 $.db.saveDoc(result_doc, {
                     async: false,
                     success: function(ok){
@@ -66,7 +101,7 @@ $(document).ready(function(){
             },
             error: function(err){
                 // document does not exists
-                var result_doc = $.extend({}, form)
+                var result_doc = $.extend({}, forms)
                 $.db.saveDoc(result_doc, {
                     async: false,
                     success: function(ok){
@@ -79,7 +114,7 @@ $(document).ready(function(){
             }
         })
 
-        //return true;
+        return true;
     })
 
     // serviceAreas

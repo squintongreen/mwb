@@ -99,12 +99,14 @@
 	       </ul>
 	       == /Builder Navigation ==========  -->
 	  
-	  <ul class="nav secondary-nav">
+	  <ul id="projects" class="nav secondary-nav">
 	    <li class="dropdown" data-dropdown="dropdown">
-	      <a id="websiteId" data-id="flash-gordon-electric" href="#" class="dropdown-toggle" style="font-size:1em;font-weight:600;">Currently Editing: Flash Gordon Electric</a>
+              Currently Editing: <!-- FIXME: Sam, Currently editing should sit here -->
+	      <a id="websiteId" href="#" class="dropdown-toggle" style="font-size:1em;font-weight:600;">Flash Gordon Electric</a>
 	      <ul class="dropdown-menu">
-         	<li><a class="add-site" href="mwb/create.html">+&nbsp;&nbsp;Add another site...</a></li>
+         	<li><a id="add-new-site" class="add-site" href="#">+&nbsp;&nbsp;Add another site...</a></li>
          	<li><a class="manage-site" href="mwb/manage.html">Manage sites...</a></li>
+                <li class="divider"></li>
               </ul>
             </li>
 	  </ul>
@@ -490,7 +492,7 @@
          	      <div class="clearfix">
                 	<label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
                 	<div class="input">
-                	  <input class="span6" id="input" name="Service Area" type="text"/>
+                	  <input class="span6" id="input" name="service-area" type="text"/>
                 	</div>
                       </div>
                     </li>
@@ -498,7 +500,7 @@
          	      <div class="clearfix">
                 	<label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
                 	<div class="input">
-                	  <input class="span6" id="input" name="Service Area" type="text"/>
+                	  <input class="span6" id="input" name="service-area" type="text"/>
                 	</div>
                       </div>
                     </li>
@@ -506,7 +508,7 @@
          	      <div class="clearfix">
                 	<label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
                 	<div class="input">
-                	  <input class="span6" id="input" name="Service Area" type="text" />
+                	  <input class="span6" id="input" name="service-area" type="text" />
                 	</div>
                       </div>
                     </li>
@@ -514,7 +516,7 @@
          	      <div class="clearfix">
                 	<label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
                 	<div class="input">
-                	  <input class="span6" id="input" name="Service Area" type="text"/>
+                	  <input class="span6" id="input" name="service-area" type="text"/>
                 	</div>
                       </div>
                     </li>
@@ -522,7 +524,7 @@
          	      <div class="clearfix">
                 	<label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
                 	<div class="input">
-                	  <input class="span6" id="input" name="Service Area" type="text"/>
+                	  <input class="span6" id="input" name="service-area" type="text"/>
                 	</div>
                       </div>
                     </li>
@@ -672,10 +674,7 @@
                 <h5>Your website is ready to go!</h5>
        	        <p>You're now ready to publish your mobile site. To the right is a preview of your site. Be sure to play around with it and double check your information.</p>
        	        <br />
-       	        <form method="GET" action="mobile/publish">
-                  <input name="websiteName" type="hidden"/>
-                  <input id="publish" class="btn span5 success" type="submit" value="Publish &amp; Generate QR Code"/>
-                </form>
+                <input id="publish" class="btn span5 success" type="submit" value="Publish &amp; Generate QR Code"/>
                 <br />
                 <img src="http://placehold.it/280&text=YOUR+QR+CODE+HERE" alt="QR code placeholder" />
        	      </div>
