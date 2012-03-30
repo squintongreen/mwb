@@ -1,0 +1,63 @@
+[
+    {
+        "from": "js/*",
+        "to": "js/*"
+    },
+    {
+        "from": "css/*",
+        "to": "css/*"
+    },
+    {
+        "from": "fonts/*",
+        "to": "fonts/*"
+    },
+    {
+        "from": "img/*",
+        "to": "img/*"
+    },
+    {
+        "from": "images/*",
+        "to": "images/*"
+    },
+
+    {
+        "from": "mwb/js/*",
+        "to": "mwb/js/*"
+    },
+    {
+        "from": "mwb/css/*",
+        "to": "mwb/css/*"
+    },
+    {
+        "from": "mwb/fonts/*",
+        "to": "mwb/fonts/*"
+    },
+    {
+        "from": "mwb/img/*",
+        "to": "mwb/img/*"
+    },
+    {
+        "from": "mwb/images/*",
+        "to": "mwb/images/*"
+    },
+    {
+        "from": "vendor/*",
+        "to": "vendor/*"
+    },
+    {
+        "from": "_session",
+        "to": "/_session"
+    },
+    {
+        "from": "_list/*",
+        "to": "_list/*"
+    },
+    {
+        "from": "_view/*",
+        "to": "_view/*"
+    },
+    {
+        "from": "*",
+        "to": "_show/_/*"
+    }
+]

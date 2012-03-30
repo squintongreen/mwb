@@ -1,0 +1,93 @@
+<!-- MANAGE FIELDS -->
+<div id="profile" class="row">
+  <div id="profile-form" class="span10">
+    <!--  =====  COMPANY PROFILE  =====  -->
+    <div id="company-profile">
+      <h5>About Us</h5>
+      <p class="hint-inline">Required fields denoted with a ' * '.</p>
+      <form id="fieldsForm" name="company-profile" action="mobile/updateFields">
+        <div class="clearfix">
+          <label>Company Name *</label>
+          <div class="input">
+            <input class="span6" id="company-name" name="CName" type="text" placeholder="Company Name" required />
+          </div>
+        </div><!-- /clearfix -->
+        <div class="clearfix">
+          <label>Slogan/Tagline</label>
+          <div class="input">
+            <input class="span6" id="slogan" name="Slogan" type="text" placeholder="Slogan" rel="twipsy" title="Remember to keep it simple. Try something like 'Great service, fast'." />
+          </div>
+        </div><!-- /clearfix -->
+        <div class="clearfix">
+          <label>Description</label>
+          <div class="input">
+            <textarea name="Description" value="" rows="5" class="span6">Here you can briefly describe your company.
+            </textarea>
+            <p class="hint-inline">Maximum 200 characters.</p>
+          </div>
+        </div>  <!-- /clearfix -->
+      </form>
+    </div><!-- /company-profile -->
+    
+    <!--  =====  CONTACT INFORMATION  =====  -->
+    <div id="contact-information">
+      <h5>Contact Information</h5>
+      <p class="hint-inline">All fields required.</p>
+      <form id="fieldsForm" name="contact-information" action="mobile/updateFields">
+        <div class="clearfix">
+          <label>Street Address</label>
+          <div class="input">
+            <input class="large" id="lInput" name="street-address" type="text" placeholder="123 Peachtree Street" rel="twipsy" title="This is the address you used when you registered your business." required />
+          </div>
+        </div><!-- /clearfix -->
+        <div class="clearfix">
+          <label>Suite Number</label>
+          <div class="input">
+            <input class="small" id="small" name="Suite" type="text" placeholder="13B" />
+          </div>
+        </div><!-- /clearfix -->
+        <div class="clearfix">
+          <label>City</label>
+          <div class="input">
+            <input class="small" id="small" name="City" type="text" placeholder="Anytown" required />
+          </div>
+        </div><!-- /clearfix -->
+        <div class="clearfix">
+          <label for="smallSelect">State</label>
+          <div class="input">
+            <select class="small" name="smallSelect" id="smallSelect">
+              <option>AL</option>
+              <option>AR</option>
+              <option>DE</option>
+              <option>FL</option>
+              <option>GA</option>
+            </select>
+          </div>
+        </div><!-- /clearfix -->
+        <div class="clearfix">
+          <label>Telephone</label>
+          <div class="input">
+            <input class="small" id="small" name="Telephone" type="text" placeholder="(123) 555-6789" rel='twipsy' title='A mobile number is prefered. This way, interested parties can either call or send you a text message.' required />
+          </div>
+        </div><!-- /clearfix -->
+        <div class="clearfix">
+          <label>Email</label>
+          <div class="input">
+            <input class="large" id="large" name="Email" type="text" placeholder="you@yourcompany.com" rel="twipsy" title="Who is the primary contact?" required />
+          </div>
+        </div><!-- /clearfix -->
+      </form>
+    </div><!-- /contact-information -->
+  </div>  <!--/span11 -->
+  
+  <div id="sidebar" class="span6">
+    <img class="pull-left" src="images/icn-page-profile.png" alt="Add Page: Profile" />
+    <h5>Create your company's profile.</h5>
+    <div id="btn-group">
+      <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
+      <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
+    </div>
+    <p>This page is where you can enter and maintain information about your company. Your mission and values would be good places to start.</p>
+  </div>
+  
+</div>
