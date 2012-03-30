@@ -2,18 +2,11 @@
 <html lang="en">
   {{ template['_head'] }}
   <body>
-    <div id="dialog" title="Manage your mobile website.">
-      <p>Great! You've just created your first mobile website. You can edit the various aspects of your site through the Site Manager. We've prepared a short introduction to familiarize you with the features available. The tour is entirely optional, but we highly recommend taking the walk-through. It'll only take five minutes. Promise.</p>
-      <div id="btn-group-modal">
-	<p><a href="#"><button class="btn default span3" name="Go to Manager">Go to Manager</button></a></p>
-	<p><a href="#"><button class="btn primary span3" name="Take the Tour">Take the Tour&nbsp;&nbsp;&nbsp;&rarr;</button></a></p>
-      </div>
-    </div>
     {{ template['_topbar'] }}
     <div class="row">
       <div id="page-wrap" class="container">  <!--  Page Wrap  -->
 	<header>
-	  <a href="http://www.scanshowsell.com"><img src="images/title_sm.png" alt="ScanShowSell.com" border="0" /></a>
+	  <a href="http://www.scanshowsell.com"><img src="../images/title_sm.png" alt="ScanShowSell.com" border="0" /></a>
 	  <a href="#" class="call-us pull-right">
 	    1-855-722-6746 ( 855-SCANSHOWSELL )
 	    <br />
@@ -47,98 +40,4 @@
       </div> <!-- /.container -->
     </div> <!-- /.row -->
   </body>
-<script type="text/javascript">
-  	$(function () {
-             $("input[rel=twipsy]").twipsy({
-                live: true,
-                offset: 10,
-              	placement: 'right',
-              	trigger: 'focus'
-              })
-        })
-</script>
-    <script type="text/javascript">
-	  $(document).ready(function(){
-	    var slider = $('#templateSlider').bxSlider({
-	    	controls: false,
-	    	auto: false,
-	    	infiniteLoop: false,
-	    	hideControlOnEnd: true,
-	    	pager: true
-	    });
-	    
-	    $('#go-prev').click(function(){
-    		slider.goToPreviousSlide();
-    		return false;
- 		 });
- 		
- 		 $('#go-next').click(function(){
- 		   	slider.goToNextSlide();
- 		   	return false;
- 		 });
-	  });
-	</script>
-    <script type="text/javascript">
-    $(window).scroll(function(e) {
-    // 40 is the offsetTop of the menu. This should be constant as such
-    // it's defined that way. To get your offsetTop you can use
-    // document.getElementById('id').offsetTop or $('selector').offset().top
-    if ($(window).scrollTop() > 450) {
-        $('#instructions').css({
-            position: 'fixed',
-            top: '0',
-            left: '139px'
-        });
-    }
-    else {
-        $('#instructions').css({
-            position: 'static'
-        });
-    }
-	});
-    </script>
-    <script type="text/javascript">
-        $(function () {
-          $("input[rel=popover]")
-            .popover({
-              offset: 10,
-              placement: 'right',
-              trigger: 'focus'
-            })
-            .click(function(e) {
-              e.preventDefault()
-            })
-        })
-    </script>
-    <script type="text/javascript">
-    $('.add_service').click(function() {
-    $('.listServices').append('<li>' + '<div class="clearfix"><label>Type of Service</label><div class="input"><input class="span6" id="input" name="Service Type" type="text" placeholder="e.g. Home A/V Setup" required /></div></div>' + '<div class="clearfix"><label>Short Description</label><div class="input"><textarea name="Description" value="" rows="5" class="span6">Short description of service. Maximum of 255 characters.</textarea><p class="hint-inline">Accepted HTML tags: <code>&lt;a&gt;</code>,<code>&lt;strong&gt;</code>, and <code>&lt;em&gt;</code>.</p></div></div>' + '<a href="#" class="remove_service"><button type="button" class="btn small danger delete">Remove service</button></a>' + '</li>');
-
-    return false;
-});
-
-	// using live() will bind the event to all future
-	// elements as well as the existing ones
-	$('.remove_service').live('click', function() {
-	    $(this).parent().remove();
-
-    return false;
-});
-    </script>
-	<script type="text/javascript">
-	var counter = 1;
-	var limit = 5;
-	function addInput(divName){
-	     if (counter == limit)  {
-	          alert("You have reached the limit of adding " + counter + " inputs");
-	     }
-	     else {
-	          var newdiv = document.createElement('div');
-	          newdiv.innerHTML = "Area " + (counter + 1) + " <br /><br /><input type='text' name='myInputs[]'><br /><br />";
-	          document.getElementById(divName).appendChild(newdiv);
-	          counter++;
-	     }
-	}
-	</script>
-
 </html>
