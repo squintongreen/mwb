@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="span16">
+    
+    <!-- tabs -->
+    <ul class="breadcrumb">
+      <li class="active">&nbsp;&nbsp;&nbsp;1.&nbsp;&nbsp;<a href="content1.html">Property Info</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      <li>2.&nbsp;&nbsp;<a href="content2.html">Upload Photos</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      <li>3.&nbsp;&nbsp;<a href="content3.html">Feature A Photo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      <li>4.&nbsp;&nbsp;<a href="content4.html">Contact Info</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      <li>5.&nbsp;&nbsp;<a href="content5.html">Choose A Template</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      <li>6.&nbsp;&nbsp;<a href="content6.html">Preview &amp; Publish!</a></li>
+    </ul>
+    
+    <!-- single pane. it is always visible -->
+    <div class="css-panes">
+      <div style="display:block"></div>
+    </div>
+  </div>
+</div>
+
+<!-- activate tabs with JavaScript -->
+<script>
+  $(function() {
+
+  $("ul.breadcrumb").tabs("div.css-panes > div", {effect: 'ajax'});
+
+  });
+</script>

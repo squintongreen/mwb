@@ -1,1 +1,6 @@
-{}
+{
+    "env": {
+        "dev": {"db": "http://admin:secret9022@192.168.1.1:5984/mwb"},
+        "prod": {"db": "http://dee:dee@dev.softsky.com.ua:5984/mwb"}
+    }               
+}

@@ -1,0 +1,100 @@
+<!-- MANAGE PICTURES -->
+<div id="photo-upload" class="row">
+  <div id="upload-wrap" class="span10">
+    <!--  =====  UPLOAD BUTTON BAR  =====  -->
+    <form id="fileupload" action="fileupload/upload" method="POST" enctype="multipart/form-data">
+      <div class="fileupload-buttonbar">
+        <span class="btn success fileinput-button">
+          <span>Add files...</span>
+          <input type="file" name="files[]" multiple="multiple"></input>
+        </span>
+        <button type="submit" class="btn primary start">Upload all</button>
+      </div>
+    </form>
+    
+    <!--  =====  INDIVIDUAL PHOTO PANELS  =====  -->
+    <div id="photo-panel">
+      <div class="thumb-wrap">
+	<img class="thumbnail" src="http://placehold.it/210x150" alt="">
+      </div>  <!-- /thumb-wrap -->
+      <div class="photo-form">
+	<form class="form-stacked">
+	  <fieldset>
+            <div class="clearfix">
+	      <label for="caption">Photo caption</label>
+	      <div class="input">
+        	<input type="text" class="span3" name="caption" />
+              </div>
+            </div><!-- /clearfix -->
+            <div class="photo-buttons" >
+	      <button type="button" class="btn small danger delete">Remove photo</button>
+            </div><!-- /photo-buttons -->
+            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
+	  </fieldset>
+	</form>
+      </div>  <!-- /photo-form -->
+    </div>  <!-- /photo-panel -->
+    
+    <!--  =====  INDIVIDUAL PHOTO PANELS  =====  -->
+    <div id="photo-panel">
+      <div class="thumb-wrap">
+	<img class="thumbnail" src="http://placehold.it/210x150" alt="">
+      </div>  <!-- /thumb-wrap -->
+      <div class="photo-form">
+	<form class="form-stacked">
+	  <fieldset>
+            <div class="clearfix">
+	      <label for="caption">Photo caption</label>
+	      <div class="input">
+        	<input type="text" class="span3" name="caption" />
+              </div>
+            </div><!-- /clearfix -->
+            <div class="photo-buttons" >
+	      <button type="button" class="btn small danger delete">Remove photo</button>
+            </div><!-- /photo-buttons -->
+            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
+	  </fieldset>
+	</form>
+      </div>  <!-- /photo-form -->
+    </div>  <!-- /photo-panel -->
+    
+    <!--  =====  INDIVIDUAL PHOTO PANELS  =====  -->
+    <div id="photo-panel">
+      <div class="thumb-wrap">
+	<img class="thumbnail" src="http://placehold.it/210x150" alt="">
+      </div>  <!-- /thumb-wrap -->
+      <div class="photo-form">
+	<form class="form-stacked">
+	  <fieldset>
+            <div class="clearfix">
+	      <label for="caption">Photo caption</label>
+	      <div class="input">
+        	<input type="text" class="span3" name="caption" />
+              </div>
+            </div><!-- /clearfix -->
+            <div class="photo-buttons" >
+	      <button type="button" class="btn small danger delete">Remove photo</button>
+            </div><!-- /photo-buttons -->
+            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
+	  </fieldset>
+	</form>
+      </div>  <!-- /photo-form -->
+    </div>  <!-- /photo-panel -->
+  </div>  <!-- /span11 -->
+  
+  <div id="sidebar" class="span5">
+    <img class="pull-left" src="images/icn-page-photos.png" alt="Add Page: Photos" />
+    <h5>Dazzle prospects with your work.</h5>
+    <p>Talk is cheap. Show your potential clients that you know your stuff by uploading a few photos of your work.</p>
+    <br />
+    <div class="alert-message block-message warning">
+      <p>Load up to three photos for your free trial. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
+    </div>
+    <div id="btn-group">
+      <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
+      <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
+    </div>
+  </div>
+  
+</div>  <!-- /photo-upload -->
+
