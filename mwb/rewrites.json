@@ -21,26 +21,6 @@
     },
 
     {
-        "from": "mwb/js/*",
-        "to": "mwb/js/*"
-    },
-    {
-        "from": "mwb/css/*",
-        "to": "mwb/css/*"
-    },
-    {
-        "from": "mwb/fonts/*",
-        "to": "mwb/fonts/*"
-    },
-    {
-        "from": "mwb/img/*",
-        "to": "mwb/img/*"
-    },
-    {
-        "from": "mwb/images/*",
-        "to": "mwb/images/*"
-    },
-    {
         "from": "vendor/*",
         "to": "vendor/*"
     },
@@ -55,6 +35,14 @@
     {
         "from": "_view/*",
         "to": "_view/*"
+    },
+    {
+        "from": "register.html",
+        "to": "register.html"
+    },
+    {
+        "from": "wizard.html",
+        "to": "wizard.html"
     },
     {
         "from": "*",
