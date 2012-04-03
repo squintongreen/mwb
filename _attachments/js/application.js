@@ -78,8 +78,17 @@ $(function(){
 
         addRow : function(model){
             console.log("addRow", this)
-            $("#dropdown .divider")
-                .prepend($("li").val(model.id).text(model.id.split(":")[1]));
+            var li = $("<li/>").append($("<a href=#/>").text(model.id.split(":")[2]));
+            li.on("click", function(){
+                $(this).siblings().removeClass("active")
+                $(this).addClass("active");
+                $(".website-name").text("Currently editing:" + $(this).text()) // FIXME template should be used
+                
+            })
+            $("#dropdown").prepend(li);
+
+            $(".user-name").text(model.id.split(":")[1])
+
         },
 
         deleteRow: function(model){
@@ -87,7 +96,7 @@ $(function(){
         },
         reseted: function(model){
             console.log("reseted", this)
-            $("#dropdown li > .divider").remove();
+            $("#dropdown li.divider:first").prevAll().remove();
             model.each(this.addRow);
         }
     });
