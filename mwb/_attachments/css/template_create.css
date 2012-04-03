@@ -43,7 +43,7 @@
 	Header
 	-------------------------------------------------- */
 
-	header						{ padding:40px 40px 38px;background-color:#fcfcfc;}
+	header						{ padding:40px 40px 38px;background-color:#fcfcfc;border-bottom:1px solid #d3d3d3;}
 	.call-us					{padding:10px;background-color:#e3e3e3;border-radius:2px;color:#494949;font-weight:600;font-size:1.05em;text-decoration:none;display:block;}
     .call-us:hover				{background-color:#393939;color:#f3f3f3;text-decoration:none;}
 
@@ -103,10 +103,10 @@
     Content Blocks
     -------------------------------------------------- */ 
     
-    #body						{background-color:#e3e3e3;}
+    #body						{margin-left:20px;background-color:#e3e3e3;}
     #instructions				{margin:18px 0;padding:20px;background-color:#e3e3e3;z-index:9999;}
     #information				{margin-top:18px;margin-bottom:18px;}
-    #sidebar					{padding-top:18px;width:300px;display:inline;float:left;}
+    #sidebar					{margin-left:20px;padding-top:18px;}
     #sidebar > img				{margin:0 10px 10px 0;}
     #sidebar > h5				{line-height:18px;}
     #sidebar #btn-group			{margin-top:18px;padding-top:18px;border-top:1px solid #d3d3d3;width:280px;display:inline;float:left;}
@@ -116,15 +116,15 @@
     
     
     /* --  Section Header -- */
-    #section-head				{margin:24px 40px 0px;padding:30px 0 36px 0;border-top:1px solid #d3d3d3;border-bottom:1px solid #d3d3d3;}
-    #section-header				{display:inline;}
-    #section-header a			{color:#c3c3c3;text-decoration:none;}
-    #seciton-header a:hover		{color:#c3c3c3 !important;text-decoration:none;}
-    #section-header .current	{color:#393939;}
+    #section-head				{margin:24px 40px 0px;padding:30px 0 36px 0;border-top:1px solid #d3d3d3;}
+    .section-header				{display:inline;}
+    .section-header a			{color:#c3c3c3;text-decoration:none;}
+    .seciton-header a:hover		{color:#c3c3c3 !important;text-decoration:none;}
+    .section-header .current	{color:#393939;}
     
     
     /* --  Manage Styles --  */
-    #manage						{padding-top:18px;background-color:#f9f9f9;}
+    #manage						{margin-left:20px;padding-top:18px;background-color:#f9f9f9;border-top:1px solid #d3d3d3;}
     #manage ul					{margin:18px 0 36px -10px;float:left;}
     #manage ul li				{margin-bottom:36px;margin-left:28px;padding:0;height:160px;border:1px solid #d3d3d3;box-shadow:0 1px 3px rgba(0,0,0,0.15);border-radius:4px;float:left;display:inline;position:relative;}
     #manage ul li:hover			{border:1px solid #00aaff;box-shadow:0 1px 3px rgba(0,0,0,0.5);}
@@ -184,11 +184,10 @@
     */
     
     /* -- Company Profile -- */
-    #profile					{background-color:#e3e3e3;}
-    #profile-form				{margin-left:0;padding:18px 0 18px 40px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #section-profile			{background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
+    #profile-form				{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
     #company-profile			{margin-top:18px;}
     #contact-information		{padding-top:18px;border-top:1px solid #d3d3d3;}
-    #fieldsForm					{padding-top:18px;}
     
     
     /* -- Photo Uploader -- */
