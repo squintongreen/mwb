@@ -3,8 +3,7 @@
   {{ template['_head'] }}
   <body>
     {{ template['_topbar'] }}
-    <div class="row">
-      <div id="page-wrap" class="container">  <!--  Page Wrap  -->
+    <div id="page-wrap" class="container">  <!--  Page Wrap  -->
 	<header>
 	  <a href="http://www.scanshowsell.com"><img src="../images/title_sm.png" alt="ScanShowSell.com" border="0" /></a>
 	  <a href="#" class="call-us pull-right">
@@ -13,31 +12,34 @@
 	    We're just a phone call away!</a>
 	</header>
 	
-	<div class="section-head">
-	  <h1 class="section-header">Manage Your Mobile Site</h1>
-	  <div id="siteEditorMenu" class="span7">
-	    <ul class="nav secondary-nav">
-	      <li class="dropdown" data-dropdown="dropdown">
-		<a href="#" id="siteSelect" class="dropdown-toggle" style="font-size:1em;font-weight:600;">Currently Editing: Kitchen Sink</a>
-		<ul id="dropdown" class="dropdown-menu">
-         	  <li><a href="#">Discount Cabinet Designs</a></li>
-         	  <li><a href="#">Long Cane Group</a></li>
-         	  <li class="divider"></li>
-         	  <li><a href="mwb/create.html">+&nbsp;&nbsp;Add another site...</a></li>
-         	  <li><a href="mwb/sites.html">Manage sites...</a></li>
-         	  <li class="divider"></li>
-         	  <li><a href="#">Send Link to Phone</a></li>
-		  <li><a href="#">View/Generate QR code</a></li>
-		  <li><a href="#">Preview Site in Phone Simulator</a></li>
-                </ul>
-              </li>
-	    </ul>
-	  </div>
-	</div>
+	<section id="section-head" class="row">
+		<h1 class="section-header">Manage Your Mobile Site</h1>
+		<div id="site-manager" class="span7">
+		  <ul id="site-manager-menu" class="nav secondary-nav">
+		  	<li class="dropdown" data-dropdown="dropdown">
+		  		<a href="#" id="site-toggle" class="dropdown-toggle" style="font-size:1em;font-weight:600;">Currently Editing: Kitchen Sink</a>
+		  		<ul id="site-manager-dropdown" id="dropdown" class="dropdown-menu">
+	      		   	<li><a href="#">Discount Cabinet Designs</a></li>
+	      		   	<li><a href="#">Long Cane Group</a></li>
+	      		   	<li class="divider"></li>
+	      		   	<li><a href="mwb/create.html">+&nbsp;&nbsp;Add another site...</a></li>
+	      		   	<li><a href="mwb/sites.html">Manage sites...</a></li>
+	      		   	<li class="divider"></li>
+	      		   	<li><a href="#">Send Link to Phone</a></li>
+		  		    <li><a href="#">View/Generate QR code</a></li>
+		  		    <li><a href="#">Preview Site in Phone Simulator</a></li>
+    	  		</ul><!-- /site-manager-dropdown -->
+    	  	</li>
+		  </ul><!-- /site-manager-menu -->
+		</div><!-- /span7 -->
+	</section><!-- /section-head -->
 	
-        {{ template[file] }}
-        {{ template['_footer'] }}
-      </div> <!-- /.container -->
-    </div> <!-- /.row -->
+	<section id="body" class="row">
+    	{{ template[file] }}
+    </section>
+    </div> <!-- /.container -->
+    
+    {{ template['_footer'] }}
+    
   </body>
 </html>
