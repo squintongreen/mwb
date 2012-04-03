@@ -106,7 +106,7 @@
     #body						{margin-left:0;background-color:#e3e3e3;}
     #instructions				{margin:18px 0;padding:20px;background-color:#e3e3e3;z-index:9999;}
     #information				{margin-top:18px;margin-bottom:18px;}
-    #sidebar					{margin-left:20px;padding-top:18px;}
+    #sidebar					{padding-top:18px;padding-left:10px;}
     #sidebar > img				{margin:0 10px 10px 0;}
     #sidebar > h5				{line-height:18px;}
     #sidebar #btn-group			{margin-top:18px;padding-top:18px;border-top:1px solid #d3d3d3;width:280px;display:inline;float:left;}
@@ -184,7 +184,8 @@
     */
     
     /* -- Company Profile -- */
-    #section-profile			{background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
+    #section-profile			{margin-left:20px;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
+    #section-profile > div		{margin-left:0;}
     #profile-form				{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
     #company-profile			{margin-top:18px;}
     #contact-information		{padding-top:18px;border-top:1px solid #d3d3d3;}
