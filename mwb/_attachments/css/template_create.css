@@ -192,14 +192,14 @@
     
     
     /* -- Photo Uploader -- */
-    #photo-upload		{background-color:#e3e3e3;}
-    #upload-wrap		{margin-left:0;padding:0 0 18px 40px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
-    #fileupload			{padding:18px 0;border-bottom:1px solid #d3d3d3;}
-    #photo-panel		{margin:18px 0;padding:10px;padding-top:15px;background-color:#e3e3e3;width:540px;display:block;position:relative;float:left;}
-    .thumb-wrap			{width:220px;display:inline;float:left;}
-    .photo-form			{margin-left:10px;width:310px;display:inline;float:left;}
+    #section-photo-upload		{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
+    #upload-photo-wrap			{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #fileupload					{padding:18px 0;border-bottom:1px solid #d3d3d3;}
+    #photo-panel				{margin:18px 0;padding:10px;padding-top:15px;background-color:#e3e3e3;width:540px;display:block;position:relative;float:left;}
+    .thumb-wrap					{width:220px;display:inline;float:left;}
+    .photo-form					{margin-left:10px;width:310px;display:inline;float:left;}
     .photo-form > .form-stacked		{padding-left:0 !important;}
-    .photo-buttons		{margin:18px 0;width:100%;display:block;position:relative;}
+    .photo-buttons				{margin:18px 0;width:100%;display:block;position:relative;}
     
     /* -- Services -- */
     #services						{background-color:#e3e3e3;}
