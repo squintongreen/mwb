@@ -202,8 +202,9 @@
     .photo-buttons				{margin:18px 0;width:100%;display:block;position:relative;}
     
     /* -- Services -- */
-    #services						{background-color:#e3e3e3;}
-    #services-form					{margin-left:0;padding:0 0 18px 40px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #section-services				{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
+    #section-services > div			{margin-left:0;}
+    #services-form					{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
     #service-panel					{margin-top:18px;}
     #serviceForm					{padding-top:18px;}
     .listServices					{margin:0;list-style:none;}
