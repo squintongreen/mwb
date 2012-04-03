@@ -210,8 +210,9 @@
     .listServices					{margin:0;list-style:none;}
     
     /* -- Service Areas -- */
-    #service-areas					{background-color:#e3e3e3;}
-    #service-areas-form				{margin-left:0;padding:0 0 18px 40px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #section-service-areas			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
+    #section-serice-areas > div		{margin-left:0;}
+    #service-areas-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
     #serviceAreasForm				{padding-top:18px;padding-left:0;}
     #serviceAreasForm input			{margin-top:7px;}
     .listServiceArea				{margin:0;list-style:none;}
@@ -219,21 +220,24 @@
     
     
     /* -- Special Offers -- */
-    #special-offers					{background-color:#e3e3e3;}
-    #special-offers-form			{margin-left:0;padding:0 0 18px 40px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #section-special-offers			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
+    #section-special-offers > div	{margin-left:0;}
+    #special-offers-form			{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
     #specialOffersForm				{padding-top:18px;}
     .listSpecialOffers				{margin:0;list-style:none;}
     
     /* -- Testimonials -- */
-    #testimonials					{background:#e3e3e3;}
-    #testimonials-form				{margin-left:0;padding:0 0 18px 40px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #section-testimonials			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
+    #section-testimonials > div		{margin-left:0;}
+    #testimonials-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
     #testimonialsForm				{padding-top:18px;}
     .listFeedback					{margin:0;list-style:none;}
     
-    /* -- Accreditations -- */
-    #accreditation					{background-color:#e3e3e3;}
-    #accreditation-form				{margin-left:0;padding:0 0 18px 40px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
-    #accreditationForm				{padding-top:18px;}
+    /* -- Credentials -- */
+    #section-credentials			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
+    #section-credentials > div		{margin-left:0;}
+    #credentials-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #credentialsForm				{padding-top:18px;}
     .listCredentials				{margin:0;list-style:none;}
     .listCredentials li				{margin-bottom:18px;}
     
