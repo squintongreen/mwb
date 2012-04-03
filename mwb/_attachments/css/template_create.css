@@ -126,8 +126,8 @@
     /* --  Manage Styles --  */
     #manage						{margin-left:0;padding-top:18px;background-color:#f9f9f9;border-top:1px solid #d3d3d3;}
     #manage ul					{margin:18px 0 36px -10px;float:left;}
-    #manage ul li				{margin-bottom:36px;margin-left:28px;padding:0;height:160px;border:1px solid #d3d3d3;box-shadow:0 1px 3px rgba(0,0,0,0.15);border-radius:4px;float:left;display:inline;position:relative;}
-    #manage ul li:hover			{border:1px solid #00aaff;box-shadow:0 1px 3px rgba(0,0,0,0.5);}
+    #manage ul li				{margin-bottom:36px;margin-left:28px;padding:0;height:160px;border:1px solid #d3d3d3;box-shadow:0pt 0px 0px 4px rgba(161, 161, 161, 0.15);border-radius:2px;float:left;display:inline;position:relative;}
+    #manage ul li:hover			{border:1px solid #00aaff;box-shadow:0pt 0px 0px 4px #00aaff;}
     
     
     /* --  Panel Styles  -- */
