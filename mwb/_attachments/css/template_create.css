@@ -17,13 +17,10 @@
 	-------------------------------------------------- */
 	
 	body {
-			background-color:#f2f2f2;
-			background-image:url('../images/header_bg.png');
-			background-repeat:repeat-x;
-			background-position: left top;
+			background:url('../images/boder_single.png') left 382px repeat-x, url('../images/bg_grid-light.png') left top repeat, url('../images/bg_hilite.png') center top no-repeat, url('../images/header_bg.png') left top repeat-x;
 			}
 	#page-wrap		{
-			margin-top:72px;
+			margin-top:90px;
 			background: #fcfcfc;
 			background: -moz-linear-gradient(top, #fcfcfc 0%, #f9f9f9 100%);
 			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfcfc), color-stop(100%,#f9f9f9));
