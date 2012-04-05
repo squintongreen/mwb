@@ -68,7 +68,7 @@ $(function(){
         events: {
             "click #new-btn": function(e){
                 var model = {
-                    _id: String.format("org.scanshowsell.website:{0}:{1}", username, $("#websiteName").val())
+                    _id: String.format("com.scanshowsell.website:{0}:{1}", username, $("#websiteName").val())
                 }
                 Websites.create(model,{
                     success:function(model){
@@ -78,9 +78,9 @@ $(function(){
                         console.log('Error', error)
                     }
                 })
-                e.stopPropagation();
-                e.preventDefault();
-                return true;
+                //e.stopPropagation();
+                //e.preventDefault();
+                //return true;
             }
         },
 
