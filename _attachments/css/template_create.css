@@ -17,7 +17,7 @@
 	-------------------------------------------------- */
 	
 	body {
-			background:url('../images/boder_single.png') left 382px repeat-x, url('../images/bg_grid-light.png') left top repeat, url('../images/bg_hilite.png') center top no-repeat, url('../images/header_bg.png') left top repeat-x;
+			background:url('../images/border_single.png') left 382px repeat-x, url('../images/bg_grid-light.png') left top repeat, url('../images/bg_hilite.png') center top no-repeat, url('../images/header_bg.png') left top repeat-x;
 			}
 	#page-wrap		{
 			margin-top:90px;
