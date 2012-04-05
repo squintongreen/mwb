@@ -1,3 +1,33 @@
+var hash = window.location.hash;
+var website_name = hash.replace(/#/g,'');
+var username;
+
+$.couch.session({
+    success: function(session){
+        username = session.userCtx.name;
+    }
+})
+
+new_hash = function(){
+    hash = window.location.hash;
+    website_name = hash.replace(/#/g,'');
+
+    $("a").each(function(idx, a){
+        var href = $(a).attr("href")
+        if(href == undefined)
+            href ="";
+        href = href.split("#")[0]
+        $(a).attr("href", href + hash);
+    });
+
+
+    $("#site-manager-dropdown .divider:first").prevAll().removeClass("active");
+    $("#site-manager-dropdown").find(String.format("li:contains('{0}')", website_name)).addClass("active");
+    $("#site-toggle").text("Currently editing:" + website_name) // FIXME template should be used
+}
+
+$(window).bind("hashchange", new_hash)
+
 $(function(){
     // Fill this with your database information.                                                                                           // `ddoc_name` is the name of your couchapp project.
 
@@ -19,46 +49,38 @@ $(function(){
     Websites = new WebsiteCollection();
 
     Websites.on('change', function(model){ 
-        notification('Документ змінено:' + model.id)
         console.log("change", model)
-        console.log("title", $("#title").val())
-
-        if(model.id == $("#title").val()){
-            console.log("change", model)
-            // same document is changing
-            $("form input[name=_rev]").val(
-                model.get("_rev") // updating _rev
-            ).trigger("set");
-
-            $("form input[name=_attachments]").val(
-                JSON.stringify(model.get("_attachments")) // updating _attachments
-            ).trigger("set");
-        }
     })
 
-    /*
-    Articles.on('add', function(model){ 
-        notification('Документ додано:' + model.id)        
+
+    Websites.on('add', function(model){ 
+        console.log("Website added:", model.id);
     })
 
-    Articles.on('remove', function(model){ 
-        notification('Документ видалено:' + model.id)        
+    Websites.on('remove', function(model){ 
+        console.log("Website removed:", model.id);
     })
-    */
+
 
     WebsiteView = Backbone.View.extend({
-        el: $("#parent"), 
+        el: $("body"), 
 
         events: {
-            "change": function(e){
-                if(isDirty == false){
-                    FilteredArticles.resetCollection(); // FIXME this is not good to act so, better to find the reason for problem
-                    FilteredArticles.setFilter();
-                    console.log("#parent change")
+            "click #new-btn": function(e){
+                var model = {
+                    _id: String.format("org.scanshowsell.website:{0}:{1}", username, $("#websiteName").val())
                 }
-
-                $("#title option:first").attr("selected", "selected");
-                $("#title").trigger('liszt:updated').trigger("change");
+                Websites.create(model,{
+                    success:function(model){
+                        console.log('Created', model)
+                    },
+                    error:function(error){
+                        console.log('Error', error)
+                    }
+                })
+                e.stopPropagation();
+                e.preventDefault();
+                return true;
             }
         },
 
@@ -78,17 +100,15 @@ $(function(){
 
         addRow : function(model){
             console.log("addRow", this)
-            var li = $("<li/>").append($("<a href=#/>").text(model.id.split(":")[2]));
-            li.on("click", function(){
-                $(this).siblings().removeClass("active")
-                $(this).addClass("active");
-                $(".website-name").text("Currently editing:" + $(this).text()) // FIXME template should be used
-                
-            })
-            $("#dropdown").prepend(li);
-
-            $(".user-name").text(model.id.split(":")[1])
-
+            var hash = window.location.hash.substring(1)
+            var model_id = model.id.split(":");
+            var name = model_id[2];
+            var li = $("<li/>").append($("<a/>").attr("href", "#" + name).text(name));
+            // making li active
+            if(hash && name === hash){
+                li.addClass("active")
+            }
+            $("#site-manager-dropdown").prepend(li);
         },
 
         deleteRow: function(model){
@@ -122,19 +142,24 @@ $(function(){
 
         // Includes the couchlogin
         // check it out here: <a href="https://github.com/couchapp/couchdb-login-jquery">https://github.com/couchapp/couchdb-login-jquery</a>
-        $('#login_form').couchLogin({
-            loggedIn : function(user){
-
-            },
-            loggedOut : function(){
-
-            }
-        });
-
         // Bootstrapping
         new WebsiteView({model: Websites });
         new App();
 
     }, 100);
 
+    $("button:contains('Save')").click(function(){
+        var model = Websites.where({_id: String.format("com.scanshowsell.website:{0}:{1}", username, website_name)})[0]
+        var form = {};
+        $("form").each(function(){
+            form[$(this).attr("name")] = $(this).serializeArray();
+        });
+
+        model.set(form);
+
+        model.save();
+    });
+
+    if(window.location.hash)
+        new_hash()
 })
