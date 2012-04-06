@@ -124,7 +124,7 @@
     	a.topbar-survey,							{background:url('../images/sprite-menu-requests.png') -229px 10px no-repeat;}
     	
     	a.topbar-testimonial:hover,
-    	a.topbar-survey:hover						{background:url('../images/sprite-menu-requests.png') -229px -70px no-repeat;}
+    	a.topbar-survey:hover						{background:url('../images/sprite-menu-requests.png') -229px -100px no-repeat;}
     	
     	a.topbar-service,				
     	a.topbar-estimate,
@@ -132,7 +132,7 @@
     	
     	a.topbar-service:hover,				
     	a.topbar-estimate:hover,
-    	a.topbar-message:hover						{background:url('../images/sprite-menu-requests.png') left -70px no-repeat;}
+    	a.topbar-message:hover						{background:url('../images/sprite-menu-requests.png') left -100px no-repeat;}
     
     #user-menu-dropdown								{margin-top:14px;width:275px;background:#292929;border:1px solid #1c1c1c;border-bottom-right-radius:4px;border-bottom-left-radius:4px;box-shadow:2px 2px 6px rgba(0,0,0,0.4);}
     #topbar-user-toggle			{padding:16px 10px 18px 50px;background:url('../images/icn-user.png')left 7px no-repeat;color:#c3c3c3;}
