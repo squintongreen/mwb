@@ -140,12 +140,12 @@
     #topbar-user-toggle:hover	{color:#f3f3f3;}
     
     	a.topbar-settings							{background:url('../images/sprite-menu-user.png') left -5px no-repeat;}
-    	a.topbar-account							{background:url('../images/sprite-menu-user.png') left -62px no-repeat;}
-    	a.topbar-billing							{background:url('../images/sprite-menu-user.png') left -109px no-repeat;}
+    	a.topbar-account							{background:url('../images/sprite-menu-user.png') left -59px no-repeat;}
+    	a.topbar-billing							{background:url('../images/sprite-menu-user.png') left -105px no-repeat;}
     	
-    	a.topbar-settings:hover						{background:url('../images/sprite-menu-user.png') -255px -5px no-repeat;}
-    	a.topbar-account:hover						{background:url('../images/sprite-menu-user.png') -255px -62px no-repeat;}
-    	a.topbar-billing:hover						{background:url('../images/sprite-menu-user.png') -255px -109px no-repeat;}
+    	a.topbar-settings:hover						{background:url('../images/sprite-menu-user.png') 255px -5px no-repeat;}
+    	a.topbar-account:hover						{background:url('../images/sprite-menu-user.png') 255px -59px no-repeat;}
+    	a.topbar-billing:hover						{background:url('../images/sprite-menu-user.png') 255px -105px no-repeat;}
     
     
 /*  --------------------------------------------------
