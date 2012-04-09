@@ -28,7 +28,7 @@ $(function () {
     });
 
 
-    $( "#dialog" ).dialog({ 
+    $("#dialog").dialog({ 
         
         autoOpen: true,
         modal: true,
@@ -56,7 +56,6 @@ $(function () {
         slider.goToNextSlide();
         return false;
     });
-
 
 
     $(window).scroll(function(e) {

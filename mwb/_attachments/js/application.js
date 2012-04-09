@@ -13,12 +13,21 @@ new_hash = function(){
     website_name = hash.replace(/#/g,'');
 
     $("a").each(function(idx, a){
-        var href = $(a).attr("href")
-        if(href == undefined)
-            href ="";
-        href = href.split("#")[0]
-        $(a).attr("href", href + hash);
+        // if not bootstrap tabs
+        if($(a).parents("ul").hasClass("tabs") == false){
+            var href = $(a).attr("href")
+            if(href == undefined)
+                href ="";
+            href = href.split("#")[0]
+            $(a).attr("href", href + hash);
+        }
     });
+
+    // filling up forms
+    var model = Websites.where({_id: String.format("com.scanshowsell.website:{0}:{1}", username, website_name)})[0]
+    if(model){
+        $("form").deserializeForms(model);
+    }
 
 
     $("#site-manager-dropdown .divider:first").prevAll().removeClass("active");
@@ -66,9 +75,13 @@ $(function(){
         el: $("body"), 
 
         events: {
+            "blur #websiteName": function(e){
+                var a = $(e.target).valid();
+                $("#new-btn").attr("href", $("#new-btn").attr("href").replace(/#.*/g, '') + "#" + $(e.target).val());
+            },
             "click #new-btn": function(e){
                 var model = {
-                    _id: String.format("org.scanshowsell.website:{0}:{1}", username, $("#websiteName").val())
+                    _id: String.format("com.scanshowsell.website:{0}:{1}", username, $("#websiteName").val())
                 }
                 Websites.create(model,{
                     success:function(model){
@@ -78,9 +91,19 @@ $(function(){
                         console.log('Error', error)
                     }
                 })
-                e.stopPropagation();
-                e.preventDefault();
-                return true;
+                //e.stopPropagation();
+                //e.preventDefault();
+                //return true;
+            },
+
+            // TESTME: this block of the code require more testing
+            "click button:contains('Save')": function(){
+                var form = {};
+                var model = Websites.where({_id: String.format("com.scanshowsell.website:{0}:{1}", username, website_name)})[0];
+                if(model){
+                    model.set($("form").serializeForms());
+                    model.save();
+                }
             }
         },
 
@@ -126,7 +149,11 @@ $(function(){
     // The App router initializes the app by calling `UserList.fetch()`
     var App = Backbone.Router.extend({
         initialize : function(){
-            Websites.fetch();
+            Websites.fetch({
+                success:function(){
+                    if(window.location.hash) new_hash()
+                }
+            });
         }
     });
 
@@ -147,19 +174,4 @@ $(function(){
         new App();
 
     }, 100);
-
-    $("button:contains('Save')").click(function(){
-        var model = Websites.where({_id: String.format("com.scanshowsell.website:{0}:{1}", username, website_name)})[0]
-        var form = {};
-        $("form").each(function(){
-            form[$(this).attr("name")] = $(this).serializeArray();
-        });
-
-        model.set(form);
-
-        model.save();
-    });
-
-    if(window.location.hash)
-        new_hash()
 })
