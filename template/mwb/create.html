@@ -5,11 +5,11 @@
       </div>
       
       <div id="create-website-block" class="span11">
-	<form>
+	<form id="create-form">
 	  <h4>Choose a name</h4>
 	  <label for="websiteName">Website name</label>
 	  <div class="input">
-	    <input type="text" id="websiteName" name="websiteName" required/>
+	    <input type="text" id="websiteName" name="websiteName"  class="{validate: {required: true, uniqueWebsiteName: true} }"/>
 	  </div>
 	  <br />
 	  <label for="name-preview" style="width:150px;">Name Preview</label>

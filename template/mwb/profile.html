@@ -5,23 +5,23 @@
     <div id="company-profile">
       <h5>About Us</h5>
       <p class="hint-inline">Required fields denoted with a ' * '.</p>
-      <form id="fieldsForm" name="company-profile" action="mobile/updateFields">
+      <form id="company-profile" name="company-profile" action="mobile/updateFields">
         <div class="clearfix">
           <label>Company Name *</label>
           <div class="input">
-            <input class="span6" id="company-name" name="CName" type="text" placeholder="Company Name" required />
+            <input name="company-name" type="text" placeholder="Company Name" class="span6 {validation: {required:true}}" />
           </div>
         </div><!-- /clearfix -->
         <div class="clearfix">
           <label>Slogan/Tagline</label>
           <div class="input">
-            <input class="span6" id="slogan" name="Slogan" type="text" placeholder="Slogan" rel="twipsy" title="Remember to keep it simple. Try something like 'Great service, fast'." />
+            <input name="slogan" type="text" placeholder="Slogan" rel="twipsy" title="Remember to keep it simple. Try something like 'Great service, fast'."  class="span6" />
           </div>
         </div><!-- /clearfix -->
         <div class="clearfix">
           <label>Description</label>
           <div class="input">
-            <textarea name="Description" rows="5" class="span6" placeholder="Here you can briefly describe your company."></textarea>
+            <textarea name="description" rows="5" class="span6" placeholder="Here you can briefly describe your company."  class="{validation: {maxlength:200}}" ></textarea>
             <p class="hint-inline">Maximum 200 characters.</p>
           </div>
         </div>  <!-- /clearfix -->
@@ -32,7 +32,7 @@
     <div id="contact-information">
       <h5>Contact Information</h5>
       <p class="hint-inline">All fields required.</p>
-      <form id="fieldsForm" name="contact-information" action="mobile/updateFields">
+      <form id="contact-information" name="contact-information" action="mobile/updateFields">
         <div class="clearfix">
           <label>Street Address</label>
           <div class="input">
@@ -83,9 +83,9 @@
     <img class="pull-left" src="../images/icn-page-profile.png" alt="Add Page: Profile" />
     <h5>Create your company's profile.</h5>
     <div id="btn-group">
-      <p class="btn-options"><button class="btn default span5"><a href="#">Save</a></button></p>
-      <p class="btn-options"><button class="btn primary span5"><a href="manage.html">&larr;&nbsp;&nbsp;Back to Manager</a></button></p>
-    </div>
+      <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
+      <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
+    </div><!-- /btn-group -->
     <p>This page is where you can enter and maintain information about your company.</p>
   </div>
 </div><!-- /row -->

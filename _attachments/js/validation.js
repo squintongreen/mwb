@@ -8,7 +8,7 @@ $.validator.addMethod("uniqueWebsiteName", function(value, element) {
     $(element).val(value)
     var isSuccess = false;
     $.ajax({
-        url: "/" + $.dbname + "/" + value,
+        url: String.format("/{0}/com.scanshowsell.website:{1}:{2}", Backbone.couch_connector.config.db_name, username, value),
         async: false,
         success: function(doc){
             isSuccess = false;
@@ -44,57 +44,39 @@ $.validator.addMethod(
     }, "Please check your input."
 );
 
+
 $(document).ready(function(){
-    var defaults = {
-        highlight: function (element, errorClass, validClas) { 
-            $(element).parents("div[class='clearfix']").addClass("error"); 
-        }, 
-        unhighlight: function (element, errorClass, validClass) { 
-            $(element).parents(".error").removeClass("error"); 
-        }, 
-        errorElement: 'span', // helps if u are not using the inline labels 
-    }
 
-    // registerForm 
-    $("#registerForm").validate($.extend(defaults, {
-        rules: { 
-            websiteName: { required: true, uniqueWebsiteName: true },
-            emailAddress: { required: true, email: true, uniqueUserName: true },
-            emailConfirm: { equalTo: "#emailAddress" },
-            password: { required: true, minlength:6 }, 
-            passwordConfirm: { equalTo: "#password" },
-            areYouHuman: { required: true, humanCheck: true },
-            tosAgree: { required: true, checked: true }
+    $('form').validate({                                                                                             
+        wrapper: 'span class="error"',                                                                                 
+        meta: 'validate',
+        highlight: function(element, errorClass, validClass) {
+            if (element.type === 'radio') {
+                this.findByName(element.name).addClass(errorClass).removeClass(validClass);
+            } else {
+                $(element).addClass(errorClass).removeClass(validClass);
+            }
+
+            // Show icon in parent element
+            var error = $(element).parent().find('span.error');
+
+            error.siblings('.icon').hide(0, function() {
+                error.show();
+            });
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            if (element.type === 'radio') {
+                this.findByName(element.name).removeClass(errorClass).addClass(validClass);
+            } else {
+                $(element).removeClass(errorClass).addClass(validClass);
+            }
+
+            // Hide icon in parent element
+            $(element).parent().find('span.error').hide(0, function() {
+                $(element).parent().find('span.valid').fadeIn(200);
+            });
         }
-    }));
-    // companyPorfile 
-    $("#companyProfile").validate($.extend(defaults, {
-        rules: { 
-            'company-name': { required: true },
-            'description': { maxlength: 200 },
-            /*
-            'street-address': { required: true },p
-            'suite': { required: true },
-            'city': { required: true },
-            'state': { required: true }, */
-            'phone': { required: true, regex: /^\([0-9]{3}\)[0-9]*$/ },
-            'email': { required: true, email: true }
-
-        }
-    }));
-
-    // service
-    $("#service").validate($.extend(defaults, {
-        rules: {
-            'description-1': { maxlength: 200 },
-            'description-2': { maxlength: 200 },
-            'description-3': { maxlength: 200 },
-            'description-4': { maxlength: 200 },
-            'description-5': { maxlength: 200 }
-        }
-    }));
-
-
+    });
     $(".success").click(function(){
         var allForms = $(this).parents("div.tab-pane").find("form")
         allForms.submit();
