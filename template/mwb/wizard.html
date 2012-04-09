@@ -12,361 +12,56 @@
 
 <div id="wizard" class="tab-content">
   <div id="profile" class="tab-pane active">
-    <div id="profile-form" class="span10">
-    <!--  =====  COMPANY PROFILE  =====  -->
-    <div id="company-profile">
-      <h5>About Us</h5>
-      <p class="hint-inline">Required fields denoted with a ' * '.</p>
-      <form id="company-profile" name="company-profile" action="mobile/updateFields">
-        <div class="clearfix">
-          <label>Company Name *</label>
-          <div class="input">
-            <input name="company-name" type="text" placeholder="Company Name" class="span6 {validation: {required:true}}" />
-          </div>
-        </div><!-- /clearfix -->
-        <div class="clearfix">
-          <label>Slogan/Tagline</label>
-          <div class="input">
-            <input name="slogan" type="text" placeholder="Slogan" rel="twipsy" title="Remember to keep it simple. Try something like 'Great service, fast'."  class="span6" />
-          </div>
-        </div><!-- /clearfix -->
-        <div class="clearfix">
-          <label>Description</label>
-          <div class="input">
-            <textarea name="description" rows="5" class="span6" placeholder="Here you can briefly describe your company."  class="{validation: {maxlength:200}}" ></textarea>
-            <p class="hint-inline">Maximum 200 characters.</p>
-          </div>
-        </div>  <!-- /clearfix -->
-      </form>
-    </div><!-- /company-profile -->
+    {{ processTemplate('profile') }}
     
-    <!--  =====  CONTACT INFORMATION  =====  -->
-    <div id="contact-information">
-      <h5>Contact Information</h5>
-      <p class="hint-inline">All fields required.</p>
-      <form id="contact-information" name="contact-information" action="mobile/updateFields">
-        <div class="clearfix">
-          <label>Street Address</label>
-          <div class="input">
-            <input class="large" id="lInput" name="street-address" type="text" placeholder="123 Peachtree Street" rel="twipsy" title="This is the address you used when you registered your business." required />
-          </div>
-        </div><!-- /clearfix -->
-        <div class="clearfix">
-          <label>Suite Number</label>
-          <div class="input">
-            <input class="small" id="small" name="Suite" type="text" placeholder="13B" />
-          </div>
-        </div><!-- /clearfix -->
-        <div class="clearfix">
-          <label>City</label>
-          <div class="input">
-            <input class="small" id="small" name="City" type="text" placeholder="Anytown" required />
-          </div>
-        </div><!-- /clearfix -->
-        <div class="clearfix">
-          <label for="smallSelect">State</label>
-          <div class="input">
-            <select class="small" name="smallSelect" id="smallSelect">
-              <option>AL</option>
-              <option>AR</option>
-              <option>DE</option>
-              <option>FL</option>
-              <option>GA</option>
-            </select>
-          </div>
-        </div><!-- /clearfix -->
-        <div class="clearfix">
-          <label>Telephone</label>
-          <div class="input">
-            <input class="small" id="small" name="Telephone" type="text" placeholder="(123) 555-6789" rel="twipsy" title="A mobile number is prefered. This way, interested parties can either call or send you a text message." required />
-          </div>
-        </div><!-- /clearfix -->
-        <div class="clearfix">
-          <label>Email</label>
-          <div class="input">
-            <input class="large" id="large" name="Email" type="text" placeholder="you@yourcompany.com" rel="twipsy" title="Who is the primary contact?" required />
-          </div>
-        </div><!-- /clearfix -->
-      </form>
-    </div><!-- /contact-information -->
-  </div>  <!--/profile-form span10 -->
-  
-  <div id="sidebar" class="span5">
-    <img class="pull-left" src="../images/icn-page-profile.png" alt="Add Page: Profile" />
-    <h5>Create your company's profile.</h5>
-    <div id="btn-group">
-      <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
-      <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
-    </div><!-- /btn-group -->
-    <p>This page is where you can enter and maintain information about your company.</p>
-  </div>
+    <div id="sidebar" class="span5">
+      <img class="pull-left" src="../images/icn-page-profile.png" alt="Add Page: Profile" />
+      <h5>Create your company's profile.</h5>
+      <div id="btn-group">
+        <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
+        <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
+      </div><!-- /btn-group -->
+      <p>This page is where you can enter and maintain information about your company.</p>
+    </div>
   </div>  <!-- /tab-pane -->
   
   <div class="tab-pane" id="upload-photos">
-    <div class="row">
-  <div id="upload-photo-wrap" class="span10">
-    <!--  =====  UPLOAD BUTTON BAR  =====  -->
-    <form id="fileupload" action="fileupload/upload" method="POST" enctype="multipart/form-data">
-      <div class="fileupload-buttonbar">
-        <span class="btn success fileinput-button">
-          <span>Add files...</span>
-          <input type="file" name="files[]" multiple="multiple"></input>
-        </span>
-        <button type="submit" class="btn primary start">Upload all</button>
+    {{ processTemplate('manage-photos') }} 
+    <div id="sidebar" class="span5">
+      <img class="pull-left" src="../images/icn-page-photos.png" alt="Add Page: Photos" />
+      <h5>Dazzle prospects with your work.</h5>
+      <p>Talk is cheap. Show your potential clients that you know your stuff by uploading a few photos of your work.</p>
+      <br />
+      <div class="alert-message block-message warning">
+        <p>Load up to three photos for your free trial. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
       </div>
-    </form>
-    
-    <!--  =====  INDIVIDUAL PHOTO PANELS  =====  -->
-    <div id="photo-panel">
-      <div class="thumb-wrap">
-	<img class="thumbnail" src="http://placehold.it/210x150" alt="">
-      </div>  <!-- /thumb-wrap -->
-      <div class="photo-form">
-	<form class="form-stacked">
-	  <fieldset>
-            <div class="clearfix">
-	      <label for="caption">Photo caption</label>
-	      <div class="input">
-        	<input type="text" class="span3" name="caption" />
-              </div>
-            </div><!-- /clearfix -->
-            <div class="photo-buttons" >
-	      <button type="button" class="btn small danger delete">Remove photo</button>
-            </div><!-- /photo-buttons -->
-            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
-	  </fieldset>
-	</form>
-      </div>  <!-- /photo-form -->
-    </div>  <!-- /photo-panel -->
-    
-    <!--  =====  INDIVIDUAL PHOTO PANELS  =====  -->
-    <div id="photo-panel">
-      <div class="thumb-wrap">
-	<img class="thumbnail" src="http://placehold.it/210x150" alt="">
-      </div>  <!-- /thumb-wrap -->
-      <div class="photo-form">
-	<form class="form-stacked">
-	  <fieldset>
-            <div class="clearfix">
-	      <label for="caption">Photo caption</label>
-	      <div class="input">
-        	<input type="text" class="span3" name="caption" />
-              </div>
-            </div><!-- /clearfix -->
-            <div class="photo-buttons" >
-	      <button type="button" class="btn small danger delete">Remove photo</button>
-            </div><!-- /photo-buttons -->
-            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
-	  </fieldset>
-	</form>
-      </div>  <!-- /photo-form -->
-    </div>  <!-- /photo-panel -->
-    
-    <!--  =====  INDIVIDUAL PHOTO PANELS  =====  -->
-    <div id="photo-panel">
-      <div class="thumb-wrap">
-	<img class="thumbnail" src="http://placehold.it/210x150" alt="">
-      </div>  <!-- /thumb-wrap -->
-      <div class="photo-form">
-	<form class="form-stacked">
-	  <fieldset>
-            <div class="clearfix">
-	      <label for="caption">Photo caption</label>
-	      <div class="input">
-        	<input type="text" class="span3" name="caption" />
-              </div>
-            </div><!-- /clearfix -->
-            <div class="photo-buttons" >
-	      <button type="button" class="btn small danger delete">Remove photo</button>
-            </div><!-- /photo-buttons -->
-            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
-	  </fieldset>
-	</form>
-      </div>  <!-- /photo-form -->
-    </div>  <!-- /photo-panel -->
-  </div>  <!-- /upload-photo-wrap span10 -->
-  
-  <div id="sidebar" class="span5">
-    <img class="pull-left" src="../images/icn-page-photos.png" alt="Add Page: Photos" />
-    <h5>Dazzle prospects with your work.</h5>
-    <p>Talk is cheap. Show your potential clients that you know your stuff by uploading a few photos of your work.</p>
-    <br />
-    <div class="alert-message block-message warning">
-      <p>Load up to three photos for your free trial. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
+      <div id="btn-group">
+        <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
+        <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
+      </div>
     </div>
-    <div id="btn-group">
-      <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
-      <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
-    </div>
-  </div>
-</div><!-- /row -->
+
   </div>  <!-- /tab-pane -->
-  
+
   <div class="tab-pane" id="services">
-    <div class="row">
-  <div id="services-form" class="span10">
-    <!-- SERVICE PANEL -->
-    <div id="service-panel">
-      <!-- =====  SERVICE FORM  ===== -->
-      <form id="serviceForm" name="service" action="mobile/updateFields">
-	<ul class="listServices">
-          <li>
-            <h5>Service/Product 1</h5>
-            <div class="clearfix">
-              <label>Type of Service</label>
-              <div class="input">
-             	<input name="Service Type" type="text" placeholder="e.g. Home A/V Setup" class="span6"/>
-              </div>
-            </div>
-            <div class="clearfix">
-              <label>Short Description</label>
-              <div class="input">
-             	<textarea name="Description" rows="3" class="span6" maxlength="120" placeholder="Short description of service."></textarea>
-             	<p class="hint-inline">Maximum of 200 characters.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <h5>Service/Product 2</h5>
-            <div class="clearfix">
-              <label>Type of Service</label>
-              <div class="input">
-             	<input name="Service Type" type="text" placeholder="e.g. Home A/V Setup" class="span6"/>
-              </div>
-            </div>
-            <div class="clearfix">
-              <label>Short Description</label>
-              <div class="input">
-             	<textarea name="Description" rows="3" class="span6" placeholder="Short description of service."></textarea>
-             	<p class="hint-inline">Maximum of 200 characters.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <h5>Service/Product 3</h5>
-            <div class="clearfix">
-              <label>Type of Service</label>
-              <div class="input">
-             	<input name="Service Type" type="text" placeholder="e.g. Home A/V Setup" class="span6"/>
-              </div>
-            </div>
-            <div class="clearfix">
-              <label>Short Description</label>
-              <div class="input">
-             	<textarea name="Description" rows="3" class="span6" placeholder="Short description of service."></textarea>
-             	<p class="hint-inline">Maximum of 200 characters.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <h5>Service/Product 4</h5>
-            <div class="clearfix">
-              <label>Type of Service</label>
-              <div class="input">
-             	<input name="Service Type" type="text" placeholder="e.g. Home A/V Setup" class="span6"/>
-              </div>
-            </div>
-            <div class="clearfix">
-              <label>Short Description</label>
-              <div class="input">
-             	<textarea name="Description" rows="3" class="span6" placeholder="Short description of service."></textarea>
-             	<p class="hint-inline">Maximum of 200 characters.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <h5>Service/Product 5</h5>
-            <div class="clearfix">
-              <label>Type of Service</label>
-              <div class="input">
-             	<input class="span6" name="Service Type" type="text" placeholder="e.g. Home A/V Setup"/>
-              </div>
-            </div>
-            <div class="clearfix">
-              <label>Short Description</label>
-              <div class="input">
-             	<textarea name="Description" rows="3" class="span6" placeholder="Short description of service."></textarea>
-             	<p class="hint-inline">Maximum of 200 characters.</p>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <a href="#" class="add_service"><button class="btn primary">Add Service</button></a>
-      </form><!-- /serviceForm -->
-    </div><!-- /service-panel -->
-  </div>  <!--/services-form span10 -->
-  
-  <div id="sidebar" class="span5">
-    <img class="pull-left" src="../images/icn-page-services.png" alt="Add Page: Services" />
-    <h5>Tell prospects what you do.</h5>
-    <p>Define the services you offer here. Potential customers will be able to select from these options when contacting you.</p>
-    <div class="alert-message block-message warning">
-      <p>Add up to three services or products for your free trial. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
-    </div>
-    <div id="btn-group">
-      <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
-      <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
-    </div><!-- /btn-group -->
-  </div><!-- /sidebar -->
-</div><!-- /row -->
+    {{ processTemplate('services') }} 
+    <div id="sidebar" class="span5">
+      <img class="pull-left" src="../images/icn-page-services.png" alt="Add Page: Services" />
+      <h5>Tell prospects what you do.</h5>
+      <p>Define the services you offer here. Potential customers will be able to select from these options when contacting you.</p>
+      <div class="alert-message block-message warning">
+        <p>Add up to three services or products for your free trial. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
+      </div>
+      <div id="btn-group">
+        <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
+        <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
+      </div><!-- /btn-group -->
+    </div><!-- /sidebar -->
   </div>  <!-- /tab-pane -->
-  
+
   <div class="tab-pane" id="service-area">
-  <div class="row">
-    <div id="service-areas-form" class="span10">
-      <h4>Service Areas</h4>
-      <!-- SERVICE AREAS PANEL -->
-      <div id="service-areas-panel">
-       	<!-- =====  SERVICE FORM  ===== -->
-		<form id="serviceAreas" class="form-stacked" method="POST">
-		  <ul class="listServiceArea">
-    	        <li>
-    	          <div class="clearfix">
-    	            <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
-    	            <div class="input">
-    	              <input class="span6" id="input" name="service-area" type="text"/>
-    	            </div>
-    	          </div>
-    	        </li>
-    	        <li>
-    	          <div class="clearfix">
-    	            <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
-    	            <div class="input">
-    	              <input class="span6" id="input" name="service-area" type="text"/>
-    	            </div>
-    	          </div>
-    	        </li>
-    	        <li>
-    	          <div class="clearfix">
-    	            <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
-    	            <div class="input">
-    	              <input class="span6" id="input" name="service-area" type="text" />
-    	            </div>
-    	          </div>
-    	        </li>
-    	        <li>
-    	          <div class="clearfix">
-    	            <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
-    	            <div class="input">
-    	              <input class="span6" id="input" name="service-area" type="text"/>
-    	            </div>
-    	          </div>
-    	        </li>
-    	        <li>
-    	          <div class="clearfix">
-    	            <label>County, City, Community or All of ­­­­­­­­­­­­­­­­_____</label>
-    	            <div class="input">
-    	              <input class="span6" id="input" name="service-area" type="text"/>
-    	            </div>
-    	          </div>
-    	        </li>
-    	      </ul>
-		  <br />
-		  <button class="btn primary" type="button">Add Service Area</button>
-		</form>
-      </div><!-- /service-areas-panel -->
-    </div>  <!--/span10 -->
-    
+    {{ processTemplate('service-areas') }} 
+
     <div id="sidebar" class="span5">
       <h5>Where do you work?</h5>
       <p>Define a list of towns, cities, or counties that you service. Potential customers will be able to select from these options when contacting you.</p>
@@ -374,113 +69,41 @@
         <p>Add up to five service areas for your free trial. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
       </div>
     </div><!-- /sidebar -->
-    </div><!-- /row -->
   </div>  <!-- /tab-pane -->
-  
+
   <div class="tab-pane" id="optional-pages">
-    <div class="row">
-  <div id="optional-pages-form" class="span10">
-    <h4>Optional Pages</h4>
-    <!-- OPTIONAL PAGES PANEL -->
-    <div id="optional-pages-panel">
-      <!-- =====  OPTIONAL PAGES FORM  ===== -->
-      <form id="optionalPagesForm" name="Optional Pages" action="mobile/updateFields">
-	<ul class="inputs-list">
-	  <li>
-	    <label>
-              <input type="checkbox" name="reqService" value="reqService" />
-              <span>Request Service</span>
-            </label>
-          </li>
-          <li>
-	    <label>
-              <input type="checkbox" name="reqEstimate" value="reqEstimate" />
-              <span>Request Estimate</span>
-            </label>
-          </li>
-          <li>
-	    <label>
-              <input type="checkbox" name="subSurvey" value="subSurvey" />
-              <span>Submit Survey</span>
-            </label>
-          </li>
-          <li>
-	    <label>
-              <input type="checkbox" name="subTestimonial" value="subSurvey" />
-              <span>Submit Testimonial</span>
-            </label>
-          </li>
-        </ul>
-      </form><!-- /optionalPagesForm -->
-    </div><!-- /optional-pages-panel -->
-  </div>  <!--/span11 -->
-  
-  <div id="sidebar" class="span5">
-    <h5>Enhance your customer relationships.</h5>
-    <p>These pages are completely optional, and will only show up if you select them. Don't worry, there's no setting up these pages, as they simply use the contact information you provided at the beginning of this wizard.</p>
-    <div class="alert-message block-message warning">
-      <p>During your free trial, you can create these optional pages. Once your subscription expires, these pages will no longer be available. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
+    {{ processTemplate('optional-pages') }} 
+    
+    <div id="sidebar" class="span5">
+      <h5>Enhance your customer relationships.</h5>
+      <p>These pages are completely optional, and will only show up if you select them. Don't worry, there's no setting up these pages, as they simply use the contact information you provided at the beginning of this wizard.</p>
+      <div class="alert-message block-message warning">
+        <p>During your free trial, you can create these optional pages. Once your subscription expires, these pages will no longer be available. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
+      </div>
     </div>
-  </div>
-</div><!-- /row -->
-  </div>  <!-- /tab-pane -->
-  
-  <div class="tab-pane" id="choose-theme">
-    <div id="template-picker">
-      <h4>Choose a Theme</h4>
-      <!-- TEMPLATE PANEL -->
-      <ul class="block-grid five-up" id="templates">
-        <li class="active">
-          <img src="images/black_sm.png"/>
-          <div class="btnContainer">
-            <a href="images/black.png" title="Black" rel="gallery" class="btn default">Preview</a>
-            <a href="preview-and-publish.html" class="btn success">Apply</a>
-          </div>
-        </li>
-        <li>
-          <img src="images/blueandgray_sm.png"/>
-          <div class="btnContainer">
-            <a href="#" class="btn default">Preview</a>
-            <a href="preview-and-publish.html" class="btn success">Apply</a>
-          </div>
-        </li>
-        <li>
-          <img src="images/grayandwhite_sm.png"/>
-          <div class="btnContainer">
-            <a href="#" class="btn default">Preview</a>
-            <a href="preview-and-publish.html" class="btn success">Apply</a>
-          </div>
-        </li>
-        <li>
-          <img src="images/white_sm.png"/>
-          <div class="btnContainer">
-            <a href="#" class="btn default">Preview</a>
-            <a href="preview-and-publish.html" class="btn success">Apply</a>
-          </div>
-        </li>
-      </ul>
-      <a href="#" id="go-prev" class="pull-left"><button class="btn primary mini">&nbsp;&larr;&nbsp;</button></a>
-      <a href="#" id="go-next" class="pull-right"><button class="btn primary mini">&nbsp;&rarr;&nbsp;</button></a>
-    </div>  <!--/template-picker -->
-  </div>  <!-- /tab-pane -->
-  
-  <div class="tab-pane" id="prevpub">
-    <div id="preview-publish">
-      <h4>Preview &amp; Publish</h4>
-      <div id="instructions" class="span5">
-        <h5>Your website is ready to go!</h5>
-       	<p>You're now ready to publish your mobile site. To the right is a preview of your site. Be sure to play around with it and double check your information.</p>
-       	<br />
-        <input id="publish" class="btn span5 success" type="submit" value="Publish &amp; Generate QR Code"/>
-        <br />
-        <img src="http://placehold.it/280&text=YOUR+QR+CODE+HERE" alt="QR code placeholder" />
+</div>  <!-- /tab-pane -->
+
+<div class="tab-pane" id="choose-theme">
+  {{ processTemplate('choose-theme') }} 
+</div>  <!-- /tab-pane -->
+
+<div class="tab-pane" id="prevpub">
+  <div id="preview-publish">
+    <h4>Preview &amp; Publish</h4>
+    <div id="instructions" class="span5">
+      <h5>Your website is ready to go!</h5>
+      <p>You're now ready to publish your mobile site. To the right is a preview of your site. Be sure to play around with it and double check your information.</p>
+      <br />
+      <input id="publish" class="btn span5 success" type="submit" value="Publish &amp; Generate QR Code"/>
+      <br />
+      <img src="http://placehold.it/280&text=YOUR+QR+CODE+HERE" alt="QR code placeholder" />
+    </div>
+    
+    <div id="emulator-wrap" class="span10 offset5">
+      <div id="emulator">
+        <iframe id="emulator-view" src=""></iframe>
       </div>
-      
-      <div id="emulator-wrap" class="span10 offset5">
-        <div id="emulator">
-          <iframe id="emulator-view" src=""></iframe>
-        </div>
-      </div>
-    </div>  <!--/preview-publish -->
-  </div>  <!-- /tab-pane -->
+    </div>
+  </div>  <!--/preview-publish -->
+</div>  <!-- /tab-pane -->
 </div>  <!-- /tab-content -->
