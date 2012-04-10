@@ -245,7 +245,7 @@
     #sidebar > img				{margin:0 10px 10px 0;}
     #sidebar > h5				{line-height:18px;}
     #sidebar #btn-group			{margin-top:18px;padding-top:18px;border-top:1px solid #d3d3d3;width:280px;display:inline;float:left;}
-    #sidebar #btn-group a 		{margin:0 0 10px 0;display:block;width:280px;}
+    #sidebar #btn-group a 		{margin:0 0 10px 0;display:block;width:250px;text-align:center;}
     #btn-group-modal			{margin:18px 0 18px 45px;width:400px;display:block;position:relative;float:left;}
     #btn-group-modal p			{margin:0;}
     
@@ -381,7 +381,7 @@
     #optional-pages-panel			{border-top:1px solid #d3d3d3;}
     #optionalPagesForm				{padding-top:18px;width:360px;float:right;}
     .inputs-list					{margin:18px 0;list-style:none;}
-    .inputs-list li					{margin-bottom:18px;padding:18px 10px !important;width:320px;border-radius:4px;background:#ececec;list-style:none;}
+    .inputs-list li					{margin-bottom:18px;padding:18px 10px !important;width:320px;border:1px solid #e3e3e3;border-radius:4px;background:#ececec;list-style:none;}
     .inputs-list li label			{font-size: 1.2em;}
     .inputs-list li label input		{margin-right:10px;}
     
