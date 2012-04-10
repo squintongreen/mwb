@@ -330,13 +330,13 @@
     .photo-buttons				{margin:18px 0;width:100%;display:block;position:relative;}
     
     /* -- Services -- */
-    #services-form					{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #services-form					{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #service-panel					{margin-top:18px;}
     #serviceForm					{padding-top:18px;}
     .listServices					{margin:0;list-style:none;}
     
     /* -- Service Areas -- */
-    #service-areas-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #service-areas-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #serviceAreasForm				{padding-top:18px;padding-left:0;}
     #serviceAreasForm input			{margin-top:7px;}
     .listServiceArea				{margin:0;list-style:none;}
@@ -344,23 +344,23 @@
     
     
     /* -- Special Offers -- */
-    #special-offers-form			{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #special-offers-form			{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #specialOffersForm				{padding-top:18px;}
     .listSpecialOffers				{margin:0;list-style:none;}
     
     /* -- Testimonials -- */
-    #testimonials-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #testimonials-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #testimonialsForm				{padding-top:18px;}
     .listFeedback					{margin:0;list-style:none;}
     
     /* -- Credentials -- */
-    #credentials-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #credentials-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #credentialsForm				{padding-top:18px;}
     .listCredentials				{margin:0;list-style:none;}
     .listCredentials li				{margin-bottom:18px;}
     
     /* -- Optional Pages -- */
-    #optional-pages-form			{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #optional-pages-form			{padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #optional-pages-panel			{border-top:1px solid #d3d3d3;}
     #optionalPagesForm				{padding-top:18px;width:360px;float:right;}
     .inputs-list					{margin:18px 0;list-style:none;}
