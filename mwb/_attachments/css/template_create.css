@@ -382,7 +382,7 @@
     #go-next						{margin-top:-25px;margin-right:150px;}
               
     /* -- Preview & Publish -- */
-    #preview-publish				{padding-top:18px;padding-bottom:36px;background-color:#fcfcfc;width:960px;display:inline;float:left;}
+    #preview-publish				{padding-top:18px;padding-bottom:36px;background-color:#fcfcfc;float:left;}
     #preview-publish h4				{margin-left:20px;}
     #emulator-wrap					{margin-left:0;float:right;}
     #emulator {

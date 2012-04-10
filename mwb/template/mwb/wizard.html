@@ -13,7 +13,6 @@
 <div id="wizard" class="tab-content">
   <div class="tab-pane active" id="profile">
     {{ processTemplate('profile') }}
-    
     <div id="sidebar" class="span5">
       <h5>Wizard Specific Block</h5>
       <p>Something specific only to the wizard can go here. Or this area can be the exact same as the Manager sidebar.</p>
@@ -24,8 +23,6 @@
   <div class="tab-pane" id="upload-photos">
     {{ processTemplate('manage-photos') }} 
   </div>
-
-  </div>  <!-- /tab-pane -->
 
   <div class="tab-pane" id="services">
     {{ processTemplate('services') }} 
@@ -43,23 +40,23 @@
     {{ processTemplate('choose-theme') }} 
   </div>  <!-- /tab-pane -->
 
-<div class="tab-pane" id="prevpub">
-  <div id="preview-publish">
-    <h4>Preview &amp; Publish</h4>
-    <div id="instructions" class="span5">
-      <h5>Your website is ready to go!</h5>
-      <p>You're now ready to publish your mobile site. To the right is a preview of your site. Be sure to play around with it and double check your information.</p>
-      <br />
-      <input id="publish" class="btn span5 success" type="submit" value="Publish &amp; Generate QR Code"/>
-      <br />
-      <img src="http://placehold.it/280&text=YOUR+QR+CODE+HERE" alt="QR code placeholder" />
-    </div>
-    
-    <div id="emulator-wrap" class="span10 offset5">
-      <div id="emulator">
-        <iframe id="emulator-view" src=""></iframe>
+  <div class="tab-pane" id="prevpub">
+    <div id="preview-publish" class="span16">
+      <h4>Preview &amp; Publish</h4>
+      <div id="instructions" class="span5">
+        <h5>Your website is ready to go!</h5>
+        <p>You're now ready to publish your mobile site. To the right is a preview of your site. Be sure to play around with it and double check your information.</p>
+        <br />
+        <input id="publish" class="btn span5 success" type="submit" value="Publish &amp; Generate QR Code"/>
+        <br />
+        <img src="http://placehold.it/280&text=YOUR+QR+CODE+HERE" alt="QR code placeholder" />
       </div>
-    </div>
-  </div>  <!--/preview-publish -->
-</div>  <!-- /tab-pane -->
+      
+      <div id="emulator-wrap" class="span10 offset5">
+        <div id="emulator">
+          <iframe id="emulator-view" src=""></iframe>
+        </div>
+      </div>
+    </div>  <!--/preview-publish -->
+  </div>  <!-- /tab-pane -->
 </div>  <!-- /tab-content -->
