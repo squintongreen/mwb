@@ -325,7 +325,6 @@
     
     
     /* -- Photo Uploader -- */
-    #section-photo-upload		{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
     #upload-photo-wrap			{padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
     #fileupload					{padding:18px 0;border-bottom:1px solid #d3d3d3;}
     #photo-panel				{margin:18px 0;padding:10px;padding-top:15px;background-color:#e3e3e3;width:540px;display:block;position:relative;float:left;}
@@ -335,16 +334,12 @@
     .photo-buttons				{margin:18px 0;width:100%;display:block;position:relative;}
     
     /* -- Services -- */
-    #section-services				{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
-    #section-services > div			{margin-left:0;}
     #services-form					{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
     #service-panel					{margin-top:18px;}
     #serviceForm					{padding-top:18px;}
     .listServices					{margin:0;list-style:none;}
     
     /* -- Service Areas -- */
-    #section-service-areas			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
-    #section-service-areas > div	{margin-left:0;}
     #service-areas-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
     #serviceAreasForm				{padding-top:18px;padding-left:0;}
     #serviceAreasForm input			{margin-top:7px;}
@@ -353,22 +348,16 @@
     
     
     /* -- Special Offers -- */
-    #section-special-offers			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
-    #section-special-offers > div	{margin-left:0;}
     #special-offers-form			{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
     #specialOffersForm				{padding-top:18px;}
     .listSpecialOffers				{margin:0;list-style:none;}
     
     /* -- Testimonials -- */
-    #section-testimonials			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
-    #section-testimonials > div		{margin-left:0;}
     #testimonials-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
     #testimonialsForm				{padding-top:18px;}
     .listFeedback					{margin:0;list-style:none;}
     
     /* -- Credentials -- */
-    #section-credentials			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
-    #section-credentials > div		{margin-left:0;}
     #credentials-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
     #credentialsForm				{padding-top:18px;}
     .listCredentials				{margin:0;list-style:none;}
