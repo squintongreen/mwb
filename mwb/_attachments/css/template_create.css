@@ -381,7 +381,7 @@
     #optional-pages-panel			{border-top:1px solid #d3d3d3;}
     #optionalPagesForm				{padding-top:18px;}
     .inputs-list					{margin:18px 0;list-style:none;}
-    .inputs-list li					{margin-bottom:18px;padding:18px 10px;width:600px;border-radius:4px;background:#f3f3f3;}
+    .inputs-list li					{margin-bottom:18px;padding:18px 10px;border-radius:4px;background:#f3f3f3;}
     .inputs-list li label			{font-size: 1.2em;}
     .inputs-list li label input		{margin-right:10px;}
     
