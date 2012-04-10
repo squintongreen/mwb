@@ -238,7 +238,7 @@
     Content Blocks
     -------------------------------------------------- */ 
     
-    #body						{margin-left:0;background-color:#e3e3e3;}
+    #body						{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
     #instructions				{margin:18px 0;padding:20px;background-color:#e3e3e3;z-index:9999;}
     #information				{margin-top:18px;margin-bottom:18px;}
     #sidebar					{padding-top:18px;padding-left:10px;}
@@ -259,7 +259,7 @@
     
     
     /* --  Manage Styles --  */
-    #manage						{margin-left:0;padding-top:18px;background-color:#f9f9f9;border-top:1px solid #d3d3d3;}
+    #manage						{margin-left:0;padding-top:18px;background-color:#f9f9f9;}
     #manage ul					{margin:18px 0 36px -10px;float:left;}
     #manage ul li				{margin-bottom:36px;margin-left:28px;padding:0;height:160px;border:1px solid #d3d3d3;box-shadow:0pt 0px 0px 4px rgba(161, 161, 161, 0.15);border-radius:2px;float:left;display:inline;position:relative;}
     #manage ul li:hover			{border:1px solid #00aaff;box-shadow:0pt 0px 0px 4px #00aaff;}
@@ -381,7 +381,7 @@
     #optional-pages-panel			{border-top:1px solid #d3d3d3;}
     #optionalPagesForm				{padding-top:18px;width:360px;float:right;}
     .inputs-list					{margin:18px 0;list-style:none;}
-    .inputs-list li					{margin-bottom:18px;padding:18px 10px;border-radius:4px;background:#ececec;list-style:none;}
+    .inputs-list li					{margin-bottom:18px;padding:18px 10px;width:320px;border-radius:4px;background:#ececec;list-style:none;}
     .inputs-list li label			{font-size: 1.2em;}
     .inputs-list li label input		{margin-right:10px;}
     
