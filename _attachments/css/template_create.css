@@ -155,7 +155,6 @@
     
     #wizard-nav		{
     				margin-left:0;
-    				padding-left:20px;
     				background:#f9f9f9;
 					}
     nav.form_btm	{padding:30px 0 0 0;background-color:#f9f9f9;border-top:1px solid #dedede;height:72px;position:relative;bottom:0;clear:both;}
@@ -175,19 +174,15 @@
 	.tabs:after{
 			  clear: both;
 			}
-	.tabs > li{
+	.tabs > li {
 			  float: left;
-			}
-	.tabs > li > a{
-			  display: block;
+			  position:relative;
+			  margin-left:10px;
 			}
 	.tabs {
 			  float: left;
 			  width: 100%;
 			}
-	.tabs > li {
-			  position: relative;
-		    }
 	.tabs > li > a {
 			  color:#b3b3b3;
 			  font-weight:500;
@@ -196,6 +191,7 @@
 			  /*  text-shadow: 0 1px 1px rgba(255,255,255,0.35);  */
 			  line-height: 24px;
 			  font-weight:600;
+			  display:block;
 			}
 	.tabs > li > a:hover {text-decoration:none;}
 	.tabs > li.active > a {
@@ -238,14 +234,14 @@
     Content Blocks
     -------------------------------------------------- */ 
     
-    #body						{margin-left:0;background-color:#e3e3e3;}
+    #body						{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
     #instructions				{margin:18px 0;padding:20px;background-color:#e3e3e3;z-index:9999;}
     #information				{margin-top:18px;margin-bottom:18px;}
-    #sidebar					{padding-top:18px;padding-left:10px;}
+    #sidebar					{padding-top:18px;padding-left:10px;float:left;}
     #sidebar > img				{margin:0 10px 10px 0;}
     #sidebar > h5				{line-height:18px;}
     #sidebar #btn-group			{margin-top:18px;padding-top:18px;border-top:1px solid #d3d3d3;width:280px;display:inline;float:left;}
-    #sidebar #btn-group button.span5 		        {margin:0 0 10px 0;float:left;}
+    #sidebar #btn-group a 		{margin:0 0 10px 0;display:block;width:250px;text-align:center;}
     #btn-group-modal			{margin:18px 0 18px 45px;width:400px;display:block;position:relative;float:left;}
     #btn-group-modal p			{margin:0;}
     
@@ -259,7 +255,7 @@
     
     
     /* --  Manage Styles --  */
-    #manage						{margin-left:0;padding-top:18px;background-color:#f9f9f9;border-top:1px solid #d3d3d3;}
+    #manage						{margin-left:0;padding-top:18px;background-color:#f9f9f9;}
     #manage ul					{margin:18px 0 36px -10px;float:left;}
     #manage ul li				{margin-bottom:36px;margin-left:28px;padding:0;height:160px;border:1px solid #d3d3d3;box-shadow:0pt 0px 0px 4px rgba(161, 161, 161, 0.15);border-radius:2px;float:left;display:inline;position:relative;}
     #manage ul li:hover			{border:1px solid #00aaff;box-shadow:0pt 0px 0px 4px #00aaff;}
@@ -319,16 +315,13 @@
     */
     
     /* -- Company Profile -- */
-    #section-profile			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
-    #section-profile > div		{margin-left:0;}
-    #profile-form				{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #profile-form				{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #company-profile			{margin-top:18px;}
     #contact-information		{padding-top:18px;border-top:1px solid #d3d3d3;}
     
     
     /* -- Photo Uploader -- */
-    #section-photo-upload		{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
-    #upload-photo-wrap			{padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #upload-photo-wrap			{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #fileupload					{padding:18px 0;border-bottom:1px solid #d3d3d3;}
     #photo-panel				{margin:18px 0;padding:10px;padding-top:15px;background-color:#e3e3e3;width:540px;display:block;position:relative;float:left;}
     .thumb-wrap					{width:220px;display:inline;float:left;}
@@ -337,17 +330,13 @@
     .photo-buttons				{margin:18px 0;width:100%;display:block;position:relative;}
     
     /* -- Services -- */
-    #section-services				{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
-    #section-services > div			{margin-left:0;}
-    #services-form					{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #services-form					{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #service-panel					{margin-top:18px;}
     #serviceForm					{padding-top:18px;}
     .listServices					{margin:0;list-style:none;}
     
     /* -- Service Areas -- */
-    #section-service-areas			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
-    #section-service-areas > div	{margin-left:0;}
-    #service-areas-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #service-areas-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #serviceAreasForm				{padding-top:18px;padding-left:0;}
     #serviceAreasForm input			{margin-top:7px;}
     .listServiceArea				{margin:0;list-style:none;}
@@ -355,33 +344,27 @@
     
     
     /* -- Special Offers -- */
-    #section-special-offers			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
-    #section-special-offers > div	{margin-left:0;}
-    #special-offers-form			{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #special-offers-form			{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #specialOffersForm				{padding-top:18px;}
     .listSpecialOffers				{margin:0;list-style:none;}
     
     /* -- Testimonials -- */
-    #section-testimonials			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
-    #section-testimonials > div		{margin-left:0;}
-    #testimonials-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #testimonials-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #testimonialsForm				{padding-top:18px;}
     .listFeedback					{margin:0;list-style:none;}
     
     /* -- Credentials -- */
-    #section-credentials			{margin-left:0;background-color:#e3e3e3;border-top:1px solid #d3d3d3;}
-    #section-credentials > div		{margin-left:0;}
-    #credentials-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #credentials-form				{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #credentialsForm				{padding-top:18px;}
     .listCredentials				{margin:0;list-style:none;}
     .listCredentials li				{margin-bottom:18px;}
     
     /* -- Optional Pages -- */
-    #optional-pages-form			{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;}
+    #optional-pages-form			{padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
     #optional-pages-panel			{border-top:1px solid #d3d3d3;}
-    #optionalPagesForm				{padding-top:18px;}
+    #optionalPagesForm				{padding-top:18px;width:360px;float:right;}
     .inputs-list					{margin:18px 0;list-style:none;}
-    .inputs-list li					{margin-bottom:18px;padding:18px 10px;width:600px;border-radius:4px;background:#f3f3f3;}
+    .inputs-list li					{margin-bottom:18px;padding:18px 10px !important;width:320px;border:1px solid #e3e3e3;border-radius:4px;background:#ececec;list-style:none;}
     .inputs-list li label			{font-size: 1.2em;}
     .inputs-list li label input		{margin-right:10px;}
     
@@ -399,7 +382,7 @@
     #go-next						{margin-top:-25px;margin-right:150px;}
               
     /* -- Preview & Publish -- */
-    #preview-publish				{padding-top:18px;padding-bottom:36px;background-color:#fcfcfc;width:960px;display:inline;float:left;}
+    #preview-publish				{padding-top:18px;padding-bottom:36px;background-color:#fcfcfc;float:left;}
     #preview-publish h4				{margin-left:20px;}
     #emulator-wrap					{margin-left:0;float:right;}
     #emulator {

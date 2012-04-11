@@ -11,99 +11,52 @@
 </div>
 
 <div id="wizard" class="tab-content">
-  <div id="profile" class="tab-pane active">
+  <div class="tab-pane active" id="profile">
     {{ processTemplate('profile') }}
-    
     <div id="sidebar" class="span5">
-      <img class="pull-left" src="../images/icn-page-profile.png" alt="Add Page: Profile" />
-      <h5>Create your company's profile.</h5>
-      <div id="btn-group">
-        <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
-        <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
-      </div><!-- /btn-group -->
-      <p>This page is where you can enter and maintain information about your company.</p>
+      <h5>Wizard Specific Block</h5>
+      <p>Something specific only to the wizard can go here. Or this area can be the exact same as the Manager sidebar.</p>
+      <img src="http://placehold.it/280x350&text=iPhone+Preview" alt="iPhone Screen Preview" />
     </div>
   </div>  <!-- /tab-pane -->
   
   <div class="tab-pane" id="upload-photos">
     {{ processTemplate('manage-photos') }} 
-    <div id="sidebar" class="span5">
-      <img class="pull-left" src="../images/icn-page-photos.png" alt="Add Page: Photos" />
-      <h5>Dazzle prospects with your work.</h5>
-      <p>Talk is cheap. Show your potential clients that you know your stuff by uploading a few photos of your work.</p>
-      <br />
-      <div class="alert-message block-message warning">
-        <p>Load up to three photos for your free trial. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
-      </div>
-      <div id="btn-group">
-        <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
-        <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
-      </div>
-    </div>
-
-  </div>  <!-- /tab-pane -->
+  </div>
 
   <div class="tab-pane" id="services">
     {{ processTemplate('services') }} 
-    <div id="sidebar" class="span5">
-      <img class="pull-left" src="../images/icn-page-services.png" alt="Add Page: Services" />
-      <h5>Tell prospects what you do.</h5>
-      <p>Define the services you offer here. Potential customers will be able to select from these options when contacting you.</p>
-      <div class="alert-message block-message warning">
-        <p>Add up to three services or products for your free trial. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
-      </div>
-      <div id="btn-group">
-        <p class="btn-options"><a href="#"><button class="btn default span5">Save</button></a></p>
-        <p class="btn-options"><a href="manage.html"><button class="btn primary span5">&larr;&nbsp;&nbsp;Back to Manager</button></a></p>
-      </div><!-- /btn-group -->
-    </div><!-- /sidebar -->
   </div>  <!-- /tab-pane -->
 
   <div class="tab-pane" id="service-area">
     {{ processTemplate('service-areas') }} 
-
-    <div id="sidebar" class="span5">
-      <h5>Where do you work?</h5>
-      <p>Define a list of towns, cities, or counties that you service. Potential customers will be able to select from these options when contacting you.</p>
-      <div class="alert-message block-message warning">
-        <p>Add up to five service areas for your free trial. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
-      </div>
-    </div><!-- /sidebar -->
   </div>  <!-- /tab-pane -->
 
   <div class="tab-pane" id="optional-pages">
     {{ processTemplate('optional-pages') }} 
-    
-    <div id="sidebar" class="span5">
-      <h5>Enhance your customer relationships.</h5>
-      <p>These pages are completely optional, and will only show up if you select them. Don't worry, there's no setting up these pages, as they simply use the contact information you provided at the beginning of this wizard.</p>
-      <div class="alert-message block-message warning">
-        <p>During your free trial, you can create these optional pages. Once your subscription expires, these pages will no longer be available. Paid subscriptions are allowed more. <strong><a href="http://www.scanshowsell.com/pricing.html">Upgrade today!</a></strong></p>
-      </div>
-    </div>
-</div>  <!-- /tab-pane -->
+  </div>  <!-- /tab-pane -->
 
-<div class="tab-pane" id="choose-theme">
-  {{ processTemplate('choose-theme') }} 
-</div>  <!-- /tab-pane -->
+  <div class="tab-pane" id="choose-theme">
+    {{ processTemplate('choose-theme') }} 
+  </div>  <!-- /tab-pane -->
 
-<div class="tab-pane" id="prevpub">
-  <div id="preview-publish">
-    <h4>Preview &amp; Publish</h4>
-    <div id="instructions" class="span5">
-      <h5>Your website is ready to go!</h5>
-      <p>You're now ready to publish your mobile site. To the right is a preview of your site. Be sure to play around with it and double check your information.</p>
-      <br />
-      <input id="publish" class="btn span5 success" type="submit" value="Publish &amp; Generate QR Code"/>
-      <br />
-      <img src="http://placehold.it/280&text=YOUR+QR+CODE+HERE" alt="QR code placeholder" />
-    </div>
-    
-    <div id="emulator-wrap" class="span10 offset5">
-      <div id="emulator">
-        <iframe id="emulator-view" src=""></iframe>
+  <div class="tab-pane" id="prevpub">
+    <div id="preview-publish" class="span16">
+      <h4>Preview &amp; Publish</h4>
+      <div id="instructions" class="span5">
+        <h5>Your website is ready to go!</h5>
+        <p>You're now ready to publish your mobile site. To the right is a preview of your site. Be sure to play around with it and double check your information.</p>
+        <br />
+        <input id="publish" class="btn span5 success" type="submit" value="Publish &amp; Generate QR Code"/>
+        <br />
+        <img src="http://placehold.it/280&text=YOUR+QR+CODE+HERE" alt="QR code placeholder" />
       </div>
-    </div>
-  </div>  <!--/preview-publish -->
-</div>  <!-- /tab-pane -->
+      
+      <div id="emulator-wrap" class="span10 offset5">
+        <div id="emulator">
+          <iframe id="emulator-view" src=""></iframe>
+        </div>
+      </div>
+    </div>  <!--/preview-publish -->
+  </div>  <!-- /tab-pane -->
 </div>  <!-- /tab-content -->
