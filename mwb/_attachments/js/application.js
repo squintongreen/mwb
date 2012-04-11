@@ -97,11 +97,14 @@ $(function(){
             },
 
             // TESTME: this block of the code require more testing
-            "click button:contains('Save')": function(){
-                var form = {};
+            "click button:contains('Save'), a.btn.success:contains('Save')": function(){
+
                 var model = Websites.where({_id: String.format("com.scanshowsell.website:{0}:{1}", username, website_name)})[0];
                 if(model){
-                    model.set($("form").serializeForms());
+                    var form = $("form").serializeForms();
+                    _.each(form, function(val, key){
+                        model.set(key, _.extend(model.get(key) || {}, val));
+                    })
                     model.save();
                 }
             }
