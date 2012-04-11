@@ -1667,21 +1667,20 @@ a.menu:after, .dropdown-toggle:after {
   padding: 0 15px;
   margin-right: 2px;
   line-height: 34px;
-  border: 1px solid transparent;
-  -webkit-border-radius: 4px 4px 0 0;
-  -moz-border-radius: 4px 4px 0 0;
-  border-radius: 4px 4px 0 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border:1px solid transparent;
 }
 .tabs > li > a:hover {
   text-decoration: none;
   background-color: #eee;
-  border-color: #eee #eee #ddd;
+  color:#808080;
 }
 .tabs .active > a, .tabs .active > a:hover {
   color: #808080;
   background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-bottom-color: transparent;
+  border:1px solid #dedede;
   cursor: default;
 }
 .tabs .menu-dropdown, .tabs .dropdown-menu {

@@ -177,6 +177,7 @@
 	.tabs > li {
 			  float: left;
 			  position:relative;
+			  margin-bottom:0;
 			  margin-left:10px;
 			}
 	.tabs {
@@ -331,7 +332,6 @@
     
     /* -- Services -- */
     #services-form					{margin-left:0;padding:0 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
-    #service-panel					{margin-top:18px;}
     #serviceForm					{padding-top:18px;}
     .listServices					{margin:0;list-style:none;}
     
@@ -360,8 +360,12 @@
     .listCredentials li				{margin-bottom:18px;}
     
     /* -- Optional Pages -- */
-    #optional-pages-form			{padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
-    #optional-pages-panel			{border-top:1px solid #d3d3d3;}
+    #optional-pages-form			{margin-left:0;padding:18px 0 18px 20px;background-color:#fcfcfc;border-right:1px solid #d3d3d3;float:left;}
+    #optionalPagesForm-0			{padding-top:18px;width:560px;float:left;}
+    .inputs-list-0					{margin:18px 0;list-style:none;}
+    .inputs-list-0 li				{margin-bottom:18px;padding:18px 10px !important;width:540px;border:1px solid #e3e3e3;border-radius:4px;background:#ececec;list-style:none;}
+    .inputs-list-0 li label			{margin-top:-9px;padding:0;font-size: 1.2em;width:540px;text-align:left;}
+    .inputs-list-0 li label input	{margin-right:10px;}
     #optionalPagesForm				{padding-top:18px;width:360px;float:right;}
     .inputs-list					{margin:18px 0;list-style:none;}
     .inputs-list li					{margin-bottom:18px;padding:18px 10px !important;width:320px;border:1px solid #e3e3e3;border-radius:4px;background:#ececec;list-style:none;}
