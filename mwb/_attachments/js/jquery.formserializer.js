@@ -49,7 +49,7 @@ $.fn.extend({
             var id = /* $(this).attr("id") || */ $(form).attr("name");
             var section = model.get(id);
             _.each(section, function(value, key){
-                if(typeof(key) === 'number'){
+                if(typeof(key) == 'number' || key.match(/\d*/)[0] != ""){
                     _.each(value, function(vv, vk){
                         $(form).find(String.format("[name=\"{0}\"]:eq({1})", vk, key)).val(vv);
                     });

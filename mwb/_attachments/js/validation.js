@@ -8,7 +8,7 @@ $.validator.addMethod("uniqueWebsiteName", function(value, element) {
     $(element).val(value)
     var isSuccess = false;
     $.ajax({
-        url: String.format("/{0}/com.scanshowsell.website:{1}:{2}", Backbone.couch_connector.config.db_name, username, value),
+        url: String.format("/{0}/com.scanshowsell.website:{1}", Backbone.couch_connector.config.db_name, value),
         async: false,
         success: function(doc){
             isSuccess = false;
@@ -46,7 +46,6 @@ $.validator.addMethod(
 
 
 $(document).ready(function(){
-
     $('form').validate({
 
         onekyup: false, // FIXME this setting does not work for some reason

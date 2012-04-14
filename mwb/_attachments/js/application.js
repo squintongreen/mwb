@@ -2,22 +2,25 @@ var hash = window.location.hash;
 var website_name = hash.replace(/#/g,'');
 var username;
 
-$.couch.session({
-    success: function(session){
-        username = session.userCtx.name;
-    }
-})
+getHash = function(val){
+    return String.format("#!{0}", val || window.location.hash.replace(/#!/g,''));
+}
 
 websiteId = function(val){
-    return String.format("com.scanshowsell.website:{0}", val || window.location.hash.substring(1))
+    return String.format("com.scanshowsell.website:{0}", val || window.location.hash.replace(/#!/g,''));
 }
 
 new_hash = function(){
     hash = window.location.hash;
-    website_name = hash.replace(/#/g,'');
+    website_name = hash.replace(/#!/g,'');
 
-    $("a:not(:regex(href,^#.*$))").each(function(idx, a){
-        var href = $(a).attr("href");
+    $("a.hash").each(function(idx, a){
+        var href = $(a).attr("href")
+        if(href) 
+            href = href.replace(/#!.*/g, '');
+        else 
+            href = ""
+
         $(a).attr("href", href + hash);
 
     });
@@ -33,9 +36,35 @@ new_hash = function(){
     $("#site-toggle").text("Currently editing:" + website_name) // FIXME template should be used
 }
 
+createWebsiteModel = function(wsName){                
+    var id = websiteId(wsName);
+    var model = {
+        _id: id,
+        owner: username
+    }
+    Websites.create(model,{
+        success:function(model){
+            console.log('Created', model)
+        },
+        error:function(error){
+            console.log('Error', error)
+        }
+    })
+
+}
+
 $(window).bind("hashchange", new_hash)
 
 $(function(){
+    $.ajaxSetup({ async: false })
+    $.couch.session({
+        success: function(session){
+            username = session.userCtx.name;
+            $.ajaxSetup({ async: true }) // workaround. _session does not accept async:false option
+        }
+    })
+
+
     // Fill this with your database information.                                                                                           // `ddoc_name` is the name of your couchapp project.
 
     Backbone.couch_connector.config.db_name = "mwb"
@@ -69,6 +98,8 @@ $(function(){
         console.log("Website removed:", model.id);
     })
 
+    $("#websiteName").val(window.location.hash.replace(/#!/g,''))
+
 
     WebsiteView = Backbone.View.extend({
         el: $("body"), 
@@ -76,23 +107,10 @@ $(function(){
         events: {
             "blur #websiteName": function(e){
                 var a = $(e.target).valid();
-                $("#new-btn").attr("href", $("#new-btn").attr("href").replace(/#.*/g, '') + "#" + $(e.target).val());
+                $("#new-btn").attr("href", $("#new-btn").attr("href").replace(/#.*/g, '') + "#!" + $(e.target).val());
             },
             "click #new-btn": function(e){
-                var model = {
-                    _id: websiteId($("#websiteName").val())
-                }
-                Websites.create(model,{
-                    success:function(model){
-                        console.log('Created', model)
-                    },
-                    error:function(error){
-                        console.log('Error', error)
-                    }
-                })
-                //e.stopPropagation();
-                //e.preventDefault();
-                //return true;
+                createWebsiteModel($("#websiteName").val())
             },
 
             // TESTME: this block of the code require more testing
@@ -105,6 +123,30 @@ $(function(){
                     })
                     model.save();
                 }
+            },
+            "click button.btn.success:contains('Build')": function(e){
+                var userProfile = $(e.target).closest("form").serializeForms();
+                userProfile = userProfile['registerForm']
+                var userDoc = {
+                    name: userProfile.emailAddress.replace(/@.*/gi, ''),
+                    email: userProfile.emailAddress
+                }
+                $.couch.signup(userDoc, userProfile.password, {
+                    success: function(){
+                        // registration successful, moving to next page
+                        $.couch.login({
+                            name: username = userDoc.name,
+                            password: userProfile.password,
+                            success: function(){
+                                createWebsiteModel(userProfile.websiteName);
+                                window.location.replace("mwb/wizard.html" + getHash());
+                            }
+                        })
+                    }
+                });
+                e.stopPropagation();
+                e.preventDefault();
+                return true;
             },
             "click a.btn.delete:contains('Remove photo')": function(e){
                 var model = Websites.where({_id: websiteId(website_name)})[0];
@@ -135,12 +177,12 @@ $(function(){
 
         addRow : function(model){
             console.log("addRow", this)
-            var hash = window.location.hash.substring(1)
+            var hash = getHash()
             var model_id = model.id.split(":");
-            var name = model_id[2];
-            var li = $("<li/>").append($("<a/>").attr("href", "#" + name).text(name));
+            var name = model_id[1];
+            var li = $("<li/>").append($("<a/>").attr("href", getHash(name)).text(name));
             // making li active
-            if(hash && name === hash){
+            if(name === getHash()){
                 li.addClass("active")
             }
             $("#site-manager-dropdown").prepend(li);

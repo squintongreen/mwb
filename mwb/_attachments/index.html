@@ -83,12 +83,15 @@
       autoHover: true,
       });
       
-      $("form").submit(function(){
+      $("form").submit(function(e){
       var wsName = $(this).find("input")
        wsName.valid();
-      window.location.href = "mwb/manage.html#" + wsName.val();
-      })
+        window.location.href = "register.html#!" + wsName.val();
+      e.stopPropagation();
+      e.preventDefault();
+      return true;
 
+      })
       });
     </script>
 
