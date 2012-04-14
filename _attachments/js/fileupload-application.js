@@ -35,7 +35,6 @@ $(function () {
             data.formData = {_rev: ws.get("_rev")}
         })
         .bind('fileuploaddone', function(e, data) {
-            $.validator.unobtrusive.parse('form');
             var resp = JSON.parse(data.jqXHR.responseText)
             if(resp.ok){
                 data.result = []
