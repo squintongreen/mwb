@@ -5,44 +5,38 @@
  * background property for each of the five styles below
  */
 
-.bx-wrapper {width:980px !important;}
-.bx-window {background-color:#939393;box-shadow:inset 0 0 5px rgba(0,0,0,0.5);}
-
-
 /*next button*/
 .bx-next {
 	position:absolute;
-	top:40%;
+	top:0;
 	right:-50px;
 	z-index:999;
-	width: 30px;
-	height: 30px;
+	width: 109px;
+	height: 390px;
 	text-indent: -999999px;
-	background: url(gray_next.png) no-repeat 0 -30px;
+	background: url(arrow_blur-r.png) no-repeat 0 0;
 }
 
 /*previous button*/
 .bx-prev {
 	position:absolute;
-	top:40%;
+	top:0;
 	left:-50px;
 	z-index:999;
-	width: 30px;
-	height: 30px;
+	width: 109px;
+	height: 390px;
 	text-indent: -999999px;
-	background: url(gray_prev.png) no-repeat 0 -30px;
+	background: url(arrow_blur-l.png) no-repeat 0 0;
 }
 
 /*pager links*/
 .bx-pager a {
 	margin-right: 5px;
-	color: #c3c3c3;
-	padding: 10px 14px;
+	color: #9a9a9a;
+	padding: 3px 8px 3px 6px;
 	font-size: 12px;
 	zoom:1;
-	background: #f3f3f3;
-	border:1px solid #d3d3d3;
-	text-decoration:none;
+	background: url(gray_pager.png) no-repeat 0 -20px;
 }
 
 /*auto start button*/
@@ -65,27 +59,22 @@
 /*next/prev button hover state*/
 .bx-next:hover,
 .bx-prev:hover {
-	background-position: 0 0;
+	background-position: 0 -388px;
 }
 
 /*pager links hover and active states*/
 .bx-pager .pager-active,
 .bx-pager a:hover {
-	background-color:#fcfcfc;
-	border-top:1px solid #f3f3f3;
-	border-right:1px solid #f3f3f3;
-	border-bottom:2px solid rgb(0, 105, 214);
-	border-left:1px solid #f3f3f3;
-	color:rgb(0, 105, 214);
-	font-weight:600;
+	background-position: 0 0;
+	color:#393939;
 }
 
 /*pager wrapper*/
 .bx-pager {
 	text-align:center;
-	margin: 0 auto;
-	padding-top: 36px;
-	width:575px;
+	margin-right:8px;
+	padding-top: 15px;
+	font-size:1px;
 }
 
 /*captions*/
@@ -93,7 +82,7 @@
 	text-align:center;
 	font-size: 12px;
 	padding: 7px 0;
-	color: #636363;
+	color: #666;
 }
 
 /*auto controls*/

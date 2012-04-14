@@ -2,6 +2,8 @@ function(doc, req) {
     // !json template
     // !code vendor/couchapp/lib/underscore.js
 
+    if(!req.userCtx.name)
+        throw (['error', 'not_found', 'Some message like Page not found'])
     _ = this._
     // Enables Mustache.js-like templating.    
      _.templateSettings = {

@@ -503,8 +503,9 @@
             this.options.templateContainer = document.createElement(
                 this._files.prop('nodeName')
             );
-            this.options.uploadTemplate = window.tmpl('template-upload');
-            this.options.downloadTemplate = window.tmpl('template-download');
+            //this.options.uploadTemplate = window.tmpl('template-upload');
+            this.options.uploadTemplate = _.template($("#template-upload").html())
+            this.options.downloadTemplate = _.template($("#template-download").html())
         },
 
         _initFiles: function () {

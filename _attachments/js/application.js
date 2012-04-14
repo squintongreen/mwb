@@ -8,27 +8,25 @@ $.couch.session({
     }
 })
 
+websiteId = function(val){
+    return String.format("com.scanshowsell.website:{0}", val || window.location.hash.substring(1))
+}
+
 new_hash = function(){
     hash = window.location.hash;
     website_name = hash.replace(/#/g,'');
 
-    $("a").each(function(idx, a){
-        // if not bootstrap tabs
-        if($(a).parents("ul").hasClass("tabs") == false){
-            var href = $(a).attr("href")
-            if(href == undefined)
-                href ="";
-            href = href.split("#")[0]
-            $(a).attr("href", href + hash);
-        }
+    $("a:not(:regex(href,^#.*$))").each(function(idx, a){
+        var href = $(a).attr("href");
+        $(a).attr("href", href + hash);
+
     });
 
     // filling up forms
-    var model = Websites.where({_id: String.format("com.scanshowsell.website:{0}:{1}", username, website_name)})[0]
+    var model = Websites.where({_id: websiteId(website_name)})[0]
     if(model){
         $("form").deserializeForms(model);
     }
-
 
     $("#site-manager-dropdown .divider:first").prevAll().removeClass("active");
     $("#site-manager-dropdown").find(String.format("li:contains('{0}')", website_name)).addClass("active");
@@ -49,9 +47,10 @@ $(function(){
     Backbone.couch_connector.config.global_changes = false;
 
     // Enables Mustache.js-like templating.
-    _.templateSettings = {
-        interpolate : /\{\{(.+?)\}\}/g
-    };
+    
+    // _.templateSettings = {
+    //     interpolate : /\{\{(.+?)\}\}/g
+    // };
 
     var isDirty = false;
 
@@ -81,7 +80,7 @@ $(function(){
             },
             "click #new-btn": function(e){
                 var model = {
-                    _id: String.format("com.scanshowsell.website:{0}:{1}", username, $("#websiteName").val())
+                    _id: websiteId($("#websiteName").val())
                 }
                 Websites.create(model,{
                     success:function(model){
@@ -97,9 +96,8 @@ $(function(){
             },
 
             // TESTME: this block of the code require more testing
-            "click button:contains('Save'), a.btn.success:contains('Save')": function(){
-
-                var model = Websites.where({_id: String.format("com.scanshowsell.website:{0}:{1}", username, website_name)})[0];
+            "click a.btn.success:contains('Save')": function(){
+                var model = Websites.where({_id: websiteId(website_name)})[0];
                 if(model){
                     var form = $("form").serializeForms();
                     _.each(form, function(val, key){
@@ -107,7 +105,18 @@ $(function(){
                     })
                     model.save();
                 }
+            },
+            "click a.btn.delete:contains('Remove photo')": function(e){
+                var model = Websites.where({_id: websiteId(website_name)})[0];
+                if(model){
+                    var form = $(e.target).closest("form")
+                    var fileName = form.find("input[type=hidden][name=file-name]").val();
+                    form.closest("div.#photo-panel").remove();
+                    delete model.get("_attachments")[fileName];
+                    model.save();
+                }                
             }
+
         },
 
         initialize : function(){

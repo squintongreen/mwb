@@ -47,7 +47,10 @@ $.validator.addMethod(
 
 $(document).ready(function(){
 
-    $('form').validate({                                                                                             
+    $('form').validate({
+
+        onekyup: false, // FIXME this setting does not work for some reason
+        ignore: ":not(:visible),:disabled,input[type=hidden]",
         wrapper: 'span class="error"',                                                                                 
         meta: 'validate',
         highlight: function(element, errorClass, validClass) {
