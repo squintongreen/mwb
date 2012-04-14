@@ -8,16 +8,25 @@ $.couch.session({
     }
 })
 
+getHash = function(val){
+    return String.format("#!{0}", val || window.location.hash.replace(/#!/g,''));
+}
+
 websiteId = function(val){
-    return String.format("com.scanshowsell.website:{0}", val || window.location.hash.substring(1))
+    return String.format("com.scanshowsell.website:{0}", val || window.location.hash.replace(/#!/g,''));
 }
 
 new_hash = function(){
     hash = window.location.hash;
-    website_name = hash.replace(/#/g,'');
+    website_name = hash.replace(/#!/g,'');
 
-    $("a:not(:regex(href,^#.*$))").each(function(idx, a){
-        var href = $(a).attr("href");
+    $("a.hash").each(function(idx, a){
+        var href = $(a).attr("href")
+        if(href) 
+            href = href.replace(/#!.*/g, '');
+        else 
+            href = ""
+
         $(a).attr("href", href + hash);
 
     });
@@ -69,6 +78,8 @@ $(function(){
         console.log("Website removed:", model.id);
     })
 
+    $("#websiteName").val(window.location.hash.replace(/#!/g,''))
+
 
     WebsiteView = Backbone.View.extend({
         el: $("body"), 
@@ -76,11 +87,13 @@ $(function(){
         events: {
             "blur #websiteName": function(e){
                 var a = $(e.target).valid();
-                $("#new-btn").attr("href", $("#new-btn").attr("href").replace(/#.*/g, '') + "#" + $(e.target).val());
+                $("#new-btn").attr("href", $("#new-btn").attr("href").replace(/#.*/g, '') + "#!" + $(e.target).val());
             },
             "click #new-btn": function(e){
+                var id = websiteId($("#websiteName").val());
                 var model = {
-                    _id: websiteId($("#websiteName").val())
+                    _id: id,
+                    owner: username
                 }
                 Websites.create(model,{
                     success:function(model){
@@ -90,9 +103,6 @@ $(function(){
                         console.log('Error', error)
                     }
                 })
-                //e.stopPropagation();
-                //e.preventDefault();
-                //return true;
             },
 
             // TESTME: this block of the code require more testing
@@ -105,6 +115,19 @@ $(function(){
                     })
                     model.save();
                 }
+            },
+            "click button.btn.success:contains('Build')": function(e){
+                var userProfile = $(e.target).closest("form").serializeForms();
+                userProfile = userProfile['registerForm']
+                var userDoc = {
+                    name: userProfile.emailAddress.replace(/@.*/gi, ''),
+                    email: userProfile.emailAddress
+                }
+                $.couch.signup(userDoc, userProfile.password);
+                window.location.replace("wizard.html" + getHash());
+                e.stopPropagation();
+                e.preventDefault();
+                return true;
             },
             "click a.btn.delete:contains('Remove photo')": function(e){
                 var model = Websites.where({_id: websiteId(website_name)})[0];
@@ -135,12 +158,12 @@ $(function(){
 
         addRow : function(model){
             console.log("addRow", this)
-            var hash = window.location.hash.substring(1)
+            var hash = getHash()
             var model_id = model.id.split(":");
-            var name = model_id[2];
-            var li = $("<li/>").append($("<a/>").attr("href", "#" + name).text(name));
+            var name = model_id[1];
+            var li = $("<li/>").append($("<a/>").attr("href", getHash(name)).text(name));
             // making li active
-            if(hash && name === hash){
+            if(name === getHash()){
                 li.addClass("active")
             }
             $("#site-manager-dropdown").prepend(li);

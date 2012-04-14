@@ -5,7 +5,9 @@ $(function(){
         db : {
             changes : true
         },
-        url : "/com.scanshowsell.website",
+        url : function(){
+            return String.format("/com.scanshowsell.website:{0}", username)
+        },
         model : WebsiteModel
     });
 })

@@ -29,7 +29,7 @@ $(function () {
 
     $('#fileupload')
         .bind('fileuploadsubmit', function (e, data) {
-            var wsId =  String.format("com.scanshowsell.website:{0}", window.location.hash.substring(1));
+            var wsId =  websiteId();
             $(data.form).attr("action", "/" + dbname +  "/" + encodeURIComponent(wsId))
             var ws = Websites.where({ _id: wsId })[0]
             data.formData = {_rev: ws.get("_rev")}
