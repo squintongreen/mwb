@@ -1,84 +1,22 @@
+<link rel="stylesheet" href="../css/jquery.fileupload-ui.css">
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->  
+
 <!-- MANAGE PICTURES -->
+<div class="container">
   <div id="upload-photo-wrap" class="span10">
     <!--  =====  UPLOAD BUTTON BAR  =====  -->
-    <form id="fileupload" action="fileupload/upload" method="POST" enctype="multipart/form-data">
+    <form id="fileupload" method="POST" enctype="multipart/form-data" action="/mwb/com.scanshowsell.website:icq">
       <div class="fileupload-buttonbar">
         <span class="btn success fileinput-button">
           <span>Add files...</span>
-          <input type="file" name="files[]" multiple="multiple"></input>
+          <input type="file" name="_attachments" multiple="multiple"></input>
         </span>
         <a href="#" class="btn primary start">Upload all</a>
       </div>
+      <br>
+      <div class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></div>
+
     </form>
-    
-    <!--  =====  INDIVIDUAL PHOTO PANELS  =====  -->
-    <div id="photo-panel">
-      <div class="thumb-wrap">
-	<img class="thumbnail" src="http://placehold.it/210x150" alt="">
-      </div>  <!-- /thumb-wrap -->
-      <div class="photo-form">
-	<form class="form-stacked">
-	  <fieldset>
-            <div class="clearfix">
-	      <label for="caption">Photo caption</label>
-	      <div class="input">
-        	<input type="text" class="span5" name="caption" />
-              </div>
-            </div><!-- /clearfix -->
-            <div class="photo-buttons" >
-	      <a href="#" class="btn small danger delete">Remove photo</a>
-            </div><!-- /photo-buttons -->
-            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
-	  </fieldset>
-	</form>
-      </div>  <!-- /photo-form -->
-    </div>  <!-- /photo-panel -->
-    
-    <!--  =====  INDIVIDUAL PHOTO PANELS  =====  -->
-    <div id="photo-panel">
-      <div class="thumb-wrap">
-	<img class="thumbnail" src="http://placehold.it/210x150" alt="">
-      </div>  <!-- /thumb-wrap -->
-      <div class="photo-form">
-	<form class="form-stacked">
-	  <fieldset>
-            <div class="clearfix">
-	      <label for="caption">Photo caption</label>
-	      <div class="input">
-        	<input type="text" class="span5" name="caption" />
-              </div>
-            </div><!-- /clearfix -->
-            <div class="photo-buttons" >
-	      <a href="#" class="btn small danger delete">Remove photo</a>
-            </div><!-- /photo-buttons -->
-            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
-	  </fieldset>
-	</form>
-      </div>  <!-- /photo-form -->
-    </div>  <!-- /photo-panel -->
-    
-    <!--  =====  INDIVIDUAL PHOTO PANELS  =====  -->
-    <div id="photo-panel">
-      <div class="thumb-wrap">
-	<img class="thumbnail" src="http://placehold.it/210x150" alt="">
-      </div>  <!-- /thumb-wrap -->
-      <div class="photo-form">
-	<form class="form-stacked">
-	  <fieldset>
-            <div class="clearfix">
-	      <label for="caption">Photo caption</label>
-	      <div class="input">
-        	<input type="text" class="span5" name="caption" />
-              </div>
-            </div><!-- /clearfix -->
-            <div class="photo-buttons" >
-	      <a href="#" class="btn small danger delete">Remove photo</a>
-            </div><!-- /photo-buttons -->
-            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
-	  </fieldset>
-	</form>
-      </div>  <!-- /photo-form -->
-    </div>  <!-- /photo-panel -->
   </div>  <!-- /upload-photo-wrap span10 -->
   
   <div id="sidebar" class="span5">
@@ -95,3 +33,91 @@
     </div>
   </div>
 
+
+
+<script>
+var fileUploadErrors = {
+    maxFileSize: 'File is too big',
+    minFileSize: 'File is too small',
+    acceptFileTypes: 'Filetype not allowed',
+    maxNumberOfFiles: 'Max number of files exceeded',
+    uploadedBytes: 'Uploaded bytes exceed file size',
+    emptyResult: 'Empty file upload result'
+};
+</script>
+<script id="template-upload" type="text/html">
+  <% _.each(files, function(file, idx) { %>
+    <div id="photo-panel">
+      <div class="thumb-wrap">
+        <a href="<%=file.url%>" title="<%=file.name%>" rel="gallery"><img class="thumbnail" src="<%= file.thumbnail_url %>"/></a>
+      </div>  <!-- /thumb-wrap -->
+      <div class="photo-form">
+        
+	<form class="form-stacked" name="photo-caption" novalidate="novalidate">
+	  <fieldset>
+            <div class="clearfix">
+	      <label for="caption">File name:</label>
+              <p class="file-name"><%= file.name %></p>
+        	<input type="hidden" name="file-name" value="<%= file.name %>" />
+              <p class="file-size"> <%= formatFileSize(file.size) %></p>
+	      <label for="caption">Photo caption</label>
+	      <div class="input">
+        	<input type="text" name="caption" class="span5"/>
+              </div>
+              <div class="progress progress-success progress-striped active"><div class="bar" style="width:0%;"></div></div>
+            </div><!-- /clearfix -->
+            <div class="photo-buttons" >
+	      <a href="#" class="btn small danger delete">Remove photo</a>
+                <button class="btn btn-primary">
+                    <i class="icon-upload icon-white"> Start</i>
+                </button>
+
+            </div><!-- /photo-buttons -->
+            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
+	  </fieldset>
+	</form>
+      </div>  <!-- /photo-form -->
+    </div>  <!-- /photo-panel -->
+    <% }) %>
+</script>
+
+<script id="template-download" type="text/html">
+  <% _.each(files, function(file, idx) { %>
+    <div id="photo-panel">
+      <div class="thumb-wrap">
+          <img class="thumbnail" src="<%= file.thumbnail_url %>" style="max-width:210px;max-height:150px;"/>
+      </div>  <!-- /thumb-wrap -->
+      <div class="photo-form">
+        
+	<form class="form-stacked" name="photo-caption" novalidate="novalidate">
+	  <fieldset>
+            <div class="clearfix">
+	      <label for="caption">File name:</label>
+              <p class="file-name"><%= file.name %></p>
+        	<input type="hidden" name="file-name" value="<%= file.name %>" />
+              <p class="file-size"> <%= formatFileSize(file.size) %></p>
+	      <label for="caption">Photo caption</label>
+	      <div class="input">
+        	<input type="text" name="caption" class="span5 valid"/>
+              </div>
+            </div><!-- /clearfix -->
+            <div class="photo-buttons" >
+	      <a href="#" class="btn small danger delete">Remove photo</a>
+            </div><!-- /photo-buttons -->
+            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
+	  </fieldset>
+	</form>
+      </div>  <!-- /photo-form -->
+    </div>  <!-- /photo-panel -->
+
+    <% }) %>
+</script>
+<!-- The Templates and Load Image plugins are included for the FileUpload user interface -->
+<script src="../js/load-image.min.js"></script>
+<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+<script src="../js/jquery.iframe-transport.js"></script>
+<script src="../js/jquery.fileupload.js"></script>
+<script src="../js/jquery.fileupload-ui.js"></script>
+<script src="../js/fileupload-application.js"></script>
+<!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
+<!--[if gte IE 8]><script src="cors/jquery.xdr-transport.js"></script><![endif]-->
