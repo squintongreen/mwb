@@ -2,12 +2,6 @@ var hash = window.location.hash;
 var website_name = hash.replace(/#/g,'');
 var username;
 
-$.couch.session({
-    success: function(session){
-        username = session.userCtx.name;
-    }
-})
-
 getHash = function(val){
     return String.format("#!{0}", val || window.location.hash.replace(/#!/g,''));
 }
@@ -42,9 +36,35 @@ new_hash = function(){
     $("#site-toggle").text("Currently editing:" + website_name) // FIXME template should be used
 }
 
+createWebsiteModel = function(wsName){                
+    var id = websiteId(wsName);
+    var model = {
+        _id: id,
+        owner: username
+    }
+    Websites.create(model,{
+        success:function(model){
+            console.log('Created', model)
+        },
+        error:function(error){
+            console.log('Error', error)
+        }
+    })
+
+}
+
 $(window).bind("hashchange", new_hash)
 
 $(function(){
+    $.ajaxSetup({ async: false })
+    $.couch.session({
+        success: function(session){
+            username = session.userCtx.name;
+            $.ajaxSetup({ async: true }) // workaround. _session does not accept async:false option
+        }
+    })
+
+
     // Fill this with your database information.                                                                                           // `ddoc_name` is the name of your couchapp project.
 
     Backbone.couch_connector.config.db_name = "mwb"
@@ -90,19 +110,7 @@ $(function(){
                 $("#new-btn").attr("href", $("#new-btn").attr("href").replace(/#.*/g, '') + "#!" + $(e.target).val());
             },
             "click #new-btn": function(e){
-                var id = websiteId($("#websiteName").val());
-                var model = {
-                    _id: id,
-                    owner: username
-                }
-                Websites.create(model,{
-                    success:function(model){
-                        console.log('Created', model)
-                    },
-                    error:function(error){
-                        console.log('Error', error)
-                    }
-                })
+                createWebsiteModel($("#websiteName").val())
             },
 
             // TESTME: this block of the code require more testing
@@ -123,8 +131,19 @@ $(function(){
                     name: userProfile.emailAddress.replace(/@.*/gi, ''),
                     email: userProfile.emailAddress
                 }
-                $.couch.signup(userDoc, userProfile.password);
-                window.location.replace("wizard.html" + getHash());
+                $.couch.signup(userDoc, userProfile.password, {
+                    success: function(){
+                        // registration successful, moving to next page
+                        $.couch.login({
+                            name: username = userDoc.name,
+                            password: userProfile.password,
+                            success: function(){
+                                createWebsiteModel(userProfile.websiteName);
+                                window.location.replace("mwb/wizard.html" + getHash());
+                            }
+                        })
+                    }
+                });
                 e.stopPropagation();
                 e.preventDefault();
                 return true;

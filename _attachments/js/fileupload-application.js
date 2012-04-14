@@ -59,7 +59,7 @@ $(function () {
             var files = [];
             _.each(model.get("_attachments"),function(val, key){
                 files.push({
-                    thumbnail_url: $("#fileupload").attr("action") + "/" + key,
+                    thumbnail_url: "/" + dbname +  "/" + encodeURIComponent(model.id) + "/" + key,
                     name: key,
                     size: val.length,
                     type: val.content_type
