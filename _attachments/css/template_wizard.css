@@ -526,7 +526,7 @@
     Miscellaneous
     -------------------------------------------------- */ 
     
-    #btn-group			{margin:24px 0;padding:18px 0;border-top:1px solid #d3d3d3;}
+    .btn-group			{margin:24px 0;padding:18px 0;border-top:1px solid #d3d3d3;}
     #preview-page		{width:340px;}
     #content			{margin-top:54px;margin-left:45px !important;}
     .inline				{margin-left:20px;display:inline;}
