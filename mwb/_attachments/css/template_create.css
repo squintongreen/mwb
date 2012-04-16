@@ -241,8 +241,8 @@
     #sidebar					{padding-top:18px;padding-left:10px;float:left;}
     #sidebar > img				{margin:0 10px 10px 0;}
     #sidebar > h5				{line-height:18px;}
-    #sidebar #btn-group			{margin-top:18px;padding-top:18px;border-top:1px solid #d3d3d3;width:280px;display:inline;float:left;}
-    #sidebar #btn-group a 		{margin:0 0 10px 0;display:block;width:250px;text-align:center;}
+    #sidebar .btn-group			{margin-top:18px;padding-top:18px;border-top:1px solid #d3d3d3;width:280px;display:inline;float:left;}
+    #sidebar .btn-group a 		{margin:0 0 10px 0;display:block;width:250px;text-align:center;}
     #btn-group-modal			{margin:18px 0 18px 45px;width:400px;display:block;position:relative;float:left;}
     #btn-group-modal p			{margin:0;}
     
