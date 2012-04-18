@@ -45,7 +45,7 @@ a = function(nested){
 
 $(document).ready(function(){
     // twipsying
-    $("input[data-rel=twipsy]").twipsy({
+    $("input[rel=twipsy]").twipsy({
         live: true,
         offset: 10,
         delayIn: 800,
