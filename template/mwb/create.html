@@ -1,27 +1,27 @@
-    <div id="start-website" class="row">
-      <div id="sidebar" class="span5">
-        <h4>Create a new website!</h4>
-        <p>Create a new website using our mobile website builder. First, you need to pick a name for your website. Choose something that is short and easy to remember.</p>
+<div id="start-website" class="row">
+  <div id="sidebar" class="span5">
+    <h4>Create a new website!</h4>
+    <p>Create a new website using our mobile website builder. First, you need to pick a name for your website. Choose something that is short and easy to remember.</p>
+  </div>
+  
+  <div id="create-website-block" class="span11">
+    <form id="create-form">
+      <h4>Choose a name</h4>
+      <label for="websiteName">Website name</label>
+      <div class="input">
+	<input type="text" id="websiteName" name="websiteName"  class="{validate: {required: true, uniqueWebsiteName: true} }"/>
       </div>
-      
-      <div id="create-website-block" class="span11">
-	<form id="create-form">
-	  <h4>Choose a name</h4>
-	  <label for="websiteName">Website name</label>
-	  <div class="input">
-	    <input type="text" id="websiteName" name="websiteName"  class="{validate: {required: true, uniqueWebsiteName: true} }"/>
-	  </div>
-	  <br />
-	  <label for="name-preview" style="width:150px;">Name Preview</label>
-	  <p class="name-preview">http://www.scanshowsell.com/m/yourwebsitename</p>
-	  <br />
-	  <p><a id="new-btn" class="btn large success" href="wizard.html">Create new &raquo;</a></p>
-	</form>
-      </div>
-      <div class="alert-message error hide" id="nameAlert">
-        <a class="close" href="#">×</a>
-        <strong>Website name</strong>
-        <p>Please give your website a name!</p>
-      </div>
-      
-    </div> <!-- /row -->
+      <br />
+      <label for="name-preview" style="width:150px;">Name Preview</label>
+      <p class="name-preview">http://www.scanshowsell.com/m/yourwebsitename</p>
+      <br />
+      <p><a id="new-btn" class="btn large success" href="wizard.html">Create new &raquo;</a></p>
+    </form>
+  </div>
+  <div class="alert-message error hide" id="nameAlert">
+    <a class="close" href="#">×</a>
+    <strong>Website name</strong>
+    <p>Please give your website a name!</p>
+  </div>
+  
+</div> <!-- /row -->

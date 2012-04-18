@@ -14,7 +14,7 @@
         <a href="#" class="btn primary start">Upload all</a>
       </div>
       <br>
-        <div class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></div>
+      <div class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></div>
     </form>
   </div>  <!-- /upload-photo-wrap span10 -->
   
@@ -35,82 +35,82 @@
 
 
 <script>
-var fileUploadErrors = {
-    maxFileSize: 'File is too big',
-    minFileSize: 'File is too small',
-    acceptFileTypes: 'Filetype not allowed',
-    maxNumberOfFiles: 'Max number of files exceeded',
-    uploadedBytes: 'Uploaded bytes exceed file size',
-    emptyResult: 'Empty file upload result'
-};
+  var fileUploadErrors = {
+  maxFileSize: 'File is too big',
+  minFileSize: 'File is too small',
+  acceptFileTypes: 'Filetype not allowed',
+  maxNumberOfFiles: 'Max number of files exceeded',
+  uploadedBytes: 'Uploaded bytes exceed file size',
+  emptyResult: 'Empty file upload result'
+  };
 </script>
 <script id="template-upload" type="text/html">
   <% _.each(files, function(file, idx) { %>
-    <div id="photo-panel">
-      <div class="thumb-wrap">
-        <a href="<%=file.url%>" title="<%=file.name%>" rel="gallery"><img class="thumbnail" src="<%= file.thumbnail_url %>"/></a>
-      </div>  <!-- /thumb-wrap -->
-      <div class="photo-form">        
-	  <fieldset>
-            <div class="clearfix">
-	      <label for="caption">File name:</label>
-              <p class="file-name"><%= file.name %></p>
-        	<input type="hidden" name="file-name" value="<%= file.name %>" />
-              <p class="file-size"> <%= formatFileSize(file.size) %></p>
-	      <label for="caption">Photo caption</label>
-	      <div class="input">
-        	<input type="text" name="caption" class="span5"/>
-              </div>
-              <div class="progress progress-success progress-striped active"><div class="bar" style="width:0%;"></div></div>
-            </div><!-- /clearfix -->
-            <div class="photo-buttons" >
-	      <a href="#" class="btn small danger delete">Remove photo</a>
-                <button class="btn btn-primary">
-                    <i class="icon-upload icon-white"> Start</i>
-                </button>
+  <div id="photo-panel">
+    <div class="thumb-wrap">
+      <a href="<%=file.url%>" title="<%=file.name%>" rel="gallery"><img class="thumbnail" src="<%= file.thumbnail_url %>"/></a>
+    </div>  <!-- /thumb-wrap -->
+    <div class="photo-form">        
+      <fieldset>
+        <div class="clearfix">
+	  <label for="caption">File name:</label>
+          <p class="file-name"><%= file.name %></p>
+          <input type="hidden" name="file-name" value="<%= file.name %>" />
+          <p class="file-size"> <%= formatFileSize(file.size) %></p>
+	  <label for="caption">Photo caption</label>
+	  <div class="input">
+            <input type="text" name="caption" class="span5"/>
+          </div>
+          <div class="progress progress-success progress-striped active"><div class="bar" style="width:0%;"></div></div>
+        </div><!-- /clearfix -->
+        <div class="photo-buttons" >
+	  <a href="#" class="btn small danger delete">Remove photo</a>
+          <button class="btn btn-primary">
+            <i class="icon-upload icon-white"> Start</i>
+          </button>
 
-            </div><!-- /photo-buttons -->
-            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
-	  </fieldset>
-      </div>  <!-- /photo-form -->
-    </div>  <!-- /photo-panel -->
-    <% }) %>
+        </div><!-- /photo-buttons -->
+        <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
+      </fieldset>
+    </div>  <!-- /photo-form -->
+  </div>  <!-- /photo-panel -->
+  <% }) %>
 </script>
 
 <script id="template-download" type="text/html">
   <% _.each(files, function(file, idx) { %>
-    <div id="photo-panel">
-      <div class="thumb-wrap">
-          <img class="thumbnail" src="<%= file.thumbnail_url %>" style="max-width:210px;max-height:150px;"/>
-      </div>  <!-- /thumb-wrap -->
-      <div class="photo-form">
-        
+  <div id="photo-panel">
+    <div class="thumb-wrap">
+      <img class="thumbnail" src="<%= file.thumbnail_url %>" style="max-width:210px;max-height:150px;"/>
+    </div>  <!-- /thumb-wrap -->
+    <div class="photo-form">
+      
 
-	  <fieldset>
-            <div class="clearfix">
-	      <label for="caption">File name:</label>
-              <p class="file-name"><%= file.name %></p>
-        	<input type="hidden" name="file-name" value="<%= file.name %>" />
-              <p class="file-size"> <%= formatFileSize(file.size) %></p>
-	      <label for="caption">Photo caption</label>
-	      <div class="input">
-        	<input type="text" name="caption" class="span5 valid"/>
-              </div>
-              <label for="title-picture">Title picture</label>
-	      <div class="input">
-        	<input type="radio" name="title-picture"/>
-              </div>
-            </div><!-- /clearfix -->
-            <div class="photo-buttons" >
-	      <a href="#" class="btn small danger delete">Remove photo</a>
-            </div><!-- /photo-buttons -->
-            <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
-	  </fieldset>
+      <fieldset>
+        <div class="clearfix">
+	  <label for="caption">File name:</label>
+          <p class="file-name"><%= file.name %></p>
+          <input type="hidden" name="file-name" value="<%= file.name %>" />
+          <p class="file-size"> <%= formatFileSize(file.size) %></p>
+	  <label for="caption">Photo caption</label>
+	  <div class="input">
+            <input type="text" name="caption" class="span5 valid"/>
+          </div>
+          <label for="title-picture">Title picture</label>
+	  <div class="input">
+            <input type="radio" name="title-picture"/>
+          </div>
+        </div><!-- /clearfix -->
+        <div class="photo-buttons" >
+	  <a href="#" class="btn small danger delete">Remove photo</a>
+        </div><!-- /photo-buttons -->
+        <!-- <div class="progressbar"><div style="width:0%;"></div></div> -->
+      </fieldset>
 
-      </div>  <!-- /photo-form -->
-    </div>  <!-- /photo-panel -->
+    </div>  <!-- /photo-form -->
+  </div>  <!-- /photo-panel -->
 
-    <% }) %>
+  <% }) %>
 </script>
 <!-- The Templates and Load Image plugins are included for the FileUpload user interface -->
 <script src="../js/load-image.min.js"></script>
