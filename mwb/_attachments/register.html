@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up with ScanShowSell</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/jquery.fileupload-ui.css">
+    <link rel="stylesheet" href="css/template_register.css">
+    <link rel="stylesheet" href="css/bootstrap-happy.css">
+
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery-ui-1.8.17.custom.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/bootstrap-alerts.js"></script>
+    <script src="js/bootstrap-buttons.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tabs.js"></script>
+    <script src="js/bootstrap-twipsy.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-vert-tabs.js"></script>
+
+    <script src="js/jquery.util.js"></script>
+    <script src="../js/jquery.form.js"></script>
+
+    <script src="../js/jquery.bxSlider.js"></script>
+    <script src="../js/jquery.easing.1.3.js"></script>
+
+    <script src="../js/jquery.metadata.js"></script>
+    <script src="../js/jquery.validate.js"></script>
+
+
+    <!-- couchdb stuff -->
+    <script src="/_utils/script/sha1.js"></script>
+    <script src="/_utils/script/json2.js"></script>
+    <script src="/_utils/script/jquery.couch.js"></script>
+    <script src="vendor/couchapp/jquery.couchLogin.js"></script>
+    <script src="vendor/couchapp/jquery.couchProfile.js"></script>
+    <script src="vendor/couchapp/md5.js"></script>
+    <script src="vendor/couchapp/jquery.mustache.js"></script>
+
+    <script src="../js/underscore.js"></script>
+    <script src="../js/backbone.js"></script>
+    <script src="../js/backbone-filtered-collection.js"></script>
+    <script src="../js/backbone-couchdb.js"></script>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/jquery.formserializer.js"></script>
+    <script src="../js/models.js" type="text/javascript"></script>
+    <script src="../js/application.js" type="text/javascript"></script>
+    <script src="../js/custom.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="panel-wrap">
+        <div id="panel">
+          <div class="row">
+	    <header>
+	      <a href="http://www.scanshowsell.com"><img src="images/title_med.png" alt="ScanShowSell.com" border="0" /></a>
+	      <h1 class="pull-right">Register Now</h1>
+	    </header>
+	  </div>
+	  
+	  <div class="row">
+	    <div id="page-wrap">
+	      <hgroup>
+		<h2>Start your 30-day free trial today! No credit card necessary.</h2>
+		<h5>Build, customize and host a beautiful mobile website with us - for free. No payment necessary, cancel anytime.</h5>
+	      </hgroup>
+	      
+	      <form id="registerForm" name="registerForm">
+	        <ul id="formList">
+	          <li>
+	            <!-- ===== WEBSITE NAME ====== -->
+	            <div class="clearfix">
+	              <label for="websiteName">Website name</label>
+	              <div class="input">
+	                <input type="text" class="span7" id="websiteName" size="30" name="websiteName" rel="twipsy" title="This will part of your website address. Choose carefully as you will not be able to change this later." placeholder="Your Site Name"></input>
+	              </div>
+	            </div><!-- /clearfix -->
+	            <p class="hint-inline">This will also be used as your website's address. (Example: www.scanshowsell.com/m/mymobilewebsitename )</p>
+	          </li> 
+	          
+	          <!-- ===== WEBSITE URL ======
+	               <li> 
+	                 <div class="clearfix">
+	                   <label for="websiteURL">Website URL</label>
+	                   <div class="input">
+	                     <input type="text" class="span7 alert" id="websiteURL" size="30" name="websiteURL" rel="twipsy" title="Example: bobsplumbing.scanshowsell.com" placeholder="yourwebsite" required></input>
+	                     <span class="help-inline">.scanshowsell.com</span>
+	                   </div>
+	                 </div>
+	                 <p class="hint-inline">This is your website's address. It can be 3 - 35 characters long (only numbers and letters). Once registered, you can also use your own domain name (ex: wwww.yourdomain.com) at any time.</p>
+	               </li>
+	               -->
+	          
+	          <li>
+	            <!-- ===== EMAIL ADDRESS ====== -->
+	            <div class="clearfix">
+	              <label for="emailAddress">Email Address</label>
+	              <div class="input">
+	                <input type="text" id="emailAddress" size="30" name="emailAddress" class="span7 {validate: {required:true, email:true}}"></input>
+	              </div>
+
+	              <label for="emailConfirm">Confirm Email</label>
+	              <div class="input">
+	                <input type="text" id="emailConfirm" size="30" name="emailConfirm" class="span7 {validate: {required:true, email:true, equalTo: '#emailAddress'}}" ></input>
+	              </div>
+	            </div><!-- /clearfix -->
+	            <p class="hint-inline">Your email address will be your login ID.</p>
+	          </li>
+	          
+	          <li>
+	            <!-- ===== PASSWORD ====== -->
+	            <div class="clearfix">
+	              <label for="password">Choose Password</label>
+	              <div class="input">
+	                <input type="password" id="password" size="30" name="password" class="span7 {validate: {required:true,minlength:6}}"></input>
+	              </div>
+
+	              <label for="passwordConfirm">Confirm Password</label>
+	              <div class="input">
+	                <input type="password" id="passwordConfirm" size="30" name="passwordConfirm" class="span7 {validate: {required:true, equalTo:'#password'}}"></input>
+	              </div>
+	            </div><!-- /clearfix -->
+	            <p class="hint-inline">Password must be at least 6 characters long, numbers and letters only (no spaces, or special symbols)..</p>
+	          </li>
+	          
+	          <li>
+	            <!-- ===== SPAM ALERT ====== -->
+	            <div class="clearfix">
+	              <label class="spamLabel" for="spamAlert">What is <span id="randomEQ" class="label warning">2&nbsp;&nbsp;+&nbsp;&nbsp;2</span>&nbsp;?</label>
+	              <div class="input">
+	                <input type="text" id="areYouHuman" name="areYouHuman" class="mini {validate: {required:true}}"></input>
+	              </div>
+	            </div><!-- /clearfix -->
+	            <p class="hint-inline">We're just making sure you're a human and not a spam-bot.</p>
+	          </li>
+	          
+	          <li>
+	            <!-- ===== TOS AGREEMENT ====== -->
+	            <div class="clearfix">
+	              <input type="checkbox" name="tosAgree" value="yes" class="{validate: {required:true}}"/>
+	              <span class="tosAgree">I agree to the <a href="#">Terms of Service</a></span>
+	              <a href="wizard.html" class="pull-right"><button class="btn large success">Build your mobile website&nbsp;&nbsp;&rarr;</button></a>
+	            </div><!-- /clearfix -->
+	          </li>
+	        </ul>
+	      </form>
+            </div>  <!-- /span16 -->
+          </div>  <!-- /row -->
+          
+        </div>  <!-- /panel -->
+      </div> <!-- /panel-wrap -->
+    </div>  <!-- /container -->
+    
+
+    <script src="js/jquery.iframe-transport.js"></script>
+    <script src="js/jquery.fileupload.js"></script>
+    <script src="js/jquery.fileupload-ui.js"></script>
+    <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE >= 8 -->
+    <script src="js/jquery.xdr-transport.js"></script>
+    <!-- postMessage Transport support can be added with the following plugin -->
+    <!--script src="jquery.postmessage-transport.js"></script-->
+  </body>
+</html>

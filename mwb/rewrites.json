@@ -1,0 +1,51 @@
+[
+    {
+        "from": "js/*",
+        "to": "js/*"
+    },
+    {
+        "from": "css/*",
+        "to": "css/*"
+    },
+    {
+        "from": "fonts/*",
+        "to": "fonts/*"
+    },
+    {
+        "from": "img/*",
+        "to": "img/*"
+    },
+    {
+        "from": "images/*",
+        "to": "images/*"
+    },
+
+    {
+        "from": "vendor/*",
+        "to": "vendor/*"
+    },
+    {
+        "from": "_session",
+        "to": "/_session"
+    },
+    {
+        "from": "_list/*",
+        "to": "_list/*"
+    },
+    {
+        "from": "_view/*",
+        "to": "_view/*"
+    },
+    {
+        "from": "index.html",
+        "to": "index.html"
+    },
+    {
+        "from": "register.html",
+        "to": "register.html"
+    },
+    {
+        "from": "*",
+        "to": "_show/_/*"
+    }
+]

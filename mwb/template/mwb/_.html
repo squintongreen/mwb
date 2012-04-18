@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{ template['_head'] }}
+  <body>
+    {{ template['_topbar'] }}
+    <div id="page-wrap" class="container">  <!--  Page Wrap  -->
+      <header>
+	<a href="http://www.scanshowsell.com"><img src="../images/title_sm.png" alt="ScanShowSell.com" /></a>
+	<a href="#" class="call-us pull-right">
+	  1-855-722-6746 ( 855-SCANSHOWSELL )
+	  <br />
+	  We're just a phone call away!</a>
+      </header>
+      
+      <section id="section-head" class="row">
+	<h1 class="section-header">Manage Your Mobile Site</h1>
+	<div id="site-manager" class="span7">
+	  <ul id="site-manager-menu" class="nav secondary-nav">
+	    <li class="dropdown" data-dropdown="dropdown">
+	      <a href="#" id="site-toggle" class="dropdown-toggle website-name" style="font-size:1em;font-weight:600;">Currently Editing:</a>
+	      <ul id="site-manager-dropdown" class="dropdown-menu">
+	      	<li class="divider"></li>
+	      	<li><a class="link-site manage" href="create.html">+&nbsp;&nbsp;Add another site...</a></li>
+	      	<li><a class="link-site add" href="sites.html">Manage sites...</a></li>
+	      	<li class="divider"></li>
+	      	<li><a class="link-site send" href="#">Send Link to Phone</a></li>
+		<li><a class="link-site generate" href="#">View/Generate QR code</a></li>
+		<li><a class="link-site preview" href="#">Preview Site in Phone Simulator</a></li>
+    	      </ul><!-- /site-manager-dropdown -->
+    	    </li>
+	  </ul><!-- /site-manager-menu -->
+	</div><!-- /span7 -->
+      </section><!-- /section-head -->
+      
+      <section id="body" class="row">
+    	{{ processTemplate(file) }}
+      </section>
+    </div> <!-- /.container -->
+    
+    {{ template['_footer'] }}
+    
+  </body>
+</html>
